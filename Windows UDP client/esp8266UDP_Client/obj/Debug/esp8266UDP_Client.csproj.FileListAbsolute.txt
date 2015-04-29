@@ -1,0 +1,30 @@
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.exe.config
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.exe
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.pdb
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csprojResolveAssemblyReference.cache
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.Form1.resources
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.Properties.Resources.resources
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csproj.GenerateResource.Cache
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.exe
+c:\users\l\documents\visual studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.pdb
+C:\Users\L\Documents\Visual Studio 2012\Projects\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\ProgressBars.Basic.dll
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.exe.config
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.exe
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.pdb
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csprojResolveAssemblyReference.cache
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.Form1.resources
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.Properties.Resources.resources
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csproj.GenerateResource.Cache
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.exe
+E:\Users\Taras\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.pdb
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.exe.config
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.exe
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.pdb
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csprojResolveAssemblyReference.cache
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.Form1.resources
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.Properties.Resources.resources
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csproj.GenerateResource.Cache
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.exe
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.pdb
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\SharpDX.dll

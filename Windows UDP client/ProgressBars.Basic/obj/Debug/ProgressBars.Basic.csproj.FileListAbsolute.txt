@@ -1,0 +1,9 @@
+D:\NEIT\C#\ProgressBars.Basic\ProgressBars.Basic\bin\Debug\ProgressBars.Basic.dll
+D:\NEIT\C#\ProgressBars.Basic\ProgressBars.Basic\obj\Debug\ProgressBars.Basic.Properties.Resources.resources
+D:\NEIT\C#\ProgressBars.Basic\ProgressBars.Basic\obj\Debug\ProgressBars.Basic.csproj.GenerateResource.Cache
+D:\NEIT\C#\ProgressBars.Basic\ProgressBars.Basic\obj\Debug\ProgressBars.Basic.dll
+C:\Users\L\Desktop\ProgressBars.Basic\ProgressBars.Basic\bin\Debug\ProgressBars.Basic.dll
+C:\Users\L\Desktop\ProgressBars.Basic\ProgressBars.Basic\obj\Debug\ProgressBars.Basic.csprojResolveAssemblyReference.cache
+C:\Users\L\Desktop\ProgressBars.Basic\ProgressBars.Basic\obj\Debug\ProgressBars.Basic.Properties.Resources.resources
+C:\Users\L\Desktop\ProgressBars.Basic\ProgressBars.Basic\obj\Debug\ProgressBars.Basic.csproj.GenerateResource.Cache
+C:\Users\L\Desktop\ProgressBars.Basic\ProgressBars.Basic\obj\Debug\ProgressBars.Basic.dll

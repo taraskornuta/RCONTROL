@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc 4.8.1 mingw32 -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F100RB -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\STM32_Progects\CooCox -I..\..\..\..\..\STM32_Progects\CooCox\PWM1\cmsis_boot -I..\..\..\..\..\STM32_Progects -I..\..\..\..\..\STM32_Progects\CooCox\PWM1\stm_lib -I..\..\..\..\..\STM32_Progects\CooCox\PWM1\cmsis -I..\..\..\..\..\STM32_Progects\CooCox\PWM1 -I..\..\..\..\..\STM32_Progects\CooCox\PWM1\stm_lib\inc">
+      <target file="startup_stm32f10x_md_vl.o" lastModified="14cb9bec1be">
+         <source file="..\..\..\..\..\..\cmsis_boot\startup\startup_stm32f10x_md_vl.c" lastModified="14c55753f83"/>
+      </target>
+      <target file="uart.o" lastModified="14cfffeccd2">
+         <source file="..\..\..\..\..\..\uart.c" lastModified="14cfffec7fc"/>
+      </target>
+      <target file="syscalls.o" lastModified="14cb9bec690">
+         <source file="..\..\..\..\..\..\syscalls\syscalls.c" lastModified="14c79ee4fdf"/>
+      </target>
+      <target file="stm32f10x_tim.o" lastModified="14cb9bec183">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="14c5575c41a"/>
+      </target>
+      <target file="esp8266.o" lastModified="14cfff9e301">
+         <source file="..\..\..\..\..\..\esp8266.c" lastModified="14cfff9da35"/>
+      </target>
+      <target file="printf.o" lastModified="14cb9bec475">
+         <source file="..\..\..\..\..\..\stdio\printf.c" lastModified="14c79f0b956"/>
+      </target>
+      <target file="system_stm32f10x.o" lastModified="14cb9bec21c">
+         <source file="..\..\..\..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14c5599ab58"/>
+      </target>
+      <target file="peripheral.o" lastModified="14cb9bec63f">
+         <source file="..\..\..\..\..\..\peripheral.c" lastModified="14cb3d329b9"/>
+      </target>
+      <target file="main.o" lastModified="14cc321493b">
+         <source file="..\..\..\..\..\..\main.c" lastModified="14cc31ff7c1"/>
+      </target>
+      <target file="stm32f10x_gpio.o" lastModified="14cb9bec33d">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="14c55758566"/>
+      </target>
+      <target file="stm32f10x_usart.o" lastModified="14cb9bec5d7">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="14c5bc43bdf"/>
+      </target>
+      <target file="stm32f10x_rcc.o" lastModified="14cb9bec51f">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="14c5575790e"/>
+      </target>
+      <target file="misc.o" lastModified="14cb9bec761">
+         <source file="..\..\..\..\..\..\stm_lib\src\misc.c" lastModified="14c5f5c838d"/>
+      </target>
+      <target file="channels.o" lastModified="14cb9bec6fa">
+         <source file="..\..\..\..\..\..\channels.c" lastModified="14ca8be9dc9"/>
+      </target>
+   </processor>
+</history>
