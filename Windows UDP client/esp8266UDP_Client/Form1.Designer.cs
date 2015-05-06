@@ -56,6 +56,7 @@
             this.pBar_CH1 = new ProgressBars.Basic.BasicProgressBar();
             this.pBar_CH2 = new ProgressBars.Basic.BasicProgressBar();
             this.pBar_CH4 = new ProgressBars.Basic.BasicProgressBar();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH7)).BeginInit();
@@ -387,11 +388,21 @@
             this.pBar_CH4.TabIndex = 28;
             this.pBar_CH4.Text = "basicProgressBar1";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(506, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "label9";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 344);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.pBar_CH8);
             this.Controls.Add(this.pBar_CH7);
             this.Controls.Add(this.pBar_CH6);
@@ -419,7 +430,8 @@
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.btn_Open);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "RCONTROL";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH7)).EndInit();
@@ -462,6 +474,7 @@
         private ProgressBars.Basic.BasicProgressBar pBar_CH7;
         private ProgressBars.Basic.BasicProgressBar pBar_CH8;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label9;
     }
 }
 

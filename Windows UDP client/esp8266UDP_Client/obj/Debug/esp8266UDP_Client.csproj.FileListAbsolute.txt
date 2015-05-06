@@ -28,3 +28,14 @@ C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Clie
 C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.pdb
 C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\SharpDX.DirectInput.dll
 C:\Users\L\Desktop\esp8266UDP_Client\esp8266UDP_Client\bin\Debug\SharpDX.dll
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.exe.config
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.exe
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.pdb
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.exe
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\esp8266UDP_Client.pdb
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\SharpDX.dll
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csprojResolveAssemblyReference.cache
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.Form1.resources
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.Properties.Resources.resources
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csproj.GenerateResource.Cache
