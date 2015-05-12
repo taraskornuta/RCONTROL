@@ -1,7 +1,5 @@
 #include "uart.h"
 
-
-
 // USART1 Receiver buffer
 #define      UART1_RX_BUFFER_SIZE 128
 uint8_t      UART1_rx_buffer[UART1_RX_BUFFER_SIZE];
@@ -14,9 +12,8 @@ uint8_t      UART1_rx_buffer_overflow=0;
 #define      UART1_TX_BUFFER_SIZE 128
 uint8_t      UART1_tx_buffer[UART1_TX_BUFFER_SIZE];
 unsigned int UART1_tx_wr_index=0,
-             UART1_tx_rd_index=0,UART1_tx_counter=0;
-
-
+             UART1_tx_rd_index=0,
+             UART1_tx_counter=0;
 
 // USART2 Receiver buffer
 #define      UART2_RX_BUFFER_SIZE 128
@@ -26,16 +23,16 @@ unsigned int UART2_rx_wr_index = 0,
              UART2_rx_counter  = 0;
 uint8_t      UART2_rx_buffer_overflow=0;
 
-
 // USART2 Transmitter buffer
 #define      UART2_TX_BUFFER_SIZE 128
 uint8_t      UART2_tx_buffer[UART2_TX_BUFFER_SIZE];
 unsigned int UART2_tx_wr_index=0,
-			 UART2_tx_rd_index=0,UART2_tx_counter=0;
+             UART2_tx_rd_index=0,
+             UART2_tx_counter=0;
 
 void USART_Configuration(void)
 {
-	GPIO_InitTypeDef GPIO_InitStructure;
+        GPIO_InitTypeDef GPIO_InitStructure;
 	USART_InitTypeDef USART_InitStructure;
 	NVIC_InitTypeDef NVIC_InitStructure;
 
@@ -87,8 +84,8 @@ void USART_Configuration(void)
 
 	USART_Cmd(USART2, ENABLE);
 
-	//------------------------------------USART INTERUPT VECTORS------------------------------//
-	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+//------------------------------------USART INTERUPT VECTORS------------------------------//
+    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -98,7 +95,7 @@ void USART_Configuration(void)
     USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
 
 
-	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -112,7 +109,7 @@ void USART_Configuration(void)
 //---------------------------------UART 1 Interrupt vector ---------------------------------//
 void USART1_IRQHandler(void)
 {
-	LED_BLUE_ON;
+  LED_BLUE_ON;
   if(USART_GetITStatus(USART1, USART_IT_RXNE) == SET)
   {
        if ((USART1->SR & (USART_FLAG_NE|USART_FLAG_FE|USART_FLAG_PE|USART_FLAG_ORE)) == 0)
@@ -154,7 +151,6 @@ void USART1_IRQHandler(void)
 
 uint8_t UART1_get_char(void)
 {
-
    uint8_t data;
    while (UART1_rx_counter == 0);
    data = UART1_rx_buffer[ UART1_rx_rd_index++ ];
@@ -163,12 +159,10 @@ uint8_t UART1_get_char(void)
    --UART1_rx_counter;
    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
    return data;
-
 }
 
 void UART1_put_char(uint8_t c)
-   {
-
+{
    while (UART1_tx_counter == UART1_TX_BUFFER_SIZE);
    USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
 
@@ -179,15 +173,14 @@ void UART1_put_char(uint8_t c)
          ++UART1_tx_counter;
          USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
       }
-       else
-          USART_SendData(USART1,c);
+   else USART_SendData(USART1,c);
 }
 
 void UART1_put_str(unsigned char *s)
-   {
-      while (*s != 0)
-      UART1_put_char(*s++);
-   }
+{
+  while (*s != 0)
+  UART1_put_char(*s++);
+}
 
 
 void UART1_put_int(int32_t data)
@@ -217,38 +210,38 @@ void UART1_put_int(int32_t data)
 }
 void buff_clear()															//	очищаем буфер
 {
-	int i;
-	for(i=0;i<UART2_STRING_BUFFER_SIZE;i++)
-	{
-		Buffer[i]=0;
-	}
+  int i;
+  for(i=0;i<UART2_STRING_BUFFER_SIZE;i++)
+    {
+	Buffer[i]=0;
+    }
 }
 
 //	читаем текстовую строку с UART, до ввода <enter>. Максимальная длина строки 512Байт
 void UART1_read_str(unsigned char* s)
 {
-	unsigned char temp;
-	unsigned int index=0;
-	while(index<512)
+  unsigned char temp;
+  unsigned int index=0;
+  while(index<512)
+    {
+	temp=USART_ReceiveData(USART1);
+	if(temp!=13)
 	{
-		temp=USART_ReceiveData(USART1);
-		if(temp!=13)
-		{
-			*s++=temp;
-		}
-		else
-		{
-			index=512;
-		}
-		index++;
+	    *s++=temp;
 	}
+	else
+	{
+	    index=512;
+	}
+	index++;
+    }
 }
 
 //---------------------------------UART 2 Interrupt vector ---------------------------------//
 
 void USART2_IRQHandler(void)
 {
-	LED_BLUE_ON;
+  LED_BLUE_ON;
   if(USART_GetITStatus(USART2, USART_IT_RXNE) == SET)
   {
        if ((USART2->SR & (USART_FLAG_NE|USART_FLAG_FE|USART_FLAG_PE|USART_FLAG_ORE)) == 0)
@@ -290,7 +283,6 @@ void USART2_IRQHandler(void)
 //---------------------------------UART 2 functions ---------------------------------//
 unsigned char UART2_get_char(void)
 {
-
    unsigned char data;
    while (UART2_rx_counter == 0);
    data = UART2_rx_buffer[ UART2_rx_rd_index++ ];
@@ -299,11 +291,10 @@ unsigned char UART2_get_char(void)
    --UART2_rx_counter;
    USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
    return data;
-
 }
 
 void UART2_put_char(unsigned char c)
-   {
+{
    while (UART2_tx_counter == UART2_TX_BUFFER_SIZE);
    USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
 
@@ -319,11 +310,11 @@ void UART2_put_char(unsigned char c)
 }
 
 void UART2_put_str(unsigned char *s)
-   {
-      while (*s != 0)
-      UART2_put_char(*s++);
+{
+  while (*s != 0)
+  UART2_put_char(*s++);
 
-   }
+}
 
 
 void UART2_put_int(int32_t data)
@@ -353,20 +344,20 @@ void UART2_put_int(int32_t data)
 }
 void UART2_read_str(unsigned char* s) //Читає строку до ввода Enter
 {
-	buff_clear();
-	unsigned char temp;
-	unsigned int index=0;
-	while((index<UART2_STRING_BUFFER_SIZE))
+  buff_clear();
+  unsigned char temp;
+  unsigned int index=0;
+  while((index<UART2_STRING_BUFFER_SIZE))
+    {
+	temp=UART2_get_char();
+	if((temp!=13) )              //Enter 13-символ по таблиці ANSII
 	{
-		temp=UART2_get_char();
-		if((temp!=13) )              //Enter 13-символ по таблиці ANSII
-		{
-			*s++=temp;
-		}
-		else
-		{
-			index=UART2_STRING_BUFFER_SIZE;
-		}
-		index++;
+	    *s++=temp;
 	}
+	else
+	{
+	    index=UART2_STRING_BUFFER_SIZE;
+	}
+	index++;
+    }
 }
