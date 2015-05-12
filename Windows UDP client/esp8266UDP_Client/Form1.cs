@@ -20,9 +20,9 @@ namespace esp8266UDP_Client
 {
     public partial class Form1 : Form
     {
-        private Thread tread = null;
+
+        private Thread JoystickThread = null;
         public int X, Y, Z, RotZ;
-        private UdpClient udp = new UdpClient();
         private string ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8;
 
         public Form1()
@@ -32,31 +32,34 @@ namespace esp8266UDP_Client
 
         private void btn_Open_Click(object sender, System.EventArgs e)
         {
-            this.tread = new Thread(new ThreadStart(this.relayStatus));
-            this.tread.Start();
+            
+            JoystickThread = new Thread(new ThreadStart(this.joyStatus));
+            JoystickThread.Start();
+            ThreadStart UdpThread = new ThreadStart(UdpReceive);
+            workReceive = new Thread(UdpThread);
+            workReceive.Start();
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, System.EventArgs e)
         {
-
+            UdpClient udp = new UdpClient();
             // Указываем адрес отправки сообщения
             IPAddress ipaddress = IPAddress.Parse("192.168.4.1");
             IPEndPoint ipendpoint = new IPEndPoint(ipaddress, 8000);
 
             byte[] message =
                 Encoding.Default.GetBytes(
-                    Convert.ToString(ch1 + "," + ch2 + "," + ch3 + "," + ch4 + "," + ch5 + "," + ch6 + "," + ch7 + "," +
-                                     ch8));
-            try
-            {
-                int sended = udp.Send(message, message.Length, ipendpoint);
-            }
-            catch (Exception)
-            {
+                         Convert.ToString(ch1 + ","
+                                        + ch2 + ","
+                                        + ch3 + ","
+                                        + ch4 + ","
+                                        + ch5 + ","
+                                        + ch6 + ","
+                                        + ch7 + ","
+                                        + ch8));
+                udp.Send(message, message.Length, ipendpoint);
 
-                udp.Close();
-            }
 
             ch1 = Convert.ToString(tBar_CH1.Value);
             ch2 = Convert.ToString(tBar_CH2.Value);
@@ -79,23 +82,69 @@ namespace esp8266UDP_Client
             tBar_CH2.Value = Convert.ToInt16(1000 + (Y * 3.92156862745099));  //Треба інвертувати
             tBar_CH3.Value = Convert.ToInt16(1000 + (Z * 3.92156862745099));
             tBar_CH4.Value = Convert.ToInt16(1000 + (RotZ * 3.92156862745099)); //Треба інвертувати
-
+            udp.Close();
 
         }
 
+        UdpClient udp = null;
+        bool stopReceive = false;
+        Thread workReceive = null;
+
+        void UdpReceive()
+        {
+            try
+            {
+                IPEndPoint ep = new IPEndPoint(IPAddress.Parse("192.168.4.1"), 8001);
+                udp = new UdpClient(ep);
+                while (true)
+                {
+                    IPEndPoint remote = null;
+                    byte[] message = udp.Receive(ref remote);
+                    ShowMessage(Encoding.Default.GetString(message));
+                    if (stopReceive == true) break;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                if (udp != null) udp.Close();
+            }
+
+
+        }
+        //Приймає значення із паралельного потоку
+        delegate void SetTextCallback(string message);
+        void ShowMessage(string message)
+        {
+            if (this.label9.InvokeRequired)
+            {
+                SetTextCallback dt = new SetTextCallback(ShowMessage);
+                this.Invoke(dt, new object[] { message });
+            }
+            else
+            {
+                this.label9.Text = message;
+            }
+        }
+
+        void StopReceive()
+        {
+            stopReceive = true;
+            if (udp != null) udp.Close();
+            if (workReceive != null) workReceive.Join();
+        }
         private void btn_Close_Click(object sender, System.EventArgs e)
         {
-            udp.Close();
+            
             timer1.Stop();
+            StopReceive();
+
         }
-
-        private void btn_Send_Click(object sender, System.EventArgs e)
-        {
-
-            timer1.Start();
-        }
-
-        public void relayStatus()
+        
+        public void joyStatus()
         {
             var directInput = new DirectInput();
 
@@ -115,9 +164,9 @@ namespace esp8266UDP_Client
             // If Joystick not found, throws an error
             if (joystickGuid == Guid.Empty)
             {
-                Console.WriteLine("No joystick/Gamepad found.");
-                Console.ReadKey();
-                Environment.Exit(1);
+                MessageBox.Show("");
+
+
             }
 
             // Instantiate the joystick
@@ -165,6 +214,12 @@ namespace esp8266UDP_Client
                 }
             }
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
+            StopReceive();
         }
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Project version="2G - 1.7.6" name="PWM1">
   <Target name="PWM1" isCurrent="1">
-    <Device manufacturerId="9" manufacturerName="ST" chipId="257" chipName="STM32F100RB" boardId="" boardName=""/>
+    <Device manufacturerId="9" manufacturerName="ST" chipId="305" chipName="STM32F103C8" boardId="" boardName=""/>
     <BuildOption>
       <Compile>
-        <Option name="OptimizationLevel" value="0"/>
+        <Option name="OptimizationLevel" value="4"/>
         <Option name="UseFPU" value="0"/>
         <Option name="UserEditCompiler" value=""/>
         <Option name="SupportCPlusplus" value="0"/>
@@ -12,10 +12,10 @@
           <Includepath path="."/>
         </Includepaths>
         <DefinedSymbols>
-          <Define name="STM32F100RB"/>
-          <Define name="STM32F10X_MD_VL"/>
           <Define name="USE_STDPERIPH_DRIVER"/>
           <Define name="__ASSEMBLY__"/>
+          <Define name="STM32F103C8"/>
+          <Define name="STM32F10X_MD"/>
         </DefinedSymbols>
       </Compile>
       <Link useDefault="0">
@@ -29,12 +29,12 @@
         <Option name="UserEditLinker" value=""/>
         <LinkedLibraries/>
         <MemoryAreas debugInFlashNotRAM="1">
-          <Memory name="IROM1" type="ReadOnly" size="0x00020000" startValue="0x08000000"/>
-          <Memory name="IRAM1" type="ReadWrite" size="0x00002000" startValue="0x20000000"/>
+          <Memory name="IROM1" type="ReadOnly" size="0x00010000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00005000" startValue="0x20000000"/>
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
         </MemoryAreas>
-        <LocateLinkFile path="../../../coocox/coide/configuration/programdata/pwm1/arm-gcc-link.ld" type="0"/>
+        <LocateLinkFile path="../../../../../../coocox/coide/configuration/programdata/pwm1/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>
@@ -65,7 +65,7 @@
       <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
-      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F10x_MD_128.elf"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F10x_MD_64.elf"/>
     </DebugOption>
     <ExcludeFile/>
   </Target>
@@ -77,16 +77,15 @@
     <Component id="444" name="GPIO" path="" type="2"/>
     <Component id="456" name="TIM" path="" type="2"/>
     <Component id="458" name="USART" path="" type="2"/>
-    <Component id="464" name="CMSIS Boot" path="" type="2"/>
     <Component id="467" name="MISC" path="" type="2"/>
   </Components>
   <Files>
-    <File name="cmsis_boot/startup/startup_stm32f10x_md_vl.c" path="cmsis_boot/startup/startup_stm32f10x_md_vl.c" type="1"/>
     <File name="esp8266.c" path="esp8266.c" type="1"/>
-    <File name="peripheral.c" path="peripheral.c" type="1"/>
+    <File name="cmsis_boot/startup/startup_stm32f10x_md_vl.c" path="cmsis_boot/startup/startup_stm32f10x_md_vl.c" type="1"/>
     <File name="cmsis_boot/system_stm32f10x.c" path="cmsis_boot/system_stm32f10x.c" type="1"/>
-    <File name="stdio" path="" type="2"/>
+    <File name="peripheral.c" path="peripheral.c" type="1"/>
     <File name="stm_lib/inc/misc.h" path="stm_lib/inc/misc.h" type="1"/>
+    <File name="stdio" path="" type="2"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_tim.h" path="stm_lib/inc/stm32f10x_tim.h" type="1"/>
     <File name="cmsis/core_cm3.h" path="cmsis/core_cm3.h" type="1"/>
@@ -115,8 +114,8 @@
     <File name="stm_lib/src/stm32f10x_gpio.c" path="stm_lib/src/stm32f10x_gpio.c" type="1"/>
     <File name="stm_lib/inc" path="" type="2"/>
     <File name="stm_lib/inc/stm32f10x_gpio.h" path="stm_lib/inc/stm32f10x_gpio.h" type="1"/>
-    <File name="main.c" path="main.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_usart.h" path="stm_lib/inc/stm32f10x_usart.h" type="1"/>
+    <File name="main.c" path="main.c" type="1"/>
     <File name="channels.h" path="channels.h" type="1"/>
   </Files>
 </Project>
