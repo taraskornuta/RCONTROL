@@ -7,16 +7,25 @@
 
 void GPIO_Configuration(void)
 {
+	/* Port PB3, PA15 JTAG pins, mast disabling */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);		//JTAG disabling
+    GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);	//JTAG disabling
+
 	/* GPIOC clock enable */
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB, ENABLE);
 
 	//LED_GREEN, LED_BLUE
    	GPIO_InitTypeDef GPIO_InitStructure;
 
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
    	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
    	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-   	GPIO_Init(GPIOC, &GPIO_InitStructure);
+   	GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15;
+   	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+   	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+   	GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 
 void TIMERS_Configuration(void)

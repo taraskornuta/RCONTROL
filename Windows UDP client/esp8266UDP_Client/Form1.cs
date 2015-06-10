@@ -33,8 +33,8 @@ namespace esp8266UDP_Client
         private void btn_Open_Click(object sender, System.EventArgs e)
         {
             
-            JoystickThread = new Thread(new ThreadStart(this.joyStatus));
-            JoystickThread.Start();
+            //JoystickThread = new Thread(new ThreadStart(this.joyStatus));
+           // JoystickThread.Start();
             ThreadStart UdpThread = new ThreadStart(UdpReceive);
             workReceive = new Thread(UdpThread);
             workReceive.Start();

@@ -220,18 +220,19 @@ void buff_clear()															//	очищаем буфер
 //	читаем текстовую строку с UART, до ввода <enter>. Максимальная длина строки 512Байт
 void UART1_read_str(unsigned char* s)
 {
+	buff_clear();
   unsigned char temp;
   unsigned int index=0;
-  while(index<512)
+  while(index<UART2_STRING_BUFFER_SIZE)
     {
-	temp=USART_ReceiveData(USART1);
+	temp=UART1_get_char();
 	if(temp!=13)
 	{
 	    *s++=temp;
 	}
 	else
 	{
-	    index=512;
+	    index=UART2_STRING_BUFFER_SIZE;
 	}
 	index++;
     }
@@ -339,7 +340,7 @@ void UART2_put_int(int32_t data)
          UART2_put_char(temp[--count]);
          }
         }
-          else UART2_put_char('0');
+    else UART2_put_char('0');
 
 }
 void UART2_read_str(unsigned char* s) //Читає строку до ввода Enter
@@ -347,7 +348,7 @@ void UART2_read_str(unsigned char* s) //Читає строку до ввода Enter
   buff_clear();
   unsigned char temp;
   unsigned int index=0;
-  while((index<UART2_STRING_BUFFER_SIZE))
+  while(index<UART2_STRING_BUFFER_SIZE)
     {
 	temp=UART2_get_char();
 	if((temp!=13) )              //Enter 13-символ по таблиці ANSII

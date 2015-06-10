@@ -19,6 +19,7 @@ uint8_t UART1_get_char(void);
 void UART1_put_char(uint8_t c);
 void UART1_put_str(unsigned char *s);
 void UART1_put_int(int32_t data);
+void UART1_read_str(unsigned char* s);
 void buff_clear();
 
 uint8_t UART2_get_char(void);

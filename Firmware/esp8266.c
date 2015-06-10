@@ -50,7 +50,7 @@ void WIFI_weit_connection(void)
 	do
 	{
 	    WIFI_CONNECT();
-	    //UART2_read_str(Buffer);
+	    UART2_read_str(Buffer);
 	}
 	while((!strstr(Buffer,"0,CONNECT")) && (!strstr(Buffer,"ERROR")) && (!strstr(Buffer,"busy")));
 	if (strstr(Buffer, "0,CONNECT"))
@@ -79,15 +79,15 @@ void WIFI_CONNECT(void)
 	{
 	    do{
 	        UART2_read_str(Buffer);
-		sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&ch1,&ch2,&ch3,&ch4,&ch5,&ch6,&ch7,&ch8);
-		ch1_puls(ch1);
-		ch2_puls(ch2);
-		ch3_puls(ch3);
-		ch4_puls(ch4);
-		ch5_puls(ch5);
-		ch6_puls(ch6);
-		ch7_puls(ch7);
-		ch8_puls(ch8);
+	        sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&ch1,&ch2,&ch3,&ch4,&ch5,&ch6,&ch7,&ch8);
+	        ch1_puls(ch1);
+	        ch2_puls(ch2);
+	        ch3_puls(ch3);
+	        ch4_puls(ch4);
+	        ch5_puls(ch5);
+	        ch6_puls(ch6);
+	        ch7_puls(ch7);
+	        ch8_puls(ch8);
 	      }
 	    while((!strstr(Buffer,"0,CLOSED")));
 	}

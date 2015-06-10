@@ -20,9 +20,10 @@ int main(void)
 	WIFI_Init();
 	WIFI_weit_connection();
 
+	//UART2_put_str("TEST STRING INPUT");
     while (1)
     {
-
+    	//UART2_put_char(UART2_get_char());
     }
 }
 
