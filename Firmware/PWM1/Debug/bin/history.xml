@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=PWM1.map -O0 --gc-sections -LE:\CooCox\CoIDE\configuration\ProgramData\PWM1 -TE:\CooCox\CoIDE\configuration\ProgramData\PWM1/link.ld -g">
+      <target file="PWM1.elf" lastModified="14c69af52ad">
+         <source file="..\obj\stm32f10x_tim.o" lastModified="14c69af4a2b"/>
+         <source file="..\obj\startup_stm32f10x_md_vl.o" lastModified="14c69af4a5f"/>
+         <source file="..\obj\peripheral_config.o" lastModified="14c69af4ae1"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="14c69af4b45"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="14c69af4bd1"/>
+         <source file="..\obj\main.o" lastModified="14c69af4cad"/>
+         <source file="..\obj\uart_functions.o" lastModified="14c69af4d28"/>
+         <source file="..\obj\printf.o" lastModified="14c69af4db5"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="14c69af4e41"/>
+         <source file="..\obj\stm32f10x_usart.o" lastModified="14c69af4ef5"/>
+         <source file="..\obj\buffer.o" lastModified="14c69af4f4f"/>
+         <source file="..\obj\syscalls.o" lastModified="14c69af4f95"/>
+         <source file="..\obj\channel_functions.o" lastModified="14c69af4fef"/>
+         <source file="..\obj\misc.o" lastModified="14c69af505d"/>
+         <source file="..\obj\esp8266.o" lastModified="14c69af50a3"/>
+      </target>
+   </processor>
+</history>
