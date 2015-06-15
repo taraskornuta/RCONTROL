@@ -15,20 +15,20 @@ unsigned int UART1_tx_wr_index=0,
              UART1_tx_rd_index=0,
              UART1_tx_counter=0;
 
-// USART2 Receiver buffer
-#define      UART2_RX_BUFFER_SIZE 128
-uint8_t      UART2_rx_buffer[UART2_RX_BUFFER_SIZE];
-unsigned int UART2_rx_wr_index = 0,
-             UART2_rx_rd_index = 0,
-             UART2_rx_counter  = 0;
-uint8_t      UART2_rx_buffer_overflow=0;
+// USART3 Receiver buffer
+#define      UART3_RX_BUFFER_SIZE 128
+uint8_t      UART3_rx_buffer[UART3_RX_BUFFER_SIZE];
+unsigned int UART3_rx_wr_index = 0,
+             UART3_rx_rd_index = 0,
+             UART3_rx_counter  = 0;
+uint8_t      UART3_rx_buffer_overflow=0;
 
-// USART2 Transmitter buffer
-#define      UART2_TX_BUFFER_SIZE 128
-uint8_t      UART2_tx_buffer[UART2_TX_BUFFER_SIZE];
-unsigned int UART2_tx_wr_index=0,
-             UART2_tx_rd_index=0,
-             UART2_tx_counter=0;
+// USART3 Transmitter buffer
+#define      UART3_TX_BUFFER_SIZE 128
+uint8_t      UART3_tx_buffer[UART3_TX_BUFFER_SIZE];
+unsigned int UART3_tx_wr_index=0,
+             UART3_tx_rd_index=0,
+             UART3_tx_counter=0;
 
 void USART_Configuration(void)
 {
@@ -60,9 +60,9 @@ void USART_Configuration(void)
 
 	USART_Cmd(USART1, ENABLE);
 
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2,ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3,ENABLE);
 	/*
-	 *  USART2_TX -> PA2 , USART2_RX ->	PA3
+	 *  USART3_TX -> PA2 , USART3_RX ->	PA3
 	*/
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
@@ -74,15 +74,15 @@ void USART_Configuration(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-	USART_InitStructure.USART_BaudRate = UART2_BAUD;
+	USART_InitStructure.USART_BaudRate = UART3_BAUD;
 	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 	USART_InitStructure.USART_StopBits = USART_StopBits_1;
 	USART_InitStructure.USART_Parity = USART_Parity_No;
 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-	USART_Init(USART2, &USART_InitStructure);
+	USART_Init(USART3, &USART_InitStructure);
 
-	USART_Cmd(USART2, ENABLE);
+	USART_Cmd(USART3, ENABLE);
 
 //------------------------------------USART INTERUPT VECTORS------------------------------//
     NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
@@ -95,14 +95,14 @@ void USART_Configuration(void)
     USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
 
 
-    NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
-    USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);  /* Enable Receive interrupts */
-    USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
+    USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);  /* Enable Receive interrupts */
+    USART_ITConfig(USART3, USART_IT_TXE, ENABLE);
 
 }
 
@@ -213,7 +213,7 @@ void UART1_put_int(int32_t data)
 void buff_clear()															//	очищаем буфер
 {
   int i;
-  for(i=0;i<UART2_STRING_BUFFER_SIZE;i++)
+  for(i=0;i<UART3_STRING_BUFFER_SIZE;i++)
     {
 	Buffer[i]=0;
     }
@@ -223,9 +223,9 @@ void buff_clear()															//	очищаем буфер
 void UART1_read_str(unsigned char* s)
 {
 	buff_clear();
-  unsigned char temp;
-  unsigned int index=0;
-  while(index<UART2_STRING_BUFFER_SIZE)
+	unsigned char temp;
+	unsigned int index=0;
+	while(index<UART3_STRING_BUFFER_SIZE)
     {
 	temp=UART1_get_char();
 	if(temp!=13)
@@ -234,7 +234,7 @@ void UART1_read_str(unsigned char* s)
 	}
 	else
 	{
-	    index=UART2_STRING_BUFFER_SIZE;
+	    index=UART3_STRING_BUFFER_SIZE;
 	}
 	index++;
     }
@@ -242,41 +242,41 @@ void UART1_read_str(unsigned char* s)
 
 //---------------------------------UART 2 Interrupt vector ---------------------------------//
 
-void USART2_IRQHandler(void)
+void USART3_IRQHandler(void)
 {
   LED_BLUE_ON;
-  if(USART_GetITStatus(USART2, USART_IT_RXNE) == SET)
+  if(USART_GetITStatus(USART3, USART_IT_RXNE) == SET)
   {
-       if ((USART2->SR & (USART_FLAG_NE|USART_FLAG_FE|USART_FLAG_PE|USART_FLAG_ORE)) == 0)
+       if ((USART3->SR & (USART_FLAG_NE|USART_FLAG_FE|USART_FLAG_PE|USART_FLAG_ORE)) == 0)
        {
-          UART2_rx_buffer[UART2_rx_wr_index++]=(uint8_t)(USART_ReceiveData(USART2)& 0xFF);
-          if (UART2_rx_wr_index == UART2_RX_BUFFER_SIZE) UART2_rx_wr_index=0;
-          if (++UART2_rx_counter == UART2_RX_BUFFER_SIZE)
+          UART3_rx_buffer[UART3_rx_wr_index++]=(uint8_t)(USART_ReceiveData(USART3)& 0xFF);
+          if (UART3_rx_wr_index == UART3_RX_BUFFER_SIZE) UART3_rx_wr_index=0;
+          if (++UART3_rx_counter == UART3_RX_BUFFER_SIZE)
           {
-              UART2_rx_counter=0;
-              UART2_rx_buffer_overflow=1;
+              UART3_rx_counter=0;
+              UART3_rx_buffer_overflow=1;
           }
         }
-        else USART_ReceiveData(USART2);
+        else USART_ReceiveData(USART3);
                  //вообще здесь нужен обработчик ошибок, а мы просто пропускаем битый байт
    }
 
-  if(USART_GetITStatus(USART2, USART_IT_ORE) == SET) //прерывание по переполнению буфера
+  if(USART_GetITStatus(USART3, USART_IT_ORE) == SET) //прерывание по переполнению буфера
   {
-      USART_ReceiveData(USART2); //в идеале пишем здесь обработчик переполнения буфера, но мы просто сбрасываем этот флаг прерывания чтением из регистра данных.
+      USART_ReceiveData(USART3); //в идеале пишем здесь обработчик переполнения буфера, но мы просто сбрасываем этот флаг прерывания чтением из регистра данных.
   }
 
-  if(USART_GetITStatus(USART2, USART_IT_TXE) == SET)
+  if(USART_GetITStatus(USART3, USART_IT_TXE) == SET)
   {
-     if (UART2_tx_counter)
+     if (UART3_tx_counter)
      {
-         --UART2_tx_counter;
-         USART_SendData(USART2,UART2_tx_buffer[UART2_tx_rd_index++]);
-         if (UART2_tx_rd_index == UART2_TX_BUFFER_SIZE) UART2_tx_rd_index=0;
+         --UART3_tx_counter;
+         USART_SendData(USART3,UART3_tx_buffer[UART3_tx_rd_index++]);
+         if (UART3_tx_rd_index == UART3_TX_BUFFER_SIZE) UART3_tx_rd_index=0;
      }
      else
      {
-        USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
+        USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
      }
   }
   LED_BLUE_OFF;
@@ -284,49 +284,49 @@ void USART2_IRQHandler(void)
 
 
 //---------------------------------UART 2 functions ---------------------------------//
-unsigned char UART2_get_char(void)
+unsigned char UART3_get_char(void)
 {
    unsigned char data;
-   while (UART2_rx_counter == 0);
-   data = UART2_rx_buffer[ UART2_rx_rd_index++ ];
-   if (UART2_rx_rd_index == UART2_RX_BUFFER_SIZE) UART2_rx_rd_index = 0;
-   USART_ITConfig(USART2, USART_IT_RXNE, DISABLE);
-   --UART2_rx_counter;
-   USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+   while (UART3_rx_counter == 0);
+   data = UART3_rx_buffer[ UART3_rx_rd_index++ ];
+   if (UART3_rx_rd_index == UART3_RX_BUFFER_SIZE) UART3_rx_rd_index = 0;
+   USART_ITConfig(USART3, USART_IT_RXNE, DISABLE);
+   --UART3_rx_counter;
+   USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
    return data;
 }
 
-void UART2_put_char(unsigned char c)
+void UART3_put_char(unsigned char c)
 {
-   while (UART2_tx_counter == UART2_TX_BUFFER_SIZE);
-   USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
+   while (UART3_tx_counter == UART3_TX_BUFFER_SIZE);
+   USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
 
-   if (UART2_tx_counter || (USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET))
+   if (UART3_tx_counter || (USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET))
       {
-         UART2_tx_buffer[UART2_tx_wr_index++]=c;
-         if (UART2_tx_wr_index == UART2_TX_BUFFER_SIZE) UART2_tx_wr_index=0;
-         ++UART2_tx_counter;
-         USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
+         UART3_tx_buffer[UART3_tx_wr_index++]=c;
+         if (UART3_tx_wr_index == UART3_TX_BUFFER_SIZE) UART3_tx_wr_index=0;
+         ++UART3_tx_counter;
+         USART_ITConfig(USART3, USART_IT_TXE, ENABLE);
       }
        else
-          USART_SendData(USART2,c);
+          USART_SendData(USART3,c);
 }
 
-void UART2_put_str(unsigned char *s)
+void UART3_put_str(unsigned char *s)
 {
   while (*s != 0)
-  UART2_put_char(*s++);
+  UART3_put_char(*s++);
 
 }
 
 
-void UART2_put_int(int32_t data)
+void UART3_put_int(int32_t data)
 {
    unsigned char temp[10],count=0;
    if (data<0)
       {
       data=-data;
-      UART2_put_char('-');
+      UART3_put_char('-');
       }
 
    if (data)
@@ -339,27 +339,27 @@ void UART2_put_int(int32_t data)
 
        while (count)
          {
-         UART2_put_char(temp[--count]);
+         UART3_put_char(temp[--count]);
          }
         }
-    else UART2_put_char('0');
+    else UART3_put_char('0');
 
 }
-void UART2_read_str(unsigned char* s) //Читає строку до ввода Enter
+void UART3_read_str(unsigned char* s) //Читає строку до ввода Enter
 {
   buff_clear();
   unsigned char temp;
   unsigned int index=0;
-  while(index<UART2_STRING_BUFFER_SIZE)
+  while(index<UART3_STRING_BUFFER_SIZE)
     {
-	temp=UART2_get_char();
+	temp=UART3_get_char();
 	if((temp!=13) )              //Enter 13-символ по таблиці ANSII
 	{
 	    *s++=temp;
 	}
 	else
 	{
-	    index=UART2_STRING_BUFFER_SIZE;
+	    index=UART3_STRING_BUFFER_SIZE;
 	}
 	index++;
     }
