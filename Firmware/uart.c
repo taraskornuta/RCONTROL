@@ -32,11 +32,11 @@ unsigned int UART2_tx_wr_index=0,
 
 void USART_Configuration(void)
 {
-        GPIO_InitTypeDef GPIO_InitStructure;
+    GPIO_InitTypeDef GPIO_InitStructure;
 	USART_InitTypeDef USART_InitStructure;
 	NVIC_InitTypeDef NVIC_InitStructure;
 
-	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA | RCC_APB2Periph_USART1,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_USART1,ENABLE);
 	/*
 	 *  USART1_TX -> PA9 , USART1_RX ->	PA10
 	 */
@@ -60,7 +60,7 @@ void USART_Configuration(void)
 
 	USART_Cmd(USART1, ENABLE);
 
-	RCC_APB1PeriphClockCmd( RCC_APB1Periph_USART2,ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2,ENABLE);
 	/*
 	 *  USART2_TX -> PA2 , USART2_RX ->	PA3
 	*/
@@ -163,6 +163,7 @@ uint8_t UART1_get_char(void)
 
 void UART1_put_char(uint8_t c)
 {
+
    while (UART1_tx_counter == UART1_TX_BUFFER_SIZE);
    USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
 
@@ -174,6 +175,7 @@ void UART1_put_char(uint8_t c)
          USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
       }
    else USART_SendData(USART1,c);
+
 }
 
 void UART1_put_str(unsigned char *s)

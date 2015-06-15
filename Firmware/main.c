@@ -8,6 +8,7 @@
 #include "uart.h"
 #include "esp8266.h"
 
+
 int main(void)
 {
 
@@ -17,13 +18,19 @@ int main(void)
 	CHANNELS_Configuration();
 	USART_Configuration();
 
-	WIFI_Init();
-	WIFI_weit_connection();
+	//WIFI_Init();
+	//WIFI_weit_connection();
 
-	//UART2_put_str("TEST STRING INPUT");
+	UART1_put_str("TEST STRING INPUT\r\n");
+	UART1_put_str("YAKAS HUINya\r\n");
+	LED_BLUE_ON;
+	LED_GREEN_ON;
+	//led_green_blink(50,300);
     while (1)
     {
-    	//UART2_put_char(UART2_get_char());
+   	UART1_put_str("TEST STRING INPUT");
+   	delay_ms(500);
+
     }
 }
 

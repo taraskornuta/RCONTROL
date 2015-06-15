@@ -45,7 +45,7 @@
       </Output>
       <User>
         <UserRun name="Run#1" type="Before" checked="0" value=""/>
-        <UserRun name="Run#1" type="After" checked="1" value="${project.path}/../../../../coocox/coide/bin/download.bat"/>
+        <UserRun name="Run#1" type="After" checked="1" value="${project.path}/../../../../../../coocox/coide/bin/download.bat"/>
       </User>
     </BuildOption>
     <DebugOption>
