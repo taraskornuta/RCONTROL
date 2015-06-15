@@ -35,9 +35,9 @@ namespace esp8266UDP_Client
             
             JoystickThread = new Thread(new ThreadStart(this.joyStatus));
             JoystickThread.Start();
-            ThreadStart UdpThread = new ThreadStart(UdpReceive);
-            workReceive = new Thread(UdpThread);
-            workReceive.Start();
+            //ThreadStart UdpThread = new ThreadStart(UdpReceive);
+            //workReceive = new Thread(UdpThread);
+            //workReceive.Start();
             timer1.Start();
         }
 
@@ -45,7 +45,7 @@ namespace esp8266UDP_Client
         {
             UdpClient udp = new UdpClient();
             // Указываем адрес отправки сообщения
-            IPAddress ipaddress = IPAddress.Parse("192.168.4.1");
+            IPAddress ipaddress = IPAddress.Parse("127.0.0.1");
             IPEndPoint ipendpoint = new IPEndPoint(ipaddress, 8000);
 
             byte[] message =
@@ -94,7 +94,7 @@ namespace esp8266UDP_Client
         {
             try
             {
-                IPEndPoint ep = new IPEndPoint(IPAddress.Parse("192.168.4.1"), 8001);
+                IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
                 udp = new UdpClient(ep);
                 while (true)
                 {
@@ -169,15 +169,14 @@ namespace esp8266UDP_Client
 
             }
 
+           
             // Instantiate the joystick
             var joystick = new Joystick(directInput, joystickGuid);
 
-            Console.WriteLine("Found Joystick/Gamepad with GUID: {0}", joystickGuid);
-
             //Query all suported ForceFeedback effects
-            var allEffects = joystick.GetEffects();
-            foreach (var effectInfo in allEffects)
-                Console.WriteLine("Effect available {0}", effectInfo.Name);
+            //var allEffects = joystick.GetEffects();
+            //foreach (var effectInfo in allEffects)
+            //    Console.WriteLine("Effect available {0}", effectInfo.Name);
 
             //Set BufferSize in order to use buffered data.
             joystick.Properties.BufferSize = 128;
