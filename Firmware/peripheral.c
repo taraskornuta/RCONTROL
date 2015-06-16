@@ -8,7 +8,7 @@
 void GPIO_Configuration(void)
 {
     /* Port PB3, PA15 JTAG pins, mast be disabled */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);	//JTAG disabling
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);		//JTAG disabling
     GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);	//JTAG disabling
 
     /* GPIOC clock enable */

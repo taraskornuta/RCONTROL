@@ -15,7 +15,7 @@
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="8"/>
+<part id="7"/>
 <part id="4"/>
 <part id="0"/>
 <part id="1"/>
@@ -23,57 +23,57 @@
 <part id="5"/>
 <part id="2"/>
 <part id="6"/>
-<part id="7"/>
+<part id="8"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="esp8266.c" partName="esp8266.c" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/esp8266.c" title="esp8266.c" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/esp8266.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="esp8266.c" partName="esp8266.c" path="C:/Users/L/Documents/github/RCONTROL/Firmware/esp8266.c" title="esp8266.c" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/esp8266.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/esp8266.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="1095" selectionTopPixel="60"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1104" selectionTopPixel="98"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="esp8266.h" partName="esp8266.h" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/esp8266.h" title="esp8266.h" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/esp8266.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="esp8266.h" partName="esp8266.h" path="C:/Users/L/Documents/github/RCONTROL/Firmware/esp8266.h" title="esp8266.h" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/esp8266.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/esp8266.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="162" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="peripheral.h" partName="peripheral.h" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/peripheral.h" title="peripheral.h" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/peripheral.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="peripheral.h" partName="peripheral.h" path="C:/Users/L/Documents/github/RCONTROL/Firmware/peripheral.h" title="peripheral.h" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/peripheral.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/peripheral.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="289" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="uart.h" partName="uart.h" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/uart.h" title="uart.h" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/uart.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="uart.h" partName="uart.h" path="C:/Users/L/Documents/github/RCONTROL/Firmware/uart.h" title="uart.h" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/uart.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/uart.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="110" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="619" selectionTopPixel="210"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="uart.c" partName="uart.c" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/uart.c" title="uart.c" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/uart.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="uart.c" partName="uart.c" path="C:/Users/L/Documents/github/RCONTROL/Firmware/uart.c" title="uart.c" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/uart.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/uart.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1145" selectionTopPixel="389"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2293" selectionTopPixel="789"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="channels.c" partName="channels.c" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/channels.c" title="channels.c" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/channels.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="channels.c" partName="channels.c" path="C:/Users/L/Documents/github/RCONTROL/Firmware/channels.c" title="channels.c" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/channels.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/channels.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="845" selectionTopPixel="60"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3571" selectionTopPixel="2005"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="peripheral.c" partName="peripheral.c" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/peripheral.c" title="peripheral.c" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/peripheral.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="peripheral.c" partName="peripheral.c" path="C:/Users/L/Documents/github/RCONTROL/Firmware/peripheral.c" title="peripheral.c" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/peripheral.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/peripheral.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="2" selectionOffset="1030" selectionTopPixel="96"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="250" selectionTopPixel="781"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_gpio.h" partName="stm32f10x_gpio.h" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/stm_lib/inc/stm32f10x_gpio.h" title="stm32f10x_gpio.h" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/stm_lib/inc/stm32f10x_gpio.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/stm_lib/inc/stm32f10x_gpio.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="4554" selectionTopPixel="1875"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/main.c" title="main.c" tooltip="E:/Users/Taras/Documents/GitHub/RCONTROL/Firmware/main.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/L/Documents/github/RCONTROL/Firmware/main.c" title="main.c" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="582" selectionTopPixel="120"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="337" selectionTopPixel="120"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="channels.h" partName="channels.h" path="C:/Users/L/Documents/github/RCONTROL/Firmware/channels.h" title="channels.h" tooltip="C:/Users/L/Documents/github/RCONTROL/Firmware/channels.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PWM1/channels.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="249" selectionTopPixel="118"/>
 </editor>
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="4">
 <expanded>
 <element path="/PWM1"/>
 <element path="/PWM1/cmsis_boot"/>
 </expanded>
 <selection>
-<element path="/PWM1/peripheral.c"/>
+<element path="/PWM1/channels.h"/>
 </selection>
 </viewState>
 </view>
@@ -152,10 +152,11 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@115966e" ratio="0.69828725" ratioLeft="530" ratioRight="229" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1fadfdf">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@115966e" ratio="0.581761" ratioLeft="370" ratioRight="266" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1fadfdf">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<page content="org.eclipse.cdt.ui.callHierarchy" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
@@ -281,164 +282,165 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/uart.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/uart.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/esp8266.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/peripheral.c"/>
-<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage">
-<org.coocox.welcome.ui.WelcomePage/>
-</editor>
-<editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
-<subPage/>
-</editor>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/uart.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/esp8266.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/channels.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/channels.h"/>
 <editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
 <org.coocox.builder.ui.editors.ConfigEditor/>
 </editor>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/peripheral.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/esp8266.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PWM1/uart.h"/>
 </editors>
-<item historyLabel="esp8266.c" index="3">
-<position info="not_deleted" x="1095" y="13"/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="4890" y="0"/>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="507" y="0"/>
+<position info="not_deleted" x="369" y="0"/>
+</item>
+<item historyLabel="peripheral.c" index="1">
+<position info="not_deleted" x="569" y="0"/>
+</item>
+<item historyLabel="channels.c" index="4">
+<position info="not_deleted" x="3736" y="0"/>
+</item>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="587" y="0"/>
+<position info="not_deleted" x="214" y="0"/>
+</item>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="232" y="0"/>
+</item>
+<item historyLabel="channels.c" index="4">
+<position info="not_deleted" x="52" y="22"/>
+</item>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="258" y="0"/>
+</item>
+<item historyLabel="channels.c" index="4">
+<position info="not_deleted" x="3743" y="8"/>
+</item>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="249" y="239"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4253" y="0"/>
+<position info="not_deleted" x="196" y="0"/>
 </item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="6103" y="25"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="6103" y="25"/>
-</item>
-<item historyLabel="uart.h" index="2">
-<position info="not_deleted" x="110" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="321" y="0"/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="4963" y="24"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="4963" y="24"/>
-</item>
+<item historyLabel="Configuration" index="6"/>
 <item historyLabel="main.c" index="0">
 <position/>
 </item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="4963" y="24"/>
+<item historyLabel="peripheral.c" index="1">
+<position info="not_deleted" x="569" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="4963" y="24"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="1223" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="1317" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="1317" y="0"/>
-</item>
-<item historyLabel="peripheral.c" index="4">
-<position info="not_deleted" x="214" y="19"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="497" y="0"/>
-</item>
-<item historyLabel="welcome" index="5"/>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="584" y="0"/>
-</item>
-<item historyLabel="Repository" index="6"/>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="584" y="0"/>
-</item>
-<item historyLabel="Configuration" index="7"/>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="584" y="0"/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="1317" y="0"/>
-</item>
-<item historyLabel="peripheral.h" index="8">
-<position info="not_deleted" x="184" y="0"/>
-</item>
-<item historyLabel="peripheral.c" index="4">
-<position info="not_deleted" x="1032" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="216" y="0"/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="532" y="54"/>
-</item>
-<item historyLabel="uart.c" index="1">
-<position info="not_deleted" x="1145" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="532" y="54"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="507" y="0"/>
-</item>
-<item historyLabel="peripheral.h" index="8">
-<position info="not_deleted" x="184" y="0"/>
-</item>
-<item historyLabel="peripheral.c" index="4">
-<position info="not_deleted" x="1032" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="507" y="0"/>
-</item>
-<item historyLabel="peripheral.c" index="4">
-<position info="not_deleted" x="1030" y="2"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="460" y="0"/>
-</item>
-<item historyLabel="peripheral.h" index="8">
+<item historyLabel="peripheral.h" index="7">
 <position info="not_deleted" x="289" y="11"/>
 </item>
-<item historyLabel="peripheral.c" index="4">
-<position info="not_deleted" x="1030" y="2"/>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="249" y="239"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="460" y="0"/>
+<position/>
 </item>
-<item active="true" historyLabel="main.c" index="0">
-<position info="not_deleted" x="507" y="0"/>
+<item historyLabel="channels.c" index="4">
+<position info="not_deleted" x="39" y="0"/>
+</item>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="195" y="25"/>
+</item>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="213" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="196" y="0"/>
+</item>
+<item historyLabel="peripheral.c" index="1">
+<position info="not_deleted" x="569" y="0"/>
+</item>
+<item historyLabel="channels.h" index="5">
+<position info="not_deleted" x="249" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="337" y="0"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="202" y="9"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="1042" y="0"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="2140" y="24"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="992" y="65"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="309" y="679"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="1071" y="0"/>
+</item>
+<item historyLabel="uart.c" index="2">
+<position info="not_deleted" x="2393" y="0"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="1840" y="0"/>
+</item>
+<item historyLabel="uart.c" index="2">
+<position info="not_deleted" x="2393" y="0"/>
+</item>
+<item historyLabel="uart.c" index="2">
+<position info="not_deleted" x="2189" y="0"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="1104" y="0"/>
+</item>
+<item historyLabel="uart.c" index="2">
+<position info="not_deleted" x="6900" y="14"/>
+</item>
+<item historyLabel="uart.c" index="2">
+<position info="not_deleted" x="2143" y="56"/>
+</item>
+<item historyLabel="uart.c" index="2">
+<position info="not_deleted" x="2433" y="0"/>
+</item>
+<item historyLabel="uart.c" index="2">
+<position info="not_deleted" x="2293" y="0"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="1104" y="0"/>
+</item>
+<item historyLabel="esp8266.h" index="8">
+<position info="not_deleted" x="162" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="337" y="0"/>
+</item>
+<item historyLabel="esp8266.c" index="3">
+<position info="not_deleted" x="1104" y="0"/>
+</item>
+<item historyLabel="esp8266.h" index="8">
+<position info="not_deleted" x="162" y="0"/>
+</item>
+<item historyLabel="uart.h" index="9">
+<position info="not_deleted" x="619" y="0"/>
+</item>
+<item historyLabel="channels.c" index="4">
+<position info="not_deleted" x="39" y="0"/>
+</item>
+<item historyLabel="peripheral.h" index="7">
+<position info="not_deleted" x="289" y="11"/>
+</item>
+<item active="true" historyLabel="peripheral.c" index="1">
+<position info="not_deleted" x="569" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -452,51 +454,50 @@
 <org.coocox.builder.ui.editors.ConfigEditor/>
 </persistable>
 </file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>
-<subPage/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="channels.h" tooltip="PWM1/channels.h">
+<persistable path="/PWM1/channels.h"/>
 </file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor" name="" tooltip="">
 <persistable>
-<org.coocox.welcome.ui.WelcomePage/>
+<org.coocox.builder.ui.editors.ConfigEditor/>
 </persistable>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_gpio.h" tooltip="PWM1/stm_lib/inc/stm32f10x_gpio.h">
-<persistable path="/PWM1/stm_lib/inc/stm32f10x_gpio.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="peripheral.c" tooltip="PWM1/peripheral.c">
 <persistable path="/PWM1/peripheral.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="printf.c" tooltip="PWM1/stdio/printf.c">
+<persistable path="/PWM1/stdio/printf.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f10x.h" tooltip="PWM1/cmsis_boot/system_stm32f10x.h">
 <persistable path="/PWM1/cmsis_boot/system_stm32f10x.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f10x.c" tooltip="PWM1/cmsis_boot/system_stm32f10x.c">
 <persistable path="/PWM1/cmsis_boot/system_stm32f10x.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_conf.h" tooltip="PWM1/cmsis_boot/stm32f10x_conf.h">
-<persistable path="/PWM1/cmsis_boot/stm32f10x_conf.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x.h" tooltip="PWM1/cmsis_boot/stm32f10x.h">
 <persistable path="/PWM1/cmsis_boot/stm32f10x.h"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_conf.h" tooltip="PWM1/cmsis_boot/stm32f10x_conf.h">
+<persistable path="/PWM1/cmsis_boot/stm32f10x_conf.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md.c" tooltip="PWM1/cmsis_boot/startup/startup_stm32f10x_md.c">
+<persistable path="/PWM1/cmsis_boot/startup/startup_stm32f10x_md.c"/>
+</file>
+<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
+<persistable>&#x0A;<subPage/>
+</persistable>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md_vl.c" tooltip="PWM1/cmsis_boot/startup/startup_stm32f10x_md_vl.c">
+<persistable path="/PWM1/cmsis_boot/startup/startup_stm32f10x_md_vl.c"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stdio.h" tooltip="c:\arm toolchain\arm-none-eabi\include\stdio.h">
+<persistable uri="file:/c:/arm%20toolchain/arm-none-eabi/include/stdio.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_usart.c" tooltip="PWM1/stm_lib/src/stm32f10x_usart.c">
 <persistable path="/PWM1/stm_lib/src/stm32f10x_usart.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="channels.h" tooltip="PWM1/channels.h">
-<persistable path="/PWM1/channels.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_gpio.h" tooltip="PWM1/stm_lib/inc/stm32f10x_gpio.h">
-<persistable path="/PWM1/stm_lib/inc/stm32f10x_gpio.h"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="peripheral.c" tooltip="PWM1/peripheral.c">
 <persistable path="/PWM1/peripheral.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f10x.h" tooltip="PWM1/cmsis_boot/system_stm32f10x.h">
-<persistable path="/PWM1/cmsis_boot/system_stm32f10x.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f10x.c" tooltip="PWM1/cmsis_boot/system_stm32f10x.c">
-<persistable path="/PWM1/cmsis_boot/system_stm32f10x.c"/>
 </file>
 </mruList>
 </workbench>
