@@ -17,7 +17,7 @@ namespace esp8266UDP_Client
 {
     public partial class MainForm : Form
     {
-
+        Properties.Settings ps = Properties.Settings.Default;
         private Thread JoystickThread = null;
         public int X, Y, Z, RotZ;
         private string ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8;
@@ -32,18 +32,27 @@ namespace esp8266UDP_Client
             
             JoystickThread = new Thread(new ThreadStart(this.joyStatus));
             JoystickThread.Start();
-            ThreadStart UdpThread = new ThreadStart(UdpReceive);
-            workReceive = new Thread(UdpThread);
-            workReceive.Start();
+            //ThreadStart UdpThread = new ThreadStart(UdpReceive);
+            //workReceive = new Thread(UdpThread);
+            //workReceive.Start();
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, System.EventArgs e)
         {
             UdpClient udp = new UdpClient();
+            string defaultIP = "192.168.4.1";
+            int defaultPort = 8000;
+
+            if (ps.Debug_Enable == true)
+            {
+                defaultIP = ps.Debug_IP;
+                defaultPort = Convert.ToInt16(ps.Debug_Port);
+            }
+
             // Указываем адрес отправки сообщения
-            IPAddress ipaddress = IPAddress.Parse("192.168.4.1");
-            IPEndPoint ipendpoint = new IPEndPoint(ipaddress, 8000);
+            IPAddress ipaddress = IPAddress.Parse(defaultIP);
+            IPEndPoint ipendpoint = new IPEndPoint(ipaddress, defaultPort);
 
             byte[] message =
                 Encoding.Default.GetBytes(
@@ -87,34 +96,34 @@ namespace esp8266UDP_Client
         }
 
         UdpClient udp = null;
-        bool stopReceive = false;
+       // bool stopReceive = false;
         Thread workReceive = null;
 
-        void UdpReceive()
-        {
-            try
-            {
-                IPEndPoint ep = new IPEndPoint(IPAddress.Parse("192.168.4.1"), 8001);
-                udp = new UdpClient(ep);
-                while (true)
-                {
-                    IPEndPoint remote = null;
-                    byte[] message = udp.Receive(ref remote);
-                    ShowMessage(Encoding.Default.GetString(message));
-                    if (stopReceive == true) break;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            finally
-            {
-                if (udp != null) udp.Close();
-            }
+        //void UdpReceive()
+        //{
+        //    try
+        //    {
+        //        IPEndPoint ep = new IPEndPoint(IPAddress.Parse("192.168.4.1"), 8001);
+        //        udp = new UdpClient(ep);
+        //        while (true)
+        //        {
+        //            IPEndPoint remote = null;
+        //            byte[] message = udp.Receive(ref remote);
+        //            ShowMessage(Encoding.Default.GetString(message));
+        //            if (stopReceive == true) break;
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show(e.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (udp != null) udp.Close();
+        //    }
 
 
-        }
+        //}
         //Приймає значення із паралельного потоку
         delegate void SetTextCallback(string message);
         void ShowMessage(string message)
@@ -132,7 +141,7 @@ namespace esp8266UDP_Client
 
         void StopReceive()
         {
-            stopReceive = true;
+            //stopReceive = true;
             if (udp != null) udp.Close();
             if (workReceive != null) workReceive.Join();
         }
