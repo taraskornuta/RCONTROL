@@ -94,7 +94,7 @@ void CHANNELS_Configuration(void)
 
    TIM_ARRPreloadConfig(TIM4, ENABLE);
 
-   /* TIM3 enable counter */
+   /* TIM4 enable counter */
    TIM_Cmd(TIM4, ENABLE);
 
 }

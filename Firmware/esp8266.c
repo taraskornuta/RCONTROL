@@ -33,10 +33,10 @@ void WIFI_Init(void)
 
 void WIFI_command(unsigned char *command, unsigned char *answer)
 {
-	UART2_put_str(command);
+	UART1_put_str(command);
 	do
 	{
-	    UART2_read_str(Buffer);
+	    UART1_read_str(Buffer);
         }
         while((!strstr(Buffer,answer)));
 	if (strstr(Buffer, answer))
@@ -50,7 +50,7 @@ void WIFI_weit_connection(void)
 	do
 	{
 	    WIFI_CONNECT();
-	    UART2_read_str(Buffer);
+	    UART1_read_str(Buffer);
 	}
 	while((!strstr(Buffer,"0,CONNECT")) && (!strstr(Buffer,"ERROR")) && (!strstr(Buffer,"busy")));
 	if (strstr(Buffer, "0,CONNECT"))
@@ -72,13 +72,13 @@ void WIFI_CONNECT(void)
 {
 	do
 	{
-	    UART2_read_str(Buffer);
+	    UART1_read_str(Buffer);
 	}
 	while((!strstr(Buffer,"\n+IPD,0,39:"))&& (!strstr(Buffer,"0,CLOSED")));
 	if (strstr(Buffer, "\n+IPD,0,39:"))
 	{
 	    do{
-	        UART2_read_str(Buffer);
+	        UART1_read_str(Buffer);
 	        sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&ch1,&ch2,&ch3,&ch4,&ch5,&ch6,&ch7,&ch8);
 	        ch1_puls(ch1);
 	        ch2_puls(ch2);

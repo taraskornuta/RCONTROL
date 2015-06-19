@@ -18,14 +18,9 @@ int main(void)
 	CHANNELS_Configuration();
 	USART_Configuration();
 
-	//WIFI_Init();
-	//WIFI_weit_connection();
+	WIFI_Init();
+	WIFI_weit_connection();
 
-	UART1_put_str("TEST STRING INPUT\r\n");
-	UART1_put_str("YAKAS HUINya\r\n");
-	LED_BLUE_ON;
-	LED_GREEN_ON;
-	//led_green_blink(50,300);
     while (1)
     {
    	UART1_put_str("TEST STRING INPUT");
