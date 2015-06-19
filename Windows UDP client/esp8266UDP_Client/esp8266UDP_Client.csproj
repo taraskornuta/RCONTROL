@@ -53,6 +53,12 @@
     <Compile Include="BasicProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DigitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DigitControl.Designer.cs">
+      <DependentUpon>DigitControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DigitControl.resx">
+      <DependentUpon>DigitControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
