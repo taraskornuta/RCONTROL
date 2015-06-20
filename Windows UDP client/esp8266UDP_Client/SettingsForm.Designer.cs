@@ -187,10 +187,10 @@
             // 
             // digitControl1
             // 
-            this.digitControl1.Location = new System.Drawing.Point(164, 41);
+            this.digitControl1.Location = new System.Drawing.Point(163, 36);
             this.digitControl1.MinOrMax = false;
             this.digitControl1.Name = "digitControl1";
-            this.digitControl1.Size = new System.Drawing.Size(79, 23);
+            this.digitControl1.Size = new System.Drawing.Size(74, 23);
             this.digitControl1.TabIndex = 4;
             this.digitControl1.Value = "-100";
             // 

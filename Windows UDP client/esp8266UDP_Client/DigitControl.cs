@@ -26,21 +26,23 @@ namespace esp8266UDP_Client
 
         }
 
-        void Update_condition()
-        {
-            //bool condition;
+        public bool Update_condition()
+        {           
 		    if (MinOrMax == true)
             {
                 maxvalue = MAX_VALUE;
                 minvalue = MID_VALUE;
+                return true;
             }
             else
             {
                 maxvalue = MIN_VALUE;
                 minvalue = MID_VALUE;
+                return false;
             }
             
         }
+
         public string Value
         {
             get { return textBox1.Text; }
@@ -56,33 +58,79 @@ namespace esp8266UDP_Client
         public int i;
         private void btn_Minus_Click(object sender, EventArgs e)
         {
-            Update_condition();
-            i = Convert.ToInt16(textBox1.Text);
-            //maxvalue = Convert.ToInt16(textBox1.Text);
-            if (maxvalue==MAX_VALUE)
+            if (Update_condition() == true)
             {
-
+                i = Convert.ToInt16(textBox1.Text);
+                
+                if (i == maxvalue)
+                {
+                    i--;
+                    textBox1.Text = Convert.ToString(i);
+                }
+                else if (i == minvalue)
+                {
+                
+                }
+                else
+                {
+                    i--;
+                    textBox1.Text = Convert.ToString(i);
+                } 
             }
+
             else
             {
-                i--;
-                textBox1.Text = Convert.ToString(i);
+                i = Convert.ToInt16(textBox1.Text);
+            
+                if (i == maxvalue)
+                {
+                    i++;
+                    textBox1.Text = Convert.ToString(i);
+                }
+                else if (i == minvalue)
+                {
+
+                }
+                else
+                {
+                    i++;
+                    textBox1.Text = Convert.ToString(i);
+                } 
             }
+            
+            
         }
 
         private void btn_Plus_Click(object sender, EventArgs e)
         {
-            Update_condition();
-            i = Convert.ToInt16(textBox1.Text);
-            //maxvalue = Convert.ToInt16(textBox1.Text);
-            if (maxvalue == MAX_VALUE)
+            if (Update_condition() == true)
             {
-
+                i = Convert.ToInt16(textBox1.Text);
+             
+                if (i == maxvalue)
+                {
+                    //i++;
+                    //textBox1.Text = Convert.ToString(i);
+                }
+                else
+                {
+                    i++;
+                    textBox1.Text = Convert.ToString(i);
+                }
             }
             else
             {
-                i++;
-                textBox1.Text = Convert.ToString(i);
+                i = Convert.ToInt16(textBox1.Text);
+               
+                if (i == maxvalue)
+                {
+
+                }
+                else
+                {
+                    i--;
+                    textBox1.Text = Convert.ToString(i);
+                }
             }
         }
     }

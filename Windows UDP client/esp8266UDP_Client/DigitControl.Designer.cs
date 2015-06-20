@@ -48,13 +48,14 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(19, 1);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(25, 20);
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(33, 20);
             this.textBox1.TabIndex = 2;
             // 
             // btn_Plus
             // 
             this.btn_Plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Plus.Location = new System.Drawing.Point(43, 0);
+            this.btn_Plus.Location = new System.Drawing.Point(51, 0);
             this.btn_Plus.Name = "btn_Plus";
             this.btn_Plus.Size = new System.Drawing.Size(20, 22);
             this.btn_Plus.TabIndex = 3;
@@ -70,7 +71,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_Minus);
             this.Name = "DigitControl";
-            this.Size = new System.Drawing.Size(64, 23);
+            this.Size = new System.Drawing.Size(70, 23);
             this.ResumeLayout(false);
             this.PerformLayout();
 
