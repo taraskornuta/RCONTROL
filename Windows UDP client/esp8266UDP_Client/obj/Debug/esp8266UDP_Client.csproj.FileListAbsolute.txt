@@ -51,3 +51,4 @@ E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\ob
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.MainForm.resources
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.SettingsForm.resources
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.DigitControl.resources
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\esp8266UDP_Client.csprojResolveAssemblyReference.cache

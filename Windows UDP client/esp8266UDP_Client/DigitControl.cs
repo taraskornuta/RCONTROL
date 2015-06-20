@@ -42,7 +42,7 @@ namespace esp8266UDP_Client
             }
             
         }
-
+        
         public string Value
         {
             get { return textBox1.Text; }
@@ -96,9 +96,7 @@ namespace esp8266UDP_Client
                     i++;
                     textBox1.Text = Convert.ToString(i);
                 } 
-            }
-            
-            
+            }                        
         }
 
         private void btn_Plus_Click(object sender, EventArgs e)

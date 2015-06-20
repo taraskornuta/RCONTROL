@@ -51,5 +51,7 @@ namespace esp8266UDP_Client
             txt_Debug_IP.Text = ps.Debug_IP;
             txt_Debug_Port.Text = ps.Debug_Port;
         }
+
+
     }
 }

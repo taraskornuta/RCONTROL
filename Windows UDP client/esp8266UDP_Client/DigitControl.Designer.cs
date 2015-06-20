@@ -35,6 +35,7 @@
             // 
             // btn_Minus
             // 
+            this.btn_Minus.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_Minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_Minus.Location = new System.Drawing.Point(1, 0);
             this.btn_Minus.Name = "btn_Minus";
@@ -54,6 +55,7 @@
             // 
             // btn_Plus
             // 
+            this.btn_Plus.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_Plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_Plus.Location = new System.Drawing.Point(51, 0);
             this.btn_Plus.Name = "btn_Plus";
