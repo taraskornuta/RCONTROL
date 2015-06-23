@@ -19,6 +19,18 @@ namespace esp8266UDP_Client
             InitializeComponent();
 
         }
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            chkBox_Open_Consol.Checked = ps.Debug_Open_Console;
+            chkBox_Joy_Enable.Checked = ps.Joy_Enable;
+            chkBox_Debug.Checked = ps.Debug_Enable;
+            txt_Debug_IP.Text = ps.Debug_IP;
+            txt_Debug_Port.Text = ps.Debug_Port;
+        }
+        private void chkBox_Open_Consol_CheckedChanged(object sender, EventArgs e)
+        {
+            ps.Debug_Open_Console = chkBox_Open_Consol.Checked;
+        }
 
         private void chkBox_Debug_CheckedChanged(object sender, EventArgs e)
         {
@@ -34,7 +46,10 @@ namespace esp8266UDP_Client
                 txt_Debug_Port.Enabled = false;
             }     
         }
-
+        private void chkBox_Joy_Enable_CheckedChanged(object sender, EventArgs e)
+        {
+            ps.Joy_Enable = chkBox_Joy_Enable.Checked;
+        }
         private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {          
             if (chkBox_Debug.Checked==true)
@@ -45,12 +60,11 @@ namespace esp8266UDP_Client
             ps.Save();
         }
 
-        private void SettingsForm_Load(object sender, EventArgs e)
-        {
-            chkBox_Debug.Checked = ps.Debug_Enable;
-            txt_Debug_IP.Text = ps.Debug_IP;
-            txt_Debug_Port.Text = ps.Debug_Port;
-        }
+       
+
+
+
+
 
 
     }

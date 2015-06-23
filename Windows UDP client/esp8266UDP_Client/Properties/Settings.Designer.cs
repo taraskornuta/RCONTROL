@@ -58,5 +58,29 @@ namespace esp8266UDP_Client.Properties {
                 this["Debug_Port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Debug_Open_Console {
+            get {
+                return ((bool)(this["Debug_Open_Console"]));
+            }
+            set {
+                this["Debug_Open_Console"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Joy_Enable {
+            get {
+                return ((bool)(this["Joy_Enable"]));
+            }
+            set {
+                this["Joy_Enable"] = value;
+            }
+        }
     }
 }

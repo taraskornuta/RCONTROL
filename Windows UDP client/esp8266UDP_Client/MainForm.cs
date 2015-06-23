@@ -12,6 +12,7 @@ using System.Net.Sockets;
 using System.Runtime.Remoting.Channels;
 using System.Threading;
 using SharpDX.DirectInput;
+using System.Runtime.InteropServices;
 
 namespace esp8266UDP_Client
 {
@@ -27,11 +28,33 @@ namespace esp8266UDP_Client
             InitializeComponent();
         }
 
+        [DllImport("kernel32.dll", SetLastError = true)] //Enabling debuging console
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (ps.Debug_Open_Console==true)
+            {
+                AllocConsole(); //Enabling debuging console
+            }
+            
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
+            StopReceive();
+        }
+
         private void btn_Open_Click(object sender, System.EventArgs e)
         {
-            
-            JoystickThread = new Thread(new ThreadStart(this.joyStatus));
-            JoystickThread.Start();
+            if (ps.Joy_Enable==true)
+            {
+                JoystickThread = new Thread(new ThreadStart(this.JoyStatus));
+                JoystickThread.Start();
+            }
+
             //ThreadStart UdpThread = new ThreadStart(UdpReceive);
             //workReceive = new Thread(UdpThread);
             //workReceive.Start();
@@ -84,13 +107,17 @@ namespace esp8266UDP_Client
             pBar_CH7.Value = tBar_CH7.Value;
             pBar_CH8.Value = tBar_CH8.Value;
 
-            tBar_CH1.Value = Convert.ToInt16(1000 + (X * 3.92156862745099));
-            tBar_CH2.Value = Convert.ToInt16(1000 + (Y * 3.92156862745099));  //Треба інвертувати
-            tBar_CH3.Value = Convert.ToInt16(1000 + (Z * 3.92156862745099));
-            tBar_CH4.Value = Convert.ToInt16(1000 + (RotZ * 3.92156862745099)); //Треба інвертувати
+            if (ps.Joy_Enable == true)
+            {
+                tBar_CH1.Value = Convert.ToInt16(1000 + (X * 3.92156862745099));
+                tBar_CH2.Value = Convert.ToInt16(1000 + (Y * 3.92156862745099));
+                tBar_CH3.Value = Convert.ToInt16(1000 + (Z * 3.92156862745099));
+                tBar_CH4.Value = Convert.ToInt16(1000 + (RotZ * 3.92156862745099)); 
+            }
+
             udp.Close();
 
-            //label10.Text = Convert.ToString();
+            
 
 
         }
@@ -153,92 +180,81 @@ namespace esp8266UDP_Client
 
         }
 
-        public int revert(int data)
+        public int Revert(int data)
         {
             int i = 255 - data;
             return i;
         }
-        public void joyStatus()
+        public void JoyStatus()
         {
-            var directInput = new DirectInput();
+            if (ps.Joy_Enable == true)
+            {
+                var directInput = new DirectInput();
 
-            // Find a Joystick Guid
-            var joystickGuid = Guid.Empty;
+                // Find a Joystick Guid
+                var joystickGuid = Guid.Empty;
 
-            foreach (var deviceInstance in directInput.GetDevices(DeviceType.Gamepad,
-                DeviceEnumerationFlags.AllDevices))
-                joystickGuid = deviceInstance.InstanceGuid;
-
-            // If Gamepad not found, look for a Joystick
-            if (joystickGuid == Guid.Empty)
-                foreach (var deviceInstance in directInput.GetDevices(DeviceType.Joystick,
+                foreach (var deviceInstance in directInput.GetDevices(DeviceType.Gamepad,
                     DeviceEnumerationFlags.AllDevices))
                     joystickGuid = deviceInstance.InstanceGuid;
 
-            // If Joystick not found, throws an error
-            if (joystickGuid == Guid.Empty)
-            {
-                MessageBox.Show("");
+                // If Gamepad not found, look for a Joystick
+                if (joystickGuid == Guid.Empty)
+                    foreach (var deviceInstance in directInput.GetDevices(DeviceType.Joystick,
+                        DeviceEnumerationFlags.AllDevices))
+                        joystickGuid = deviceInstance.InstanceGuid;
 
-
-            }
-
-            // Instantiate the joystick
-             var joystick = new Joystick(directInput, joystickGuid);
-
-            Console.WriteLine("Found Joystick/Gamepad with GUID: {0}", joystickGuid);
-
-            //Query all suported ForceFeedback effects
-            var allEffects = joystick.GetEffects();
-            foreach (var effectInfo in allEffects)
-                Console.WriteLine("Effect available {0}", effectInfo.Name);
-
-            //Set BufferSize in order to use buffered data.
-            joystick.Properties.BufferSize = 128;
-
-            // Acquire the joystick
-            joystick.Acquire();
-
-            //Poll events from joystick
-            while (true)
-            {
-                joystick.Poll();
-                var data = joystick.GetBufferedData();
-                //foreach (var state in datas)
-                //    Console.WriteLine(state);
-                foreach (var state in data)
+                // If Joystick not found, throws an error
+                if (joystickGuid == Guid.Empty)
                 {
-                    if (state.Offset == JoystickOffset.X)
-                    {
-                        X = (state.Value/256);  
-                    }
-                    else if (state.Offset == JoystickOffset.Y)
-                    {
-                        Y = revert(state.Value/256);
-                    }
-                    else if (state.Offset == JoystickOffset.Z)
-                    {
-                        Z = (state.Value/256);
-                    }
-                    else if (state.Offset == JoystickOffset.RotationZ)
-                    {
-                        RotZ = revert(state.Value / 256);
-                    }
+                    MessageBox.Show("Joystick not found");
+                }
 
+                // Instantiate the joystick
+                var joystick = new Joystick(directInput, joystickGuid);
+
+                Console.WriteLine("Found Joystick/Gamepad with GUID: {0}", joystickGuid);
+
+                //Query all suported ForceFeedback effects
+                var allEffects = joystick.GetEffects();
+                foreach (var effectInfo in allEffects)
+                    Console.WriteLine("Effect available {0}", effectInfo.Name);
+
+                //Set BufferSize in order to use buffered data.
+                joystick.Properties.BufferSize = 128;
+
+                // Acquire the joystick
+                joystick.Acquire();
+
+                //Poll events from joystick
+                while (true)
+                {
+                    joystick.Poll();
+                    var data = joystick.GetBufferedData();
+                    foreach (var state in data)
+                        Console.WriteLine(state);
+
+                    foreach (var state in data)
+                    {
+                        if (state.Offset == JoystickOffset.X)
+                        {
+                            X = (state.Value/256);
+                        }
+                        else if (state.Offset == JoystickOffset.Y)
+                        {
+                            Y = Revert(state.Value/256);
+                        }
+                        else if (state.Offset == JoystickOffset.Z)
+                        {
+                            Z = (state.Value/256);
+                        }
+                        else if (state.Offset == JoystickOffset.RotationZ)
+                        {
+                            RotZ = Revert(state.Value/256);
+                        }
+                    }
                 }
             }
-
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            timer1.Stop();
-            StopReceive();
-        }
-
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
         }
 
         private void btn_Settings_Click(object sender, EventArgs e)
@@ -246,6 +262,8 @@ namespace esp8266UDP_Client
             SettingsForm settings = new SettingsForm(); // Створює форму Settings
             settings.Show(); 
         }
+
+        
     }
 }
 

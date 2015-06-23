@@ -50,7 +50,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.btn_Settings = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
             this.pBar_CH8 = new ProgressBars.Basic.BasicProgressBar();
             this.pBar_CH7 = new ProgressBars.Basic.BasicProgressBar();
             this.pBar_CH6 = new ProgressBars.Basic.BasicProgressBar();
@@ -291,15 +290,6 @@
             this.btn_Settings.UseVisualStyleBackColor = true;
             this.btn_Settings.Click += new System.EventHandler(this.btn_Settings_Click);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(506, 92);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "label10";
-            // 
             // pBar_CH8
             // 
             this.pBar_CH8.BackColor = System.Drawing.SystemColors.Control;
@@ -423,7 +413,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 344);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_Settings);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pBar_CH8);
@@ -455,7 +444,7 @@
             this.Name = "MainForm";
             this.Text = "RCONTROL";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH7)).EndInit();
@@ -500,7 +489,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_Settings;
-        private System.Windows.Forms.Label label10;
     }
 }
 
