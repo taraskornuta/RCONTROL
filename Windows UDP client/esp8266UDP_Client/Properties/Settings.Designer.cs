@@ -37,7 +37,7 @@ namespace esp8266UDP_Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
         public string Debug_IP {
             get {
                 return ((string)(this["Debug_IP"]));
@@ -49,7 +49,7 @@ namespace esp8266UDP_Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8000")]
         public string Debug_Port {
             get {
                 return ((string)(this["Debug_Port"]));

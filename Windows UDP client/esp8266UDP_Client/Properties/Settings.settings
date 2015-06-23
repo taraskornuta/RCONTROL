@@ -6,10 +6,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Debug_IP" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">127.0.0.1</Value>
     </Setting>
     <Setting Name="Debug_Port" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">8000</Value>
     </Setting>
     <Setting Name="Debug_Open_Console" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

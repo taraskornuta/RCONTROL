@@ -14,6 +14,10 @@ namespace esp8266UDP_Client
     public partial class SettingsForm : Form
     {
         Properties.Settings ps = Properties.Settings.Default;
+
+        private const string Debug_IP_Default = "127.0.0.1";  //Defaults debug IP and Port
+        private const string Debug_Port_Default = "8000";
+
         public SettingsForm()
         {
             InitializeComponent();
@@ -54,9 +58,33 @@ namespace esp8266UDP_Client
         {          
             if (chkBox_Debug.Checked==true)
             {
-                ps.Debug_IP = txt_Debug_IP.Text;
-                ps.Debug_Port = txt_Debug_Port.Text;
+                if (txt_Debug_IP.Text != "127.0.0.1")
+                {
+                    ps.Debug_IP = txt_Debug_IP.Text;
+                    if (txt_Debug_IP.Text == "")
+                    {
+                        MessageBox.Show("Please fill Debug IP box","You forgot!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else if (txt_Debug_IP.Text == "127.0.0.1")
+                {
+                    ps.Debug_IP = Debug_IP_Default;                   
+                }
+
+                if (txt_Debug_Port.Text != "8000")
+                {
+                    ps.Debug_Port = txt_Debug_Port.Text;
+                    if (txt_Debug_Port.Text == "")
+                    {
+                        MessageBox.Show("Please fill Debug Port box", "You forgot!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else if (txt_Debug_Port.Text == "8000")
+                {
+                    ps.Debug_Port = Debug_Port_Default;
+                }
             }
+
             ps.Save();
         }
 
