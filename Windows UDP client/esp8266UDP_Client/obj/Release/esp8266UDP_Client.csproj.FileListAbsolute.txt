@@ -11,3 +11,6 @@ C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Re
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Release\esp8266UDP_Client.csproj.GenerateResource.Cache
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Release\esp8266UDP_Client.exe
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Release\esp8266UDP_Client.pdb
+E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Release\esp8266UDP_Client.exe.config
+E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Release\esp8266UDP_Client.exe
+E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Release\esp8266UDP_Client.pdb

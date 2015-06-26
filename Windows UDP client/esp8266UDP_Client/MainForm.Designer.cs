@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btn_Open = new System.Windows.Forms.Button();
             this.btn_Close = new System.Windows.Forms.Button();
             this.tBar_CH5 = new System.Windows.Forms.TrackBar();
@@ -441,6 +442,7 @@
             this.Controls.Add(this.tBar_CH5);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.btn_Open);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "RCONTROL";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
