@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.cBox_Joy_Select = new System.Windows.Forms.ComboBox();
             this.btn_Joy_Enable = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chkBox_Joy_Enable = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chkBox_Open_Consol = new System.Windows.Forms.CheckBox();
@@ -75,7 +77,6 @@
             this.digitControl16 = new esp8266UDP_Client.DigitControl();
             this.digitControl18 = new esp8266UDP_Client.DigitControl();
             this.digitControl17 = new esp8266UDP_Client.DigitControl();
-            this.chkBox_Joy_Enable = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -266,6 +267,17 @@
             this.tabPage1.Size = new System.Drawing.Size(441, 264);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Joystick";
+            // 
+            // chkBox_Joy_Enable
+            // 
+            this.chkBox_Joy_Enable.AutoSize = true;
+            this.chkBox_Joy_Enable.Location = new System.Drawing.Point(230, 7);
+            this.chkBox_Joy_Enable.Name = "chkBox_Joy_Enable";
+            this.chkBox_Joy_Enable.Size = new System.Drawing.Size(100, 17);
+            this.chkBox_Joy_Enable.TabIndex = 2;
+            this.chkBox_Joy_Enable.Text = "Joystick Enable";
+            this.chkBox_Joy_Enable.UseVisualStyleBackColor = true;
+            this.chkBox_Joy_Enable.CheckedChanged += new System.EventHandler(this.chkBox_Joy_Enable_CheckedChanged);
             // 
             // tabPage2
             // 
@@ -554,23 +566,13 @@
             this.digitControl17.TabIndex = 17;
             this.digitControl17.Value = "-100";
             // 
-            // chkBox_Joy_Enable
-            // 
-            this.chkBox_Joy_Enable.AutoSize = true;
-            this.chkBox_Joy_Enable.Location = new System.Drawing.Point(230, 7);
-            this.chkBox_Joy_Enable.Name = "chkBox_Joy_Enable";
-            this.chkBox_Joy_Enable.Size = new System.Drawing.Size(100, 17);
-            this.chkBox_Joy_Enable.TabIndex = 2;
-            this.chkBox_Joy_Enable.Text = "Joystick Enable";
-            this.chkBox_Joy_Enable.UseVisualStyleBackColor = true;
-            this.chkBox_Joy_Enable.CheckedChanged += new System.EventHandler(this.chkBox_Joy_Enable_CheckedChanged);
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 309);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
             this.Text = "Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingsForm_FormClosing);
