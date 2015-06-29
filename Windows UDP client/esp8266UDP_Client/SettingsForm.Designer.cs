@@ -1,4 +1,4 @@
-﻿namespace esp8266UDP_Client
+﻿namespace RCONTROL
 {
     partial class SettingsForm
     {
@@ -51,32 +51,32 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.chkBox_Joy_Enable = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.digitControl19 = new RCONTROL.DigitControl();
+            this.digitControl20 = new RCONTROL.DigitControl();
+            this.digitControl21 = new RCONTROL.DigitControl();
+            this.digitControl22 = new RCONTROL.DigitControl();
+            this.digitControl1 = new RCONTROL.DigitControl();
+            this.digitControl23 = new RCONTROL.DigitControl();
+            this.digitControl2 = new RCONTROL.DigitControl();
+            this.digitControl24 = new RCONTROL.DigitControl();
+            this.digitControl3 = new RCONTROL.DigitControl();
+            this.digitControl10 = new RCONTROL.DigitControl();
+            this.digitControl6 = new RCONTROL.DigitControl();
+            this.digitControl11 = new RCONTROL.DigitControl();
+            this.digitControl5 = new RCONTROL.DigitControl();
+            this.digitControl12 = new RCONTROL.DigitControl();
+            this.digitControl4 = new RCONTROL.DigitControl();
+            this.digitControl13 = new RCONTROL.DigitControl();
+            this.digitControl9 = new RCONTROL.DigitControl();
+            this.digitControl14 = new RCONTROL.DigitControl();
+            this.digitControl8 = new RCONTROL.DigitControl();
+            this.digitControl15 = new RCONTROL.DigitControl();
+            this.digitControl7 = new RCONTROL.DigitControl();
+            this.digitControl16 = new RCONTROL.DigitControl();
+            this.digitControl18 = new RCONTROL.DigitControl();
+            this.digitControl17 = new RCONTROL.DigitControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chkBox_Open_Consol = new System.Windows.Forms.CheckBox();
-            this.digitControl19 = new esp8266UDP_Client.DigitControl();
-            this.digitControl20 = new esp8266UDP_Client.DigitControl();
-            this.digitControl21 = new esp8266UDP_Client.DigitControl();
-            this.digitControl22 = new esp8266UDP_Client.DigitControl();
-            this.digitControl1 = new esp8266UDP_Client.DigitControl();
-            this.digitControl23 = new esp8266UDP_Client.DigitControl();
-            this.digitControl2 = new esp8266UDP_Client.DigitControl();
-            this.digitControl24 = new esp8266UDP_Client.DigitControl();
-            this.digitControl3 = new esp8266UDP_Client.DigitControl();
-            this.digitControl10 = new esp8266UDP_Client.DigitControl();
-            this.digitControl6 = new esp8266UDP_Client.DigitControl();
-            this.digitControl11 = new esp8266UDP_Client.DigitControl();
-            this.digitControl5 = new esp8266UDP_Client.DigitControl();
-            this.digitControl12 = new esp8266UDP_Client.DigitControl();
-            this.digitControl4 = new esp8266UDP_Client.DigitControl();
-            this.digitControl13 = new esp8266UDP_Client.DigitControl();
-            this.digitControl9 = new esp8266UDP_Client.DigitControl();
-            this.digitControl14 = new esp8266UDP_Client.DigitControl();
-            this.digitControl8 = new esp8266UDP_Client.DigitControl();
-            this.digitControl15 = new esp8266UDP_Client.DigitControl();
-            this.digitControl7 = new esp8266UDP_Client.DigitControl();
-            this.digitControl16 = new esp8266UDP_Client.DigitControl();
-            this.digitControl18 = new esp8266UDP_Client.DigitControl();
-            this.digitControl17 = new esp8266UDP_Client.DigitControl();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -324,6 +324,222 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Limits";
             // 
+            // digitControl19
+            // 
+            this.digitControl19.Location = new System.Drawing.Point(74, 228);
+            this.digitControl19.Name = "digitControl19";
+            this.digitControl19.Size = new System.Drawing.Size(74, 23);
+            this.digitControl19.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl19.TabIndex = 34;
+            this.digitControl19.Value = "0";
+            // 
+            // digitControl20
+            // 
+            this.digitControl20.Location = new System.Drawing.Point(154, 228);
+            this.digitControl20.Name = "digitControl20";
+            this.digitControl20.Size = new System.Drawing.Size(74, 23);
+            this.digitControl20.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl20.TabIndex = 33;
+            this.digitControl20.Value = "-100";
+            // 
+            // digitControl21
+            // 
+            this.digitControl21.Location = new System.Drawing.Point(234, 228);
+            this.digitControl21.Name = "digitControl21";
+            this.digitControl21.Size = new System.Drawing.Size(74, 23);
+            this.digitControl21.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl21.TabIndex = 32;
+            this.digitControl21.Value = "100";
+            // 
+            // digitControl22
+            // 
+            this.digitControl22.Location = new System.Drawing.Point(74, 200);
+            this.digitControl22.Name = "digitControl22";
+            this.digitControl22.Size = new System.Drawing.Size(74, 23);
+            this.digitControl22.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl22.TabIndex = 30;
+            this.digitControl22.Value = "0";
+            // 
+            // digitControl1
+            // 
+            this.digitControl1.Location = new System.Drawing.Point(234, 32);
+            this.digitControl1.Name = "digitControl1";
+            this.digitControl1.Size = new System.Drawing.Size(74, 23);
+            this.digitControl1.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl1.TabIndex = 4;
+            this.digitControl1.Value = "100";
+            // 
+            // digitControl23
+            // 
+            this.digitControl23.Location = new System.Drawing.Point(154, 200);
+            this.digitControl23.Name = "digitControl23";
+            this.digitControl23.Size = new System.Drawing.Size(74, 23);
+            this.digitControl23.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl23.TabIndex = 29;
+            this.digitControl23.Value = "-100";
+            // 
+            // digitControl2
+            // 
+            this.digitControl2.Location = new System.Drawing.Point(154, 32);
+            this.digitControl2.Name = "digitControl2";
+            this.digitControl2.Size = new System.Drawing.Size(74, 23);
+            this.digitControl2.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl2.TabIndex = 5;
+            this.digitControl2.Value = "-100";
+            // 
+            // digitControl24
+            // 
+            this.digitControl24.Location = new System.Drawing.Point(234, 200);
+            this.digitControl24.Name = "digitControl24";
+            this.digitControl24.Size = new System.Drawing.Size(74, 23);
+            this.digitControl24.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl24.TabIndex = 28;
+            this.digitControl24.Value = "100";
+            // 
+            // digitControl3
+            // 
+            this.digitControl3.Location = new System.Drawing.Point(74, 32);
+            this.digitControl3.Name = "digitControl3";
+            this.digitControl3.Size = new System.Drawing.Size(74, 23);
+            this.digitControl3.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl3.TabIndex = 6;
+            this.digitControl3.Value = "0";
+            // 
+            // digitControl10
+            // 
+            this.digitControl10.Location = new System.Drawing.Point(74, 172);
+            this.digitControl10.Name = "digitControl10";
+            this.digitControl10.Size = new System.Drawing.Size(74, 23);
+            this.digitControl10.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl10.TabIndex = 26;
+            this.digitControl10.Value = "0";
+            // 
+            // digitControl6
+            // 
+            this.digitControl6.Location = new System.Drawing.Point(234, 60);
+            this.digitControl6.Name = "digitControl6";
+            this.digitControl6.Size = new System.Drawing.Size(74, 23);
+            this.digitControl6.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl6.TabIndex = 8;
+            this.digitControl6.Value = "100";
+            // 
+            // digitControl11
+            // 
+            this.digitControl11.Location = new System.Drawing.Point(154, 172);
+            this.digitControl11.Name = "digitControl11";
+            this.digitControl11.Size = new System.Drawing.Size(74, 23);
+            this.digitControl11.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl11.TabIndex = 25;
+            this.digitControl11.Value = "-100";
+            // 
+            // digitControl5
+            // 
+            this.digitControl5.Location = new System.Drawing.Point(154, 60);
+            this.digitControl5.Name = "digitControl5";
+            this.digitControl5.Size = new System.Drawing.Size(74, 23);
+            this.digitControl5.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl5.TabIndex = 9;
+            this.digitControl5.Value = "-100";
+            // 
+            // digitControl12
+            // 
+            this.digitControl12.Location = new System.Drawing.Point(234, 172);
+            this.digitControl12.Name = "digitControl12";
+            this.digitControl12.Size = new System.Drawing.Size(74, 23);
+            this.digitControl12.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl12.TabIndex = 24;
+            this.digitControl12.Value = "100";
+            // 
+            // digitControl4
+            // 
+            this.digitControl4.Location = new System.Drawing.Point(74, 60);
+            this.digitControl4.Name = "digitControl4";
+            this.digitControl4.Size = new System.Drawing.Size(74, 23);
+            this.digitControl4.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl4.TabIndex = 10;
+            this.digitControl4.Value = "0";
+            // 
+            // digitControl13
+            // 
+            this.digitControl13.Location = new System.Drawing.Point(74, 144);
+            this.digitControl13.Name = "digitControl13";
+            this.digitControl13.Size = new System.Drawing.Size(74, 23);
+            this.digitControl13.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl13.TabIndex = 22;
+            this.digitControl13.Value = "0";
+            // 
+            // digitControl9
+            // 
+            this.digitControl9.Location = new System.Drawing.Point(234, 88);
+            this.digitControl9.Name = "digitControl9";
+            this.digitControl9.Size = new System.Drawing.Size(74, 23);
+            this.digitControl9.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl9.TabIndex = 12;
+            this.digitControl9.Value = "100";
+            // 
+            // digitControl14
+            // 
+            this.digitControl14.Location = new System.Drawing.Point(154, 144);
+            this.digitControl14.Name = "digitControl14";
+            this.digitControl14.Size = new System.Drawing.Size(74, 23);
+            this.digitControl14.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl14.TabIndex = 21;
+            this.digitControl14.Value = "-100";
+            // 
+            // digitControl8
+            // 
+            this.digitControl8.Location = new System.Drawing.Point(154, 88);
+            this.digitControl8.Name = "digitControl8";
+            this.digitControl8.Size = new System.Drawing.Size(74, 23);
+            this.digitControl8.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl8.TabIndex = 13;
+            this.digitControl8.Value = "-100";
+            // 
+            // digitControl15
+            // 
+            this.digitControl15.Location = new System.Drawing.Point(234, 144);
+            this.digitControl15.Name = "digitControl15";
+            this.digitControl15.Size = new System.Drawing.Size(74, 23);
+            this.digitControl15.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl15.TabIndex = 20;
+            this.digitControl15.Value = "100";
+            // 
+            // digitControl7
+            // 
+            this.digitControl7.Location = new System.Drawing.Point(74, 88);
+            this.digitControl7.Name = "digitControl7";
+            this.digitControl7.Size = new System.Drawing.Size(74, 23);
+            this.digitControl7.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl7.TabIndex = 14;
+            this.digitControl7.Value = "0";
+            // 
+            // digitControl16
+            // 
+            this.digitControl16.Location = new System.Drawing.Point(74, 116);
+            this.digitControl16.Name = "digitControl16";
+            this.digitControl16.Size = new System.Drawing.Size(74, 23);
+            this.digitControl16.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl16.TabIndex = 18;
+            this.digitControl16.Value = "0";
+            // 
+            // digitControl18
+            // 
+            this.digitControl18.Location = new System.Drawing.Point(234, 116);
+            this.digitControl18.Name = "digitControl18";
+            this.digitControl18.Size = new System.Drawing.Size(74, 23);
+            this.digitControl18.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl18.TabIndex = 16;
+            this.digitControl18.Value = "100";
+            // 
+            // digitControl17
+            // 
+            this.digitControl17.Location = new System.Drawing.Point(154, 116);
+            this.digitControl17.Name = "digitControl17";
+            this.digitControl17.Size = new System.Drawing.Size(74, 23);
+            this.digitControl17.StateValue = RCONTROL.DigitControl.State.MAX_State;
+            this.digitControl17.TabIndex = 17;
+            this.digitControl17.Value = "-100";
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
@@ -349,222 +565,6 @@
             this.chkBox_Open_Consol.Text = "Open consol log";
             this.chkBox_Open_Consol.UseVisualStyleBackColor = true;
             this.chkBox_Open_Consol.CheckedChanged += new System.EventHandler(this.chkBox_Open_Consol_CheckedChanged);
-            // 
-            // digitControl19
-            // 
-            this.digitControl19.Location = new System.Drawing.Point(74, 228);
-            this.digitControl19.MinOrMax = true;
-            this.digitControl19.Name = "digitControl19";
-            this.digitControl19.Size = new System.Drawing.Size(74, 23);
-            this.digitControl19.TabIndex = 34;
-            this.digitControl19.Value = "0";
-            // 
-            // digitControl20
-            // 
-            this.digitControl20.Location = new System.Drawing.Point(154, 228);
-            this.digitControl20.MinOrMax = false;
-            this.digitControl20.Name = "digitControl20";
-            this.digitControl20.Size = new System.Drawing.Size(74, 23);
-            this.digitControl20.TabIndex = 33;
-            this.digitControl20.Value = "-100";
-            // 
-            // digitControl21
-            // 
-            this.digitControl21.Location = new System.Drawing.Point(234, 228);
-            this.digitControl21.MinOrMax = true;
-            this.digitControl21.Name = "digitControl21";
-            this.digitControl21.Size = new System.Drawing.Size(74, 23);
-            this.digitControl21.TabIndex = 32;
-            this.digitControl21.Value = "100";
-            // 
-            // digitControl22
-            // 
-            this.digitControl22.Location = new System.Drawing.Point(74, 200);
-            this.digitControl22.MinOrMax = true;
-            this.digitControl22.Name = "digitControl22";
-            this.digitControl22.Size = new System.Drawing.Size(74, 23);
-            this.digitControl22.TabIndex = 30;
-            this.digitControl22.Value = "0";
-            // 
-            // digitControl1
-            // 
-            this.digitControl1.Location = new System.Drawing.Point(234, 32);
-            this.digitControl1.MinOrMax = true;
-            this.digitControl1.Name = "digitControl1";
-            this.digitControl1.Size = new System.Drawing.Size(74, 23);
-            this.digitControl1.TabIndex = 4;
-            this.digitControl1.Value = "100";
-            // 
-            // digitControl23
-            // 
-            this.digitControl23.Location = new System.Drawing.Point(154, 200);
-            this.digitControl23.MinOrMax = false;
-            this.digitControl23.Name = "digitControl23";
-            this.digitControl23.Size = new System.Drawing.Size(74, 23);
-            this.digitControl23.TabIndex = 29;
-            this.digitControl23.Value = "-100";
-            // 
-            // digitControl2
-            // 
-            this.digitControl2.Location = new System.Drawing.Point(154, 32);
-            this.digitControl2.MinOrMax = false;
-            this.digitControl2.Name = "digitControl2";
-            this.digitControl2.Size = new System.Drawing.Size(74, 23);
-            this.digitControl2.TabIndex = 5;
-            this.digitControl2.Value = "-100";
-            // 
-            // digitControl24
-            // 
-            this.digitControl24.Location = new System.Drawing.Point(234, 200);
-            this.digitControl24.MinOrMax = true;
-            this.digitControl24.Name = "digitControl24";
-            this.digitControl24.Size = new System.Drawing.Size(74, 23);
-            this.digitControl24.TabIndex = 28;
-            this.digitControl24.Value = "100";
-            // 
-            // digitControl3
-            // 
-            this.digitControl3.Location = new System.Drawing.Point(74, 32);
-            this.digitControl3.MinOrMax = true;
-            this.digitControl3.Name = "digitControl3";
-            this.digitControl3.Size = new System.Drawing.Size(74, 23);
-            this.digitControl3.TabIndex = 6;
-            this.digitControl3.Value = "0";
-            // 
-            // digitControl10
-            // 
-            this.digitControl10.Location = new System.Drawing.Point(74, 172);
-            this.digitControl10.MinOrMax = true;
-            this.digitControl10.Name = "digitControl10";
-            this.digitControl10.Size = new System.Drawing.Size(74, 23);
-            this.digitControl10.TabIndex = 26;
-            this.digitControl10.Value = "0";
-            // 
-            // digitControl6
-            // 
-            this.digitControl6.Location = new System.Drawing.Point(234, 60);
-            this.digitControl6.MinOrMax = true;
-            this.digitControl6.Name = "digitControl6";
-            this.digitControl6.Size = new System.Drawing.Size(74, 23);
-            this.digitControl6.TabIndex = 8;
-            this.digitControl6.Value = "100";
-            // 
-            // digitControl11
-            // 
-            this.digitControl11.Location = new System.Drawing.Point(154, 172);
-            this.digitControl11.MinOrMax = false;
-            this.digitControl11.Name = "digitControl11";
-            this.digitControl11.Size = new System.Drawing.Size(74, 23);
-            this.digitControl11.TabIndex = 25;
-            this.digitControl11.Value = "-100";
-            // 
-            // digitControl5
-            // 
-            this.digitControl5.Location = new System.Drawing.Point(154, 60);
-            this.digitControl5.MinOrMax = false;
-            this.digitControl5.Name = "digitControl5";
-            this.digitControl5.Size = new System.Drawing.Size(74, 23);
-            this.digitControl5.TabIndex = 9;
-            this.digitControl5.Value = "-100";
-            // 
-            // digitControl12
-            // 
-            this.digitControl12.Location = new System.Drawing.Point(234, 172);
-            this.digitControl12.MinOrMax = true;
-            this.digitControl12.Name = "digitControl12";
-            this.digitControl12.Size = new System.Drawing.Size(74, 23);
-            this.digitControl12.TabIndex = 24;
-            this.digitControl12.Value = "100";
-            // 
-            // digitControl4
-            // 
-            this.digitControl4.Location = new System.Drawing.Point(74, 60);
-            this.digitControl4.MinOrMax = true;
-            this.digitControl4.Name = "digitControl4";
-            this.digitControl4.Size = new System.Drawing.Size(74, 23);
-            this.digitControl4.TabIndex = 10;
-            this.digitControl4.Value = "0";
-            // 
-            // digitControl13
-            // 
-            this.digitControl13.Location = new System.Drawing.Point(74, 144);
-            this.digitControl13.MinOrMax = true;
-            this.digitControl13.Name = "digitControl13";
-            this.digitControl13.Size = new System.Drawing.Size(74, 23);
-            this.digitControl13.TabIndex = 22;
-            this.digitControl13.Value = "0";
-            // 
-            // digitControl9
-            // 
-            this.digitControl9.Location = new System.Drawing.Point(234, 88);
-            this.digitControl9.MinOrMax = true;
-            this.digitControl9.Name = "digitControl9";
-            this.digitControl9.Size = new System.Drawing.Size(74, 23);
-            this.digitControl9.TabIndex = 12;
-            this.digitControl9.Value = "100";
-            // 
-            // digitControl14
-            // 
-            this.digitControl14.Location = new System.Drawing.Point(154, 144);
-            this.digitControl14.MinOrMax = false;
-            this.digitControl14.Name = "digitControl14";
-            this.digitControl14.Size = new System.Drawing.Size(74, 23);
-            this.digitControl14.TabIndex = 21;
-            this.digitControl14.Value = "-100";
-            // 
-            // digitControl8
-            // 
-            this.digitControl8.Location = new System.Drawing.Point(154, 88);
-            this.digitControl8.MinOrMax = false;
-            this.digitControl8.Name = "digitControl8";
-            this.digitControl8.Size = new System.Drawing.Size(74, 23);
-            this.digitControl8.TabIndex = 13;
-            this.digitControl8.Value = "-100";
-            // 
-            // digitControl15
-            // 
-            this.digitControl15.Location = new System.Drawing.Point(234, 144);
-            this.digitControl15.MinOrMax = true;
-            this.digitControl15.Name = "digitControl15";
-            this.digitControl15.Size = new System.Drawing.Size(74, 23);
-            this.digitControl15.TabIndex = 20;
-            this.digitControl15.Value = "100";
-            // 
-            // digitControl7
-            // 
-            this.digitControl7.Location = new System.Drawing.Point(74, 88);
-            this.digitControl7.MinOrMax = true;
-            this.digitControl7.Name = "digitControl7";
-            this.digitControl7.Size = new System.Drawing.Size(74, 23);
-            this.digitControl7.TabIndex = 14;
-            this.digitControl7.Value = "0";
-            // 
-            // digitControl16
-            // 
-            this.digitControl16.Location = new System.Drawing.Point(74, 116);
-            this.digitControl16.MinOrMax = true;
-            this.digitControl16.Name = "digitControl16";
-            this.digitControl16.Size = new System.Drawing.Size(74, 23);
-            this.digitControl16.TabIndex = 18;
-            this.digitControl16.Value = "0";
-            // 
-            // digitControl18
-            // 
-            this.digitControl18.Location = new System.Drawing.Point(234, 116);
-            this.digitControl18.MinOrMax = true;
-            this.digitControl18.Name = "digitControl18";
-            this.digitControl18.Size = new System.Drawing.Size(74, 23);
-            this.digitControl18.TabIndex = 16;
-            this.digitControl18.Value = "100";
-            // 
-            // digitControl17
-            // 
-            this.digitControl17.Location = new System.Drawing.Point(154, 116);
-            this.digitControl17.MinOrMax = false;
-            this.digitControl17.Name = "digitControl17";
-            this.digitControl17.Size = new System.Drawing.Size(74, 23);
-            this.digitControl17.TabIndex = 17;
-            this.digitControl17.Value = "-100";
             // 
             // SettingsForm
             // 

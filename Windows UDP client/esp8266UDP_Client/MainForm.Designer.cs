@@ -1,4 +1,4 @@
-﻿namespace esp8266UDP_Client
+﻿namespace RCONTROL
 {
     partial class MainForm
     {
@@ -445,7 +445,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "RCONTROL";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH6)).EndInit();

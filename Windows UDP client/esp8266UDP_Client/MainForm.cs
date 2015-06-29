@@ -14,7 +14,7 @@ using System.Threading;
 using SharpDX.DirectInput;
 using System.Runtime.InteropServices;
 
-namespace esp8266UDP_Client
+namespace RCONTROL
 {
     public partial class MainForm : Form
     {
@@ -41,7 +41,7 @@ namespace esp8266UDP_Client
             
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Stop();
             StopReceive();

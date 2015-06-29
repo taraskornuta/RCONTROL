@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SharpDX.DirectInput;
 
-namespace esp8266UDP_Client
+namespace RCONTROL
 {
     public partial class SettingsForm : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace esp8266UDP_Client
+﻿namespace RCONTROL
 {
     partial class DigitControl
     {
