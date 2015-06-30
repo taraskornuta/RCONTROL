@@ -18,7 +18,7 @@ namespace RCONTROL
         private const double MIN_VALUE = -100.0;
         private double maxvalue = MAX_VALUE;
         private double minvalue = MIN_VALUE;
-       // private bool minormax = true;
+
 
         public DigitControl()
         {
@@ -48,18 +48,6 @@ namespace RCONTROL
             }
           
         }
-        
-        public string Value
-        {
-            get { return textBox1.Text; }
-            set { textBox1.Text = value; }
-        }
-
-        //public bool MinOrMax
-        //{
-        //    get { return minormax; }
-        //    set { minormax = value; }
-        //}
         private double ParseDouble(string value)
         {
             double d = 0;
@@ -69,71 +57,89 @@ namespace RCONTROL
             }
             return d;
         }
+
+        public string Value
+        {
+            get { return textBox1.Text; }
+            set { textBox1.Text = value; }
+        }
+
         public enum State { MAX_State, MID_State, MIN_State };
-
         private State chosenState = State.MAX_State;
-
         public State StateValue
         {
-            get
-            {
-                return chosenState;
-            }
-            set
-            {
-                this.chosenState = (State)value;
-            }
+            get { return chosenState; }
+            set { chosenState = (State) value; }
         } 
 
         public double i;
         private void btn_Minus_Click(object sender, EventArgs e)
         {
+            MinusingValue();
+        }
+
+        private void btn_Minus_MouseDown(object sender, MouseEventArgs e)
+        {
+            timer1.Enabled = true;
+            timer1.Start();
+        }
+
+        private void btn_Minus_MouseUp(object sender, MouseEventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            MinusingValue();
+        }
+
+        private void MinusingValue()
+        {
             if (Update_condition() == "MAX_State")
             {
                 i = ParseDouble(textBox1.Text);
-                
+
                 if (i == maxvalue)
                 {
-                    i--;
+                    i = i - 0.1;
                     textBox1.Text = Convert.ToString(i);
                 }
                 else if (i == minvalue)
                 {
-                
                 }
                 else
                 {
-                    i--;
+                    i = i - 0.1;
                     textBox1.Text = Convert.ToString(i);
-                } 
+                }
             }
 
             else if (Update_condition() == "MIN_State")
             {
-                i = Convert.ToDouble(textBox1.Text);
-            
+                i = ParseDouble(textBox1.Text);
+
                 if (i == maxvalue)
                 {
-                    i++;
+                    i = i + 0.1;
                     textBox1.Text = Convert.ToString(i);
                 }
                 else if (i == minvalue)
                 {
-
                 }
                 else
                 {
-                    i++;
+                    i = i + 0.1;
                     textBox1.Text = Convert.ToString(i);
-                } 
+                }
             }
             else if (Update_condition() == "MID_State")
             {
-                i = Convert.ToDouble(textBox1.Text);
+                i = ParseDouble(textBox1.Text);
 
                 if (i == maxvalue)
                 {
-                    i++;
+                    i = i - 0.1;
                     textBox1.Text = Convert.ToString(i);
                 }
                 else if (i == minvalue)
@@ -142,47 +148,64 @@ namespace RCONTROL
                 }
                 else
                 {
-                    i++;
+                    i = i - 0.1;
                     textBox1.Text = Convert.ToString(i);
-                } 
+                }
             }
-                        
         }
 
         private void btn_Plus_Click(object sender, EventArgs e)
         {
+            PlusingValue();
+        }
+
+        private void btn_Plus_MouseDown(object sender, MouseEventArgs e)
+        {
+            timer2.Enabled = true;
+            timer2.Start();
+        }
+
+        private void btn_Plus_MouseUp(object sender, MouseEventArgs e)
+        {
+            timer2.Stop();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            PlusingValue();
+        }
+        private void PlusingValue()
+        {
             if (Update_condition() == "MAX_State")
             {
-                i = Convert.ToDouble(textBox1.Text);
-             
+                i = ParseDouble(textBox1.Text);
+
                 if (i == maxvalue)
                 {
-                    //i++;
-                    //textBox1.Text = Convert.ToString(i);
                 }
                 else
                 {
-                    i++;
+                    i = i + 0.1;
                     textBox1.Text = Convert.ToString(i);
                 }
             }
             else if (Update_condition() == "MIN_State")
             {
-                i = Convert.ToDouble(textBox1.Text);
-               
+                i = ParseDouble(textBox1.Text);
+
                 if (i == maxvalue)
                 {
 
                 }
                 else
                 {
-                    i--;
+                    i = i - 0.1;
                     textBox1.Text = Convert.ToString(i);
                 }
             }
             else if (Update_condition() == "MID_State")
             {
-                i = Convert.ToDouble(textBox1.Text);
+                i = ParseDouble(textBox1.Text);
 
                 if (i == maxvalue)
                 {
@@ -190,7 +213,7 @@ namespace RCONTROL
                 }
                 else
                 {
-                    i--;
+                    i = i + 0.1;
                     textBox1.Text = Convert.ToString(i);
                 }
             }
