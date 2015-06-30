@@ -413,7 +413,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 344);
+            this.ClientSize = new System.Drawing.Size(635, 344);
             this.Controls.Add(this.btn_Settings);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pBar_CH8);
