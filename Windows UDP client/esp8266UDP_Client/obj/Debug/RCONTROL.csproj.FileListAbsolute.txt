@@ -11,3 +11,6 @@ C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\De
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\RCONTROL.pdb
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.exe
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.pdb
+E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\RCONTROL.exe.config
+E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.exe
+E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.pdb
