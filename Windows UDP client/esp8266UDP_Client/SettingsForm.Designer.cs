@@ -329,7 +329,7 @@
             this.digitControl19.Location = new System.Drawing.Point(74, 228);
             this.digitControl19.Name = "digitControl19";
             this.digitControl19.Size = new System.Drawing.Size(74, 23);
-            this.digitControl19.StateValue = RCONTROL.DigitControl.State.MID_State;
+            this.digitControl19.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl19.TabIndex = 34;
             this.digitControl19.Value = "0";
             // 
@@ -338,7 +338,7 @@
             this.digitControl20.Location = new System.Drawing.Point(154, 228);
             this.digitControl20.Name = "digitControl20";
             this.digitControl20.Size = new System.Drawing.Size(74, 23);
-            this.digitControl20.StateValue = RCONTROL.DigitControl.State.MIN_State;
+            this.digitControl20.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl20.TabIndex = 33;
             this.digitControl20.Value = "-100";
             // 
@@ -356,7 +356,7 @@
             this.digitControl22.Location = new System.Drawing.Point(74, 200);
             this.digitControl22.Name = "digitControl22";
             this.digitControl22.Size = new System.Drawing.Size(74, 23);
-            this.digitControl22.StateValue = RCONTROL.DigitControl.State.MID_State;
+            this.digitControl22.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl22.TabIndex = 30;
             this.digitControl22.Value = "0";
             // 
@@ -374,7 +374,7 @@
             this.digitControl23.Location = new System.Drawing.Point(154, 200);
             this.digitControl23.Name = "digitControl23";
             this.digitControl23.Size = new System.Drawing.Size(74, 23);
-            this.digitControl23.StateValue = RCONTROL.DigitControl.State.MIN_State;
+            this.digitControl23.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl23.TabIndex = 29;
             this.digitControl23.Value = "-100";
             // 
@@ -383,7 +383,7 @@
             this.digitControl2.Location = new System.Drawing.Point(154, 32);
             this.digitControl2.Name = "digitControl2";
             this.digitControl2.Size = new System.Drawing.Size(74, 23);
-            this.digitControl2.StateValue = RCONTROL.DigitControl.State.MIN_State;
+            this.digitControl2.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl2.TabIndex = 5;
             this.digitControl2.Value = "-100";
             // 
@@ -401,7 +401,7 @@
             this.digitControl3.Location = new System.Drawing.Point(74, 32);
             this.digitControl3.Name = "digitControl3";
             this.digitControl3.Size = new System.Drawing.Size(74, 23);
-            this.digitControl3.StateValue = RCONTROL.DigitControl.State.MID_State;
+            this.digitControl3.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl3.TabIndex = 6;
             this.digitControl3.Value = "0";
             // 
@@ -410,7 +410,7 @@
             this.digitControl10.Location = new System.Drawing.Point(74, 172);
             this.digitControl10.Name = "digitControl10";
             this.digitControl10.Size = new System.Drawing.Size(74, 23);
-            this.digitControl10.StateValue = RCONTROL.DigitControl.State.MID_State;
+            this.digitControl10.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl10.TabIndex = 26;
             this.digitControl10.Value = "0";
             // 
@@ -428,7 +428,7 @@
             this.digitControl11.Location = new System.Drawing.Point(154, 172);
             this.digitControl11.Name = "digitControl11";
             this.digitControl11.Size = new System.Drawing.Size(74, 23);
-            this.digitControl11.StateValue = RCONTROL.DigitControl.State.MIN_State;
+            this.digitControl11.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl11.TabIndex = 25;
             this.digitControl11.Value = "-100";
             // 
@@ -437,7 +437,7 @@
             this.digitControl5.Location = new System.Drawing.Point(154, 60);
             this.digitControl5.Name = "digitControl5";
             this.digitControl5.Size = new System.Drawing.Size(74, 23);
-            this.digitControl5.StateValue = RCONTROL.DigitControl.State.MIN_State;
+            this.digitControl5.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl5.TabIndex = 9;
             this.digitControl5.Value = "-100";
             // 
@@ -455,7 +455,7 @@
             this.digitControl4.Location = new System.Drawing.Point(74, 60);
             this.digitControl4.Name = "digitControl4";
             this.digitControl4.Size = new System.Drawing.Size(74, 23);
-            this.digitControl4.StateValue = RCONTROL.DigitControl.State.MID_State;
+            this.digitControl4.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl4.TabIndex = 10;
             this.digitControl4.Value = "0";
             // 
@@ -464,7 +464,7 @@
             this.digitControl13.Location = new System.Drawing.Point(74, 144);
             this.digitControl13.Name = "digitControl13";
             this.digitControl13.Size = new System.Drawing.Size(74, 23);
-            this.digitControl13.StateValue = RCONTROL.DigitControl.State.MID_State;
+            this.digitControl13.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl13.TabIndex = 22;
             this.digitControl13.Value = "0";
             // 
@@ -482,7 +482,7 @@
             this.digitControl14.Location = new System.Drawing.Point(154, 144);
             this.digitControl14.Name = "digitControl14";
             this.digitControl14.Size = new System.Drawing.Size(74, 23);
-            this.digitControl14.StateValue = RCONTROL.DigitControl.State.MIN_State;
+            this.digitControl14.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl14.TabIndex = 21;
             this.digitControl14.Value = "-100";
             // 
@@ -491,7 +491,7 @@
             this.digitControl8.Location = new System.Drawing.Point(154, 88);
             this.digitControl8.Name = "digitControl8";
             this.digitControl8.Size = new System.Drawing.Size(74, 23);
-            this.digitControl8.StateValue = RCONTROL.DigitControl.State.MIN_State;
+            this.digitControl8.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl8.TabIndex = 13;
             this.digitControl8.Value = "-100";
             // 
@@ -509,7 +509,7 @@
             this.digitControl7.Location = new System.Drawing.Point(74, 88);
             this.digitControl7.Name = "digitControl7";
             this.digitControl7.Size = new System.Drawing.Size(74, 23);
-            this.digitControl7.StateValue = RCONTROL.DigitControl.State.MID_State;
+            this.digitControl7.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl7.TabIndex = 14;
             this.digitControl7.Value = "0";
             // 
@@ -518,7 +518,7 @@
             this.digitControl16.Location = new System.Drawing.Point(74, 116);
             this.digitControl16.Name = "digitControl16";
             this.digitControl16.Size = new System.Drawing.Size(74, 23);
-            this.digitControl16.StateValue = RCONTROL.DigitControl.State.MID_State;
+            this.digitControl16.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl16.TabIndex = 18;
             this.digitControl16.Value = "0";
             // 
@@ -536,7 +536,7 @@
             this.digitControl17.Location = new System.Drawing.Point(154, 116);
             this.digitControl17.Name = "digitControl17";
             this.digitControl17.Size = new System.Drawing.Size(74, 23);
-            this.digitControl17.StateValue = RCONTROL.DigitControl.State.MIN_State;
+            this.digitControl17.StateValue = RCONTROL.DigitControl.State.MAX_State;
             this.digitControl17.TabIndex = 17;
             this.digitControl17.Value = "-100";
             // 

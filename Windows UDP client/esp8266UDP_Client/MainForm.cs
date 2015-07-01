@@ -18,6 +18,7 @@ namespace RCONTROL
 {
     public partial class MainForm : Form
     {
+        Properties.Settings ps = Properties.Settings.Default;
         private Thread JoystickThread = null;
         public int X, Y, Z, RotZ;
         private string ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8;
@@ -25,7 +26,6 @@ namespace RCONTROL
         public MainForm()
         {
             InitializeComponent();
-            Settings.Load();
         }
 
         [DllImport("kernel32.dll", SetLastError = true)] //Enabling debuging console
@@ -34,8 +34,7 @@ namespace RCONTROL
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Settings.Read();
-            if (Settings.Debug_Open_Console==true)
+            if (ps.Debug_Open_Console==true)
             {
                 AllocConsole(); //Enabling debuging console
             }
@@ -50,7 +49,7 @@ namespace RCONTROL
 
         private void btn_Open_Click(object sender, System.EventArgs e)
         {
-            if (Settings.Joy_Enable == true)
+            if (ps.Joy_Enable==true)
             {
                 JoystickThread = new Thread(new ThreadStart(this.JoyStatus));
                 JoystickThread.Start();
@@ -68,10 +67,10 @@ namespace RCONTROL
             string defaultIP = "192.168.4.1";
             int defaultPort = 8000;
 
-            if (Settings.Debug_Enable == true)
+            if (ps.Debug_Enable == true)
             {
-                defaultIP = Settings.Debug_IP;
-                defaultPort = Convert.ToInt16(Settings.Debug_Port);
+                defaultIP = ps.Debug_IP;
+                defaultPort = Convert.ToInt16(ps.Debug_Port);
             }
 
             // Указываем адрес отправки сообщения
@@ -108,7 +107,7 @@ namespace RCONTROL
             pBar_CH7.Value = tBar_CH7.Value;
             pBar_CH8.Value = tBar_CH8.Value;
 
-            if (Settings.Joy_Enable == true)
+            if (ps.Joy_Enable == true)
             {
                 tBar_CH1.Value = Convert.ToInt16(1000 + (X * 3.92156862745099));
                 tBar_CH2.Value = Convert.ToInt16(1000 + (Y * 3.92156862745099));
@@ -188,7 +187,7 @@ namespace RCONTROL
         }
         public void JoyStatus()
         {
-            if (Settings.Joy_Enable == true)
+            if (ps.Joy_Enable == true)
             {
                 var directInput = new DirectInput();
 
@@ -262,7 +261,9 @@ namespace RCONTROL
         {
             SettingsForm settings = new SettingsForm(); // Створює форму Settings
             settings.Show(); 
-        }       
+        }
+
+        
     }
 }
 
