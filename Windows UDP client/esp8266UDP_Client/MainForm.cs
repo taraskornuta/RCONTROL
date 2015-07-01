@@ -26,6 +26,11 @@ namespace RCONTROL
         public MainForm()
         {
             InitializeComponent();
+<<<<<<< HEAD
+=======
+            Settings.Load();
+            
+>>>>>>> origin/master
         }
 
         [DllImport("kernel32.dll", SetLastError = true)] //Enabling debuging console

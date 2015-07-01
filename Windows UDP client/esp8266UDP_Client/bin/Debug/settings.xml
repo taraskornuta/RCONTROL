@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<Settings>
+  <xs:schema id="Settings" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="Settings" msdata:IsDataSet="true" msdata:Locale="en-US">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="root">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Debug_Enable" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Debug_IP" type="xs:string" minOccurs="0" />
+                <xs:element name="Debug_Port" type="xs:string" minOccurs="0" />
+                <xs:element name="Debug_Open_Console" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Joy_Enable" type="xs:boolean" minOccurs="0" />
+                <xs:element name="LabelText" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <root>
+    <Debug_Enable>true</Debug_Enable>
+    <Debug_IP>127.0.0.1</Debug_IP>
+    <Debug_Port>8000</Debug_Port>
+    <Debug_Open_Console>true</Debug_Open_Console>
+    <Joy_Enable>true</Joy_Enable>
+    <LabelText>Save all settings</LabelText>
+  </root>
+</Settings>
