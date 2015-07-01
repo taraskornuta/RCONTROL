@@ -26,6 +26,7 @@ namespace RCONTROL
         {
             InitializeComponent();
             Settings.Load();
+            
         }
 
         [DllImport("kernel32.dll", SetLastError = true)] //Enabling debuging console
