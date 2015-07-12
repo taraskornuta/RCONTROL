@@ -13,6 +13,10 @@
 #define LED_BLUE_ON  GPIO_SetBits(LED_BLUE);
 #define LED_BLUE_OFF GPIO_ResetBits(LED_BLUE);
 
+#define CH_PD GPIOB, GPIO_Pin_9
+#define CH_PD_ON  GPIO_SetBits(CH_PD);
+#define CH_PD_OFF GPIO_ResetBits(CH_PD);
+
 
 void GPIO_Configuration(void);
 void TIMERS_Configuration(void);

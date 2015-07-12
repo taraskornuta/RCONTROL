@@ -14,6 +14,7 @@ int ch8=1000;
 
 void WIFI_Init(void)
 {
+	CH_PD_ON;
 	delay_ms(200);
 	WIFI_command((unsigned char *)"AT+RST\r\n",(unsigned char *) "ready");
 	WIFI_command((unsigned char *)"ATE0\r\n",(unsigned char *) "OK");

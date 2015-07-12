@@ -22,7 +22,7 @@ void CHANNELS_Configuration(void)
 
     GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1| GPIO_Pin_6| GPIO_Pin_7| GPIO_Pin_8| GPIO_Pin_9;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1| GPIO_Pin_6| GPIO_Pin_7| GPIO_Pin_8;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
 
 	 /* Time base configuration */
@@ -88,9 +88,9 @@ void CHANNELS_Configuration(void)
    TIM_OC3PreloadConfig(TIM4, TIM_OCPreload_Enable);
 
    /* PWM1 Mode configuration: Channel4 */
-   TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
-   TIM_OC4Init(TIM4, &TIM_OCInitStructure);
-   TIM_OC4PreloadConfig(TIM4, TIM_OCPreload_Enable);
+//   TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+//   TIM_OC4Init(TIM4, &TIM_OCInitStructure);
+//   TIM_OC4PreloadConfig(TIM4, TIM_OCPreload_Enable);
 
    TIM_ARRPreloadConfig(TIM4, ENABLE);
 

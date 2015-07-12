@@ -23,8 +23,8 @@ int main(void)
 
     while (1)
     {
-   	UART1_put_str("TEST STRING INPUT");
-   	delay_ms(500);
+   	//UART1_put_str("TEST STRING INPUT");
+   	//delay_ms(500);
 
     }
 }
