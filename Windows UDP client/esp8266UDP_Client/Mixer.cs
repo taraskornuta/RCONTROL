@@ -6,10 +6,10 @@
         public static int LimitsMid = 500;
         public static int LimitsMax = 1000;
 
-        public static void Limit(int MinControl, int MidControl, int MaxControl)
+        public static int LimitMin(int MinControl)
         {
-            
-            //return;
+            var i = LimitsMin + MinControl;
+            return i;
         }
     }
 }
