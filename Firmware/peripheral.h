@@ -6,12 +6,12 @@
 #include <peripheral.h>
 
 
-#define LED_GREEN GPIOB, GPIO_Pin_3
-#define LED_BLUE  GPIOA, GPIO_Pin_15
+#define LED_GREEN GPIOB, GPIO_Pin_15
+#define LED_RED  GPIOA, GPIO_Pin_3
 #define LED_GREEN_ON  GPIO_SetBits(LED_GREEN);
 #define LED_GREEN_OFF GPIO_ResetBits(LED_GREEN);
-#define LED_BLUE_ON  GPIO_SetBits(LED_BLUE);
-#define LED_BLUE_OFF GPIO_ResetBits(LED_BLUE);
+#define LED_RED_ON  GPIO_SetBits(LED_RED);
+#define LED_RED_OFF GPIO_ResetBits(LED_RED);
 
 #define CH_PD GPIOB, GPIO_Pin_9
 #define CH_PD_ON  GPIO_SetBits(CH_PD);

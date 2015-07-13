@@ -110,7 +110,7 @@ void USART_Configuration(void)
 //---------------------------------UART 1 Interrupt vector ---------------------------------//
 void USART1_IRQHandler(void)
 {
-  LED_BLUE_ON;
+  LED_GREEN_ON;
   if(USART_GetITStatus(USART1, USART_IT_RXNE) == SET)
   {
        if ((USART1->SR & (USART_FLAG_NE|USART_FLAG_FE|USART_FLAG_PE|USART_FLAG_ORE)) == 0)
@@ -144,7 +144,7 @@ void USART1_IRQHandler(void)
         USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
      }
   }
-  LED_BLUE_OFF;
+  LED_GREEN_OFF;
 }
 
 
@@ -164,7 +164,6 @@ uint8_t UART1_get_char(void)
 
 void UART1_put_char(uint8_t c)
 {
-
    while (UART1_tx_counter == UART1_TX_BUFFER_SIZE);
    USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
 
@@ -176,7 +175,6 @@ void UART1_put_char(uint8_t c)
          USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
       }
    else USART_SendData(USART1,c);
-
 }
 
 void UART1_put_str(unsigned char *s)
@@ -245,7 +243,7 @@ void UART1_read_str(unsigned char* s)
 
 void USART3_IRQHandler(void)
 {
-  LED_BLUE_ON;
+  LED_GREEN_ON;
   if(USART_GetITStatus(USART3, USART_IT_RXNE) == SET)
   {
        if ((USART3->SR & (USART_FLAG_NE|USART_FLAG_FE|USART_FLAG_PE|USART_FLAG_ORE)) == 0)
@@ -280,7 +278,7 @@ void USART3_IRQHandler(void)
         USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
      }
   }
-  LED_BLUE_OFF;
+  LED_GREEN_OFF;
 }
 
 

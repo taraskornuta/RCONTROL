@@ -11,23 +11,18 @@ void GPIO_Configuration(void)
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);		//JTAG disabling
     GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);	//JTAG disabling
 
-    /* GPIOC clock enable */
+    /* GPIOA, GPIOB clock enable */
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB, ENABLE);
 
-    //LED_GREEN, LED_BLUE
+    //LED_GREEN, LED_RED, CH_PD
     GPIO_InitTypeDef GPIO_InitStructure;
 
-   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
+   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3 | GPIO_Pin_9;  //GPIO_Pin_9 - CH_PD, GPIO_Pin_3 - LED_GREEN
    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
    GPIO_Init(GPIOB, &GPIO_InitStructure);
 
-   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
-   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-   GPIO_Init(GPIOB, &GPIO_InitStructure);
-
-   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15;
+   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15; //LED_RED
    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
    GPIO_Init(GPIOA, &GPIO_InitStructure);
@@ -36,21 +31,21 @@ void GPIO_Configuration(void)
 void TIMERS_Configuration(void)
 {
 	//Delay function timer
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
-	TIM2->PSC = 23999; // f timer = fclk / 24000 => 1kHz
-	TIM2->ARR = 0xFFFF;
-	TIM2->CR1 = TIM_CR1_CEN;
-	DBGMCU->CR = DBGMCU_CR_DBG_TIM2_STOP;
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4,ENABLE);
+	TIM4->PSC = 23999; // f timer = fclk / 24000 => 1kHz
+	TIM4->ARR = 0xFFFF;
+	TIM4->CR1 = TIM_CR1_CEN;
+	DBGMCU->CR = DBGMCU_CR_DBG_TIM4_STOP;
 
 
 }
 
 void delay_ms(uint16_t ms)
 {
- TIM2->ARR = ms;
- TIM2->CNT = 0;
- while((TIM2->SR & TIM_SR_UIF)==0){}
- TIM2->SR &= ~TIM_SR_UIF;
+	TIM4->ARR = ms;
+	TIM4->CNT = 0;
+	while((TIM4->SR & TIM_SR_UIF)==0){}
+	TIM4->SR &= ~TIM_SR_UIF;
 }
 
 void led_green_blink(uint32_t time, uint8_t quantiti)

@@ -98,3 +98,9 @@ void WIFI_CONNECT(void)
 	}
 }
 
+void WIFI_hard_reset()
+{
+	CH_PD_OFF;
+	delay_ms(50);
+	WIFI_Init();
+}
