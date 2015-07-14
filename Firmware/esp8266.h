@@ -11,6 +11,6 @@ void WIFI_Init(void);
 void WIFI_command(unsigned char *command, unsigned char *answer);
 void WIFI_weit_connection(void);
 void WIFI_CONNECT(void);
-void WIFI_CLOSED(void);
+void WIFI_hard_reset(void);
 
 #endif

@@ -6,8 +6,8 @@
 #include <peripheral.h>
 
 
-#define LED_GREEN GPIOB, GPIO_Pin_15
-#define LED_RED  GPIOA, GPIO_Pin_3
+#define LED_GREEN GPIOA, GPIO_Pin_15
+#define LED_RED  GPIOB, GPIO_Pin_3
 #define LED_GREEN_ON  GPIO_SetBits(LED_GREEN);
 #define LED_GREEN_OFF GPIO_ResetBits(LED_GREEN);
 #define LED_RED_ON  GPIO_SetBits(LED_RED);
@@ -21,8 +21,8 @@
 void GPIO_Configuration(void);
 void TIMERS_Configuration(void);
 void delay_ms(uint16_t ms);
-void led_green_blink(uint32_t time, uint8_t quantiti);
-
+void led_red_blink(uint16_t time, uint8_t quantiti);
+void led_green_blink(uint16_t time, uint8_t quantiti);
 
 
 

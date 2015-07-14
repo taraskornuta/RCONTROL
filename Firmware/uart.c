@@ -183,7 +183,6 @@ void UART1_put_str(unsigned char *s)
   UART1_put_char(*s++);
 }
 
-
 void UART1_put_int(int32_t data)
 {
    unsigned char temp[10],count=0;
@@ -243,7 +242,7 @@ void UART1_read_str(unsigned char* s)
 
 void USART3_IRQHandler(void)
 {
-  LED_GREEN_ON;
+  LED_RED_ON;
   if(USART_GetITStatus(USART3, USART_IT_RXNE) == SET)
   {
        if ((USART3->SR & (USART_FLAG_NE|USART_FLAG_FE|USART_FLAG_PE|USART_FLAG_ORE)) == 0)
@@ -278,7 +277,7 @@ void USART3_IRQHandler(void)
         USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
      }
   }
-  LED_GREEN_OFF;
+  LED_RED_OFF;
 }
 
 

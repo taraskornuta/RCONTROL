@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <string.h>
 
-int ch1=1000;
-int ch2=1000;
-int ch3=1000;
-int ch4=1000;
-int ch5=1000;
-int ch6=1000;
-int ch7=1000;
-int ch8=1000;
+uint16_t ch1=1000;
+uint16_t ch2=1000;
+uint16_t ch3=1000;
+uint16_t ch4=1000;
+uint16_t ch5=1000;
+uint16_t ch6=1000;
+uint16_t ch7=1000;
+uint16_t ch8=1000;
 
 void WIFI_Init(void)
 {
@@ -42,7 +42,7 @@ void WIFI_command(unsigned char *command, unsigned char *answer)
         while((!strstr(Buffer,answer)));
 	if (strstr(Buffer, answer))
 	{
-	    led_green_blink(30,1);
+	    led_red_blink(30,1);
 	}
 }
 
@@ -98,7 +98,8 @@ void WIFI_CONNECT(void)
 	}
 }
 
-void WIFI_hard_reset()
+
+void WIFI_hard_reset(void)
 {
 	CH_PD_OFF;
 	delay_ms(50);

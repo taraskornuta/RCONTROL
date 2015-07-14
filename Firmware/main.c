@@ -11,7 +11,6 @@
 
 int main(void)
 {
-
 	SystemInit();
 	TIMERS_Configuration();
 	GPIO_Configuration();
@@ -20,6 +19,7 @@ int main(void)
 
 	WIFI_Init();
 	WIFI_weit_connection();
+
 
     while (1)
     {

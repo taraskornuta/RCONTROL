@@ -34,6 +34,7 @@ void CHANNELS_Configuration(void)
    TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
 
    /* PWM1 Mode configuration: Channel1 */
+   TIM_OCInitStructure.TIM_Pulse =
    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;
    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low;
 
@@ -133,4 +134,22 @@ void ch7_puls(uint16_t puls)
 void ch8_puls(uint16_t puls)
 {
 	TIM2->CCR4 = (uint16_t)(coeff * puls);
+}
+void freqON()
+{
+	TIM3->CCR1=50;
+}
+
+void freqOFF()
+{
+	TIM3->CCR1=0;
+}
+
+void cppm_output(uint16_t ch1, uint16_t ch2, uint16_t ch3, uint16_t ch4, uint16_t ch5, uint16_t ch6, uint16_t ch7, uint16_t ch8 )
+{
+	freqON();
+	delay_ms(4);
+	freqOFF();
+
+	//TIM3->CCR1 = (uint16_t)(coeff * puls);
 }

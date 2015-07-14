@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\..\Users\L\Documents\github /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\cmsis_boot /I..\..\..\..\..\Users\L\Documents\github\RCONTROL /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\cmsis /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\stm_lib\inc /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\stm_lib">
+      <source file="..\..\..\..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14df5b10280">
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_gpio.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\syscalls\syscalls.c" lastModified="14df5b11220">
+      </source>
+      <source file="..\..\..\..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_tim.h" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_gpio.h" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_usart.h" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\cmsis_boot\stm32f10x_conf.h" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_gpio.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_tim.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_usart.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\misc.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\cmsis\core_cm3.h" lastModified="14df5b10668">
+         <include file="..\..\..\..\..\..\cmsis\core_cmInstr.h"/>
+         <include file="..\..\..\..\..\..\cmsis\core_cmFunc.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_tim.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\peripheral.h" lastModified="14e8d8261ee">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\peripheral.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\inc\misc.h" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\uart.h" lastModified="14df8456fd6">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x_conf.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_usart.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\misc.h"/>
+         <include file="..\..\..\..\..\..\peripheral.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\peripheral.c" lastModified="14e8d8265c6">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\misc.h"/>
+         <include file="..\..\..\..\..\..\peripheral.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\uart.c" lastModified="14e8d74462a">
+         <include file="..\..\..\..\..\..\uart.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\cmsis\core_cmInstr.h" lastModified="14df5b10a50">
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_rcc.h" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\cmsis\core_cmFunc.h" lastModified="14df5b10a50">
+      </source>
+      <source file="..\..\..\..\..\..\esp8266.h" lastModified="14e8c4ac2ef">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\peripheral.h"/>
+         <include file="..\..\..\..\..\..\uart.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\main.c" lastModified="14e8d717ac6">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x_conf.h"/>
+         <include file="..\..\..\..\..\..\peripheral.h"/>
+         <include file="..\..\..\..\..\..\channels.h"/>
+         <include file="..\..\..\..\..\..\uart.h"/>
+         <include file="..\..\..\..\..\..\esp8266.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h" lastModified="14df5b10668">
+         <include file="..\..\..\..\..\..\cmsis\core_cm3.h"/>
+         <include file="..\..\..\..\..\..\cmsis_boot\system_stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x_conf.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\esp8266.c" lastModified="14e8d81bc04">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\esp8266.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\channels.h" lastModified="14e8dc3a5f6">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x_conf.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\src\misc.c" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\stm_lib\inc\misc.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="14df5b10280">
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_usart.h"/>
+         <include file="..\..\..\..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="14df5b10280">
+      </source>
+   </includePath>
+</dependencies>

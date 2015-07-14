@@ -22,4 +22,7 @@ void ch6_puls(uint16_t puls);
 void ch7_puls(uint16_t puls);
 void ch8_puls(uint16_t puls);
 
+void cppm_output(uint16_t ch1, uint16_t ch2, uint16_t ch3, uint16_t ch4, uint16_t ch5, uint16_t ch6, uint16_t ch7, uint16_t ch8 );
+
+
 #endif
