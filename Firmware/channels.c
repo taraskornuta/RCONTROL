@@ -1,5 +1,6 @@
 #include "stm32f10x.h"
 #include "channels.h"
+#include "peripheral.h"
 
 
 void CHANNELS_Configuration(void)

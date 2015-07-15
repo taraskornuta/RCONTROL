@@ -1522,7 +1522,7 @@ LOAD c:/arm toolchain/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-ea
 END GROUP
 OUTPUT(PWM1.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x5d86
+.debug_info     0x00000000     0x5d79
  .debug_info    0x00000000     0x1c58 ..\obj\stm32f10x_tim.o
  .debug_info    0x00001c58      0x479 ..\obj\system_stm32f10x.o
  .debug_info    0x000020d1      0x8b6 ..\obj\uart.o
@@ -1533,11 +1533,11 @@ OUTPUT(PWM1.elf elf32-littlearm)
  .debug_info    0x00003b2b      0x9e8 ..\obj\stm32f10x_usart.o
  .debug_info    0x00004513      0x533 ..\obj\peripheral.o
  .debug_info    0x00004a46      0x3ee ..\obj\syscalls.o
- .debug_info    0x00004e34      0x71a ..\obj\channels.o
- .debug_info    0x0000554e      0x53d ..\obj\misc.o
- .debug_info    0x00005a8b      0x2fb ..\obj\esp8266.o
+ .debug_info    0x00004e34      0x70d ..\obj\channels.o
+ .debug_info    0x00005541      0x53d ..\obj\misc.o
+ .debug_info    0x00005a7e      0x2fb ..\obj\esp8266.o
 
-.debug_abbrev   0x00000000     0x1142
+.debug_abbrev   0x00000000     0x112c
  .debug_abbrev  0x00000000      0x196 ..\obj\stm32f10x_tim.o
  .debug_abbrev  0x00000196      0x14c ..\obj\system_stm32f10x.o
  .debug_abbrev  0x000002e2      0x20d ..\obj\uart.o
@@ -1548,9 +1548,9 @@ OUTPUT(PWM1.elf elf32-littlearm)
  .debug_abbrev  0x000009d4      0x17c ..\obj\stm32f10x_usart.o
  .debug_abbrev  0x00000b50      0x14c ..\obj\peripheral.o
  .debug_abbrev  0x00000c9c       0xe2 ..\obj\syscalls.o
- .debug_abbrev  0x00000d7e      0x148 ..\obj\channels.o
- .debug_abbrev  0x00000ec6      0x145 ..\obj\misc.o
- .debug_abbrev  0x0000100b      0x137 ..\obj\esp8266.o
+ .debug_abbrev  0x00000d7e      0x132 ..\obj\channels.o
+ .debug_abbrev  0x00000eb0      0x145 ..\obj\misc.o
+ .debug_abbrev  0x00000ff5      0x137 ..\obj\esp8266.o
 
 .debug_aranges  0x00000000      0x858
  .debug_aranges
@@ -1632,7 +1632,7 @@ OUTPUT(PWM1.elf elf32-littlearm)
  .debug_str     0x00002221      0x164 ..\obj\syscalls.o
                                 0x2ea (size before relaxing)
  .debug_str     0x00002385       0xea ..\obj\channels.o
-                                0x5a1 (size before relaxing)
+                                0x598 (size before relaxing)
  .debug_str     0x0000246f      0x162 ..\obj\misc.o
                                 0x3cf (size before relaxing)
  .debug_str     0x000025d1       0x88 ..\obj\esp8266.o
