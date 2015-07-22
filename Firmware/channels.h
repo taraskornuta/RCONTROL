@@ -8,10 +8,12 @@
 
 #define MAX_COMMAND 2000
 #define MIN_COMMAND 1000
-#define MAX_PULSE   3450
+#define MAX_PULSE   4100
 #define MIN_PULSE   1700
 
 void CHANNELS_Configuration(void);
+void CHANNELS_Configuration1(void);
+
 
 void ch1_puls(int puls);
 void ch2_puls(int puls);

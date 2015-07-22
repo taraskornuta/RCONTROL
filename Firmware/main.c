@@ -14,16 +14,16 @@ int main(void)
 	SystemInit();
 	TIMERS_Configuration();
 	GPIO_Configuration();
-	CHANNELS_Configuration();
+	CHANNELS_Configuration1();
 	USART_Configuration();
 
-	WIFI_Init();
-	WIFI_weit_connection();
+	//WIFI_Init();
+	//WIFI_weit_connection();
 
 
     while (1)
     {
-    	//CPPM();
+    	CPPM();
     }
 }
 
