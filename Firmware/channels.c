@@ -28,7 +28,7 @@ void CHANNELS_Configuration(void)
 
 	 /* Time base configuration */
    TIM_TimeBaseStructure.TIM_Period = 34000; 				//Частота PWM
-   TIM_TimeBaseStructure.TIM_Prescaler = 13;				//Період в мсек
+   TIM_TimeBaseStructure.TIM_Prescaler = 34;				//Період в мсек
    TIM_TimeBaseStructure.TIM_ClockDivision = 0;
    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 
@@ -104,41 +104,43 @@ void CHANNELS_Configuration(void)
 double coeff= (double) MAX_PULSE / MAX_COMMAND; //Розрахунок коефіцієнта множення для задання періоду пульсації PWM
 
 
-void ch1_puls(uint16_t puls)
+void ch1_puls(int puls)
 {
 	TIM3->CCR1 = (uint16_t)(coeff * puls);
 }
-void ch2_puls(uint16_t puls)
+void ch2_puls(int puls)
 {
 	TIM3->CCR2 = (uint16_t)(coeff * puls);
 }
-void ch3_puls(uint16_t puls)
+void ch3_puls(int puls)
 {
 	TIM3->CCR3 = (uint16_t)(coeff * puls);
 }
-void ch4_puls(uint16_t puls)
+void ch4_puls(int puls)
 {
 	TIM3->CCR4 = (uint16_t)(coeff * puls);
 }
-void ch5_puls(uint16_t puls)
+void ch5_puls(int puls)
 {
 	TIM2->CCR1 = (uint16_t)(coeff * puls);
 }
-void ch6_puls(uint16_t puls)
+void ch6_puls(int puls)
 {
 	TIM2->CCR2 = (uint16_t)(coeff * puls);
 }
-void ch7_puls(uint16_t puls)
+void ch7_puls(int puls)
 {
 	TIM2->CCR3 = (uint16_t)(coeff * puls);
 }
-void ch8_puls(uint16_t puls)
+void ch8_puls(int puls)
 {
 	TIM2->CCR4 = (uint16_t)(coeff * puls);
 }
 void freqON()
 {
-	TIM3->CCR1=50;
+	int i;
+	i++;
+	TIM3->CCR1=i;
 }
 
 void freqOFF()
@@ -146,11 +148,18 @@ void freqOFF()
 	TIM3->CCR1=0;
 }
 
-void cppm_output(uint16_t ch1, uint16_t ch2, uint16_t ch3, uint16_t ch4, uint16_t ch5, uint16_t ch6, uint16_t ch7, uint16_t ch8 )
+void cppm_output(int ch1, int ch2, int ch3, int ch4, int ch5, int ch6, int ch7, int ch8 )
 {
 	freqON();
-	delay_ms(4);
+	delay_ms(2);
 	freqOFF();
 
 	//TIM3->CCR1 = (uint16_t)(coeff * puls);
+}
+
+void CPPM()
+{
+		freqON();
+		delay_ms(4);
+		freqOFF();
 }
