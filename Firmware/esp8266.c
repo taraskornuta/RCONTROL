@@ -3,14 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int ch1=1000;
-int ch2=1000;
-int ch3=1000;
-int ch4=1000;
-int ch5=1000;
-int ch6=1000;
-int ch7=1000;
-int ch8=1000;
+#define CH_QUANTITI 8
+
+int channel[CH_QUANTITI] = {1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000};
 
 void WIFI_Init(void)
 {
@@ -80,15 +75,15 @@ void WIFI_CONNECT(void)
 	{
 	    do{
 	        UART1_read_str(Buffer);
-	        sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&ch1,&ch2,&ch3,&ch4,&ch5,&ch6,&ch7,&ch8);
-	        ch1_puls(ch1);
-	        ch2_puls(ch2);
-	        ch3_puls(ch3);
-	        ch4_puls(ch4);
-	        ch5_puls(ch5);
-	        ch6_puls(ch6);
-	        ch7_puls(ch7);
-	        ch8_puls(ch8);
+	        sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&channel[0], &channel[1],&channel[2],&channel[3],&channel[4],&channel[5],&channel[6],&channel[7]);
+	        ch1_puls(channel[0]);
+	        ch2_puls(channel[1]);
+	        ch3_puls(channel[2]);
+	        ch4_puls(channel[3]);
+	        ch5_puls(channel[4]);
+	        ch6_puls(channel[5]);
+	        ch7_puls(channel[6]);
+	        ch8_puls(channel[7]);
 	      }
 	    while((!strstr(Buffer,"0,CLOSED")));
 	}
