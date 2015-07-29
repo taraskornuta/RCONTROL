@@ -76,6 +76,7 @@ void WIFI_CONNECT(void)
 	    do{
 	        UART1_read_str(Buffer);
 	        sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&channel[0], &channel[1],&channel[2],&channel[3],&channel[4],&channel[5],&channel[6],&channel[7]);
+
 	        ch1_puls(channel[0]);
 	        ch2_puls(channel[1]);
 	        ch3_puls(channel[2]);

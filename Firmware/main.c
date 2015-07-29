@@ -14,7 +14,7 @@ int main(void)
 	SystemInit();
 	TIMERS_Configuration();
 	GPIO_Configuration();
-	CHANNELS_Configuration1();
+	CHANNELS_Configuration();
 	USART_Configuration();
 
 	WIFI_Init();
