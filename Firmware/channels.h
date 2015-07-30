@@ -12,7 +12,7 @@
 #define MIN_PULSE   1700
 
 void CHANNELS_Configuration(void);
-void CHANNELS_Configuration1(void);
+
 
 
 void ch1_puls(int puls);

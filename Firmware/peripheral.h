@@ -17,6 +17,10 @@
 #define CH_PD_ON  GPIO_SetBits(CH_PD);
 #define CH_PD_OFF GPIO_ResetBits(CH_PD);
 
+#define PPM_PIN GPIOA, GPIO_Pin_0
+#define PPM_PIN_HI GPIO_SetBits(PPM_PIN);
+#define PPM_PIN_LO GPIO_ResetBits(PPM_PIN);
+
 
 void GPIO_Configuration(void);
 void TIMERS_Configuration(void);

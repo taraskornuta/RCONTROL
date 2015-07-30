@@ -33,7 +33,7 @@ void TIMERS_Configuration(void)
 	//Delay function timer
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4,ENABLE);
 	TIM4->PSC = 23999; // f timer = fclk / 24000 => 1kHz
-	TIM4->ARR = 0xFFFF;
+	TIM4->ARR = 65535;
 	TIM4->CR1 = TIM_CR1_CEN;
 	DBGMCU->CR = DBGMCU_CR_DBG_TIM4_STOP;
 }

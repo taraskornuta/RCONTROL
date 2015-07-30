@@ -1,11 +1,10 @@
 #include "stm32f10x.h"
 #include "esp8266.h"
+#include "channels.h"
 #include <stdio.h>
 #include <string.h>
 
-#define CH_QUANTITI 8
-
-int channel[CH_QUANTITI] = {1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000};
+int channel[CH_QUANTITI] = {MIN_COMMAND, MIN_COMMAND, MIN_COMMAND, MIN_COMMAND, MIN_COMMAND, MIN_COMMAND, MIN_COMMAND, MIN_COMMAND};
 
 void WIFI_Init(void)
 {
@@ -33,8 +32,9 @@ void WIFI_command(unsigned char *command, unsigned char *answer)
 	do
 	{
 	    UART1_read_str(Buffer);
-        }
-        while((!strstr(Buffer,answer)));
+    }
+    while((!strstr(Buffer,answer)));
+
 	if (strstr(Buffer, answer))
 	{
 	    led_red_blink(30,1);
@@ -45,13 +45,13 @@ void WIFI_weit_connection(void)
 {
 	do
 	{
-	    WIFI_CONNECT();
+	    WIFI_connect();
 	    UART1_read_str(Buffer);
 	}
 	while((!strstr(Buffer,"0,CONNECT")) && (!strstr(Buffer,"ERROR")) && (!strstr(Buffer,"busy")));
 	if (strstr(Buffer, "0,CONNECT"))
 	{
-	    WIFI_CONNECT();
+	    WIFI_connect();
 	}
 	else if (strstr(Buffer, "ERROR"))
 	{
@@ -64,7 +64,7 @@ void WIFI_weit_connection(void)
 	}
 }
 
-void WIFI_CONNECT(void)
+void WIFI_connect(void)
 {
 	do
 	{
