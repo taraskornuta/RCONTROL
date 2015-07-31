@@ -13,8 +13,6 @@
 
 void CHANNELS_Configuration(void);
 
-
-
 void ch1_puls(int puls);
 void ch2_puls(int puls);
 void ch3_puls(int puls);

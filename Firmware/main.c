@@ -17,13 +17,50 @@ int main(void)
 	CHANNELS_Configuration();
 	USART_Configuration();
 
-	WIFI_Init();
-	WIFI_weit_connection();
+	//WIFI_Init();
+	//WIFI_weit_connection();
 
 
     while (1)
     {
-    	//CPPM();
+    	LED_GREEN_OFF;
+    	delay_ms(30);
+    	LED_GREEN_ON;
+    	delay_ms(2);
+
+    	LED_GREEN_OFF;
+       	delay_ms(1);
+       	LED_GREEN_ON;
+       	delay_ms(2);
+       	LED_GREEN_OFF;
+       	delay_ms(1);
+       	LED_GREEN_ON;
+       	delay_ms(2);
+       	LED_GREEN_OFF;
+       	delay_ms(1);
+       	LED_GREEN_ON;
+       	delay_ms(2);
+       	LED_GREEN_OFF;
+       	delay_ms(1);
+       	LED_GREEN_ON;
+       	delay_ms(2);
+       	LED_GREEN_OFF;
+       	delay_ms(1);
+       	LED_GREEN_ON;
+       	delay_ms(2);
+       	LED_GREEN_OFF;
+       	delay_ms(1);
+       	LED_GREEN_ON;
+       	delay_ms(2);
+       	LED_GREEN_OFF;
+       	delay_ms(1);
+       	LED_GREEN_ON;
+       	delay_ms(2);
+       	LED_GREEN_OFF;
+        delay_ms(1);
+       	LED_GREEN_ON;
+       	delay_ms(2);
+
     }
 }
 
