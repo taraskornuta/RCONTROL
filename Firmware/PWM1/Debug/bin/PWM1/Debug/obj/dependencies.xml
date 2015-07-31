@@ -3,7 +3,7 @@
    <includePath signature="/I..\..\..\..\..\Users\L\Documents\github /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\cmsis_boot /I..\..\..\..\..\Users\L\Documents\github\RCONTROL /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\cmsis /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\stm_lib\inc /I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\stm_lib">
       <source file="..\..\..\..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14e8ba047b0">
       </source>
-      <source file="..\..\..\..\..\..\channels.c" lastModified="14ede7fb121">
+      <source file="..\..\..\..\..\..\channels.c" lastModified="14ee459137c">
          <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\..\..\..\channels.h"/>
          <include file="..\..\..\..\..\..\peripheral.h"/>
@@ -55,7 +55,7 @@
          <include file="..\..\..\..\..\..\stm_lib\inc\misc.h"/>
          <include file="..\..\..\..\..\..\peripheral.h"/>
       </source>
-      <source file="..\..\..\..\..\..\peripheral.c" lastModified="14ee3c90bd3">
+      <source file="..\..\..\..\..\..\peripheral.c" lastModified="14ee3fda00a">
          <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\..\..\..\stm_lib\inc\misc.h"/>
          <include file="..\..\..\..\..\..\peripheral.h"/>
@@ -73,17 +73,30 @@
       </source>
       <source file="..\..\..\..\..\..\cmsis\core_cmFunc.h" lastModified="14e8ba04f80">
       </source>
+      <source file="..\..\..\..\..\..\esp8266.h" lastModified="14edf1ae1ea">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\peripheral.h"/>
+         <include file="..\..\..\..\..\..\uart.h"/>
+      </source>
+      <source file="..\..\..\..\..\..\main.c" lastModified="14ee43de9c7">
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x_conf.h"/>
+         <include file="..\..\..\..\..\..\peripheral.h"/>
+         <include file="..\..\..\..\..\..\channels.h"/>
+         <include file="..\..\..\..\..\..\uart.h"/>
+         <include file="..\..\..\..\..\..\esp8266.h"/>
+      </source>
       <source file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h" lastModified="14e8ba04b98">
          <include file="..\..\..\..\..\..\cmsis\core_cm3.h"/>
          <include file="..\..\..\..\..\..\cmsis_boot\system_stm32f10x.h"/>
          <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x_conf.h"/>
       </source>
-      <source file="..\..\..\..\..\..\esp8266.c" lastModified="14edf1ae1a4">
+      <source file="..\..\..\..\..\..\esp8266.c" lastModified="14ee43e3912">
          <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\..\..\..\esp8266.h"/>
          <include file="..\..\..\..\..\..\channels.h"/>
       </source>
-      <source file="..\..\..\..\..\..\channels.h" lastModified="14ee3e55f2c">
+      <source file="..\..\..\..\..\..\channels.h" lastModified="14ee43de30d">
          <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x.h"/>
          <include file="..\..\..\..\..\..\cmsis_boot\stm32f10x_conf.h"/>
       </source>

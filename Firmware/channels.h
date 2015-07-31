@@ -11,6 +11,9 @@
 #define MAX_PULSE   4100
 #define MIN_PULSE   1700
 
+#define CHANNELS    8
+
+void CPPM_Configuration(void);
 void CHANNELS_Configuration(void);
 
 void ch1_puls(int puls);

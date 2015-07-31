@@ -2,7 +2,21 @@
 #include "channels.h"
 #include "peripheral.h"
 
+void CPPM_Configuration(void)
+{
+	/* GPIOA and GPIOB clock enable */
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
 
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+	/* GPIOA Configuration*/
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+}
 void CHANNELS_Configuration(void)
 {
 	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
@@ -139,4 +153,26 @@ void ch8_puls(int puls)
 	TIM2->CCR4 = (uint16_t)(coeff * puls);
 }
 
+void cppm_puls(int ch_mas[])			//Добавити вхідні данні і цикл пропахунку значень з масиву
+{
+	uint8_t ch_number = 0;
 
+	PPM_PIN_HI;
+	ch_number++;
+	if(ch_number > CHANNELS)
+	{
+		ch_number = 0;
+		delay_us(900); //Sync impulse
+		PPM_PIN_LO;
+	}
+	else
+	{
+		for(uint8_t i=0; i>CHANNELS; i++)
+		{
+    	//PPM_PIN_HI;		//CH1
+    	delay_us(ch_mas[i]);
+    	PPM_PIN_LO;
+    	delay_us(50);
+		}
+	}
+}
