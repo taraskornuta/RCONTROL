@@ -1,44 +1,50 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -Wno-pointer-sign -std=c99 -c -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSTM32F103C8 -DSTM32F10X_MD -I..\..\..\..\..\Users\L\Documents\github -I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\cmsis_boot -I..\..\..\..\..\Users\L\Documents\github\RCONTROL -I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware -I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\cmsis -I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\stm_lib\inc -I..\..\..\..\..\Users\L\Documents\github\RCONTROL\Firmware\stm_lib">
-      <target file="syscalls.o" lastModified="14ee458a93a">
-         <source file="..\..\..\..\..\..\syscalls\syscalls.c" lastModified="14e8ba047b0"/>
+   <processor signature="arm-none-eabi-gcc 4.8.1 mingw32 -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -Wno-pointer-sign -std=c99 -c -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSTM32F103C8 -DSTM32F10X_MD -I..\..\..\..\..\Users\Taras\Documents\GitHub\RCONTROL\Firmware\cmsis_boot -I..\..\..\..\..\Users\Taras\Documents\GitHub -I..\..\..\..\..\Users\Taras\Documents\GitHub\RCONTROL\Firmware -I..\..\..\..\..\Users\Taras\Documents\GitHub\RCONTROL\Firmware\stm_lib\inc -I..\..\..\..\..\Users\Taras\Documents\GitHub\RCONTROL\Firmware\stm_lib -I..\..\..\..\..\Users\Taras\Documents\GitHub\RCONTROL\Firmware\cmsis -I..\..\..\..\..\Users\Taras\Documents\GitHub\RCONTROL">
+      <target file="syscalls.o" lastModified="14efd58d112">
+         <source file="..\..\..\..\..\..\syscalls\syscalls.c" lastModified="14dddd8d2a0"/>
       </target>
-      <target file="uart.o" lastModified="14ee458a533">
-         <source file="..\..\..\..\..\..\uart.c" lastModified="14e8ba047b0"/>
+      <target file="uart.o" lastModified="14efd58cd14">
+         <source file="..\..\..\..\..\..\uart.c" lastModified="14efd30cd71"/>
       </target>
-      <target file="stm32f10x_tim.o" lastModified="14ee458a429">
-         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="14e8ba047b0"/>
+      <target file="stm32f10x_tim.o" lastModified="14efd58cc11">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="14dddd8d2a0"/>
       </target>
-      <target file="esp8266.o" lastModified="14ee458aaf0">
-         <source file="..\..\..\..\..\..\esp8266.c" lastModified="14ee43e3142"/>
+      <target file="stm32f10x_exti.o" lastModified="14efd58cf80">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_exti.c" lastModified="14efcf66be7"/>
       </target>
-      <target file="system_stm32f10x.o" lastModified="14ee458a497">
-         <source file="..\..\..\..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14e8ba047b0"/>
+      <target file="esp8266.o" lastModified="14efd58d313">
+         <source file="..\..\..\..\..\..\esp8266.c" lastModified="14efd4a4408"/>
       </target>
-      <target file="peripheral.o" lastModified="14ee458a8dc">
-         <source file="..\..\..\..\..\..\peripheral.c" lastModified="14ee3fd983a"/>
+      <target file="system_stm32f10x.o" lastModified="14efd58cc89">
+         <source file="..\..\..\..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14dddd8d2a0"/>
       </target>
-      <target file="main.o" lastModified="14ee458a6aa">
-         <source file="..\..\..\..\..\..\main.c" lastModified="14ee43dde0f"/>
+      <target file="peripheral.o" lastModified="14efd58d0b8">
+         <source file="..\..\..\..\..\..\peripheral.c" lastModified="14efd57e463"/>
       </target>
-      <target file="stm32f10x_gpio.o" lastModified="14ee458a62d">
-         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="14e8ba047b0"/>
+      <target file="main.o" lastModified="14f03b1ce7f">
+         <source file="..\..\..\..\..\..\main.c" lastModified="14f03afb714"/>
       </target>
-      <target file="stm32f10x_usart.o" lastModified="14ee458a85f">
-         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="14e8ba047b0"/>
+      <target file="stm32f10x_gpio.o" lastModified="14efd58cdfd">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="14dddd8d2a0"/>
       </target>
-      <target file="stm32f10x_rcc.o" lastModified="14ee458a775">
-         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="14e8ba047b0"/>
+      <target file="stm32f10x_usart.o" lastModified="14efd58d049">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="14dddd8d2a0"/>
       </target>
-      <target file="startup_stm32f10x_md.o" lastModified="14ee458a581">
-         <source file="..\..\..\..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14e8ba047b0"/>
+      <target file="stm32f10x_rcc.o" lastModified="14efd58cf0e">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="14dddd8d2a0"/>
       </target>
-      <target file="channels.o" lastModified="14ee4591699">
-         <source file="..\..\..\..\..\..\channels.c" lastModified="14ee459137c"/>
+      <target file="startup_stm32f10x_md.o" lastModified="14efd58cd51">
+         <source file="..\..\..\..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14dddd8d2a0"/>
       </target>
-      <target file="misc.o" lastModified="14ee458aa44">
-         <source file="..\..\..\..\..\..\stm_lib\src\misc.c" lastModified="14e8ba047b0"/>
+      <target file="channels.o" lastModified="14f041d92f9">
+         <source file="..\..\..\..\..\..\channels.c" lastModified="14f041d8e6f"/>
+      </target>
+      <target file="stm32f10x_dma.o" lastModified="14efd58d1a1">
+         <source file="..\..\..\..\..\..\stm_lib\src\stm32f10x_dma.c" lastModified="14efcf67032"/>
+      </target>
+      <target file="misc.o" lastModified="14efd58d2a2">
+         <source file="..\..\..\..\..\..\stm_lib\src\misc.c" lastModified="14dddd8d2a0"/>
       </target>
    </processor>
 </history>

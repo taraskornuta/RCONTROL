@@ -12,62 +12,20 @@
 int main(void)
 {
 	SystemInit();
+	//__disable_irq();
 	TIMERS_Configuration();
 	GPIO_Configuration();
-	CHANNELS_Configuration();
+	//PWM_Configuration();
+	DMA_Configuration();
 	CPPM_Configuration();
 	USART_Configuration();
-
+	//__enable_irq();
 	WIFI_Init();
 	WIFI_weit_connection();
 
 
     while (1)
     {
-
-//    	PPM_PIN_HI;
-//    	delay_us(900);
-//
-//    	PPM_PIN_HI;		//CH1
-//    	delay_us(100);
-//    	PPM_PIN_LO;
-//    	delay_us(50);
-//
-//    	PPM_PIN_HI;		//CH2
-//    	delay_us(150);
-//    	PPM_PIN_LO;
-//    	delay_us(50);
-//
-//    	PPM_PIN_HI;		//CH3
-//    	delay_us(170);
-//    	PPM_PIN_LO;
-//    	delay_us(50);
-//
-//    	PPM_PIN_HI;		//CH4
-//    	delay_us(150);
-//    	PPM_PIN_LO;
-//    	delay_us(50);
-//
-//    	PPM_PIN_HI;		//CH5
-//    	delay_us(180);
-//    	PPM_PIN_LO;
-//    	delay_us(50);
-//
-//    	PPM_PIN_HI;		//CH6
-//    	delay_us(150);
-//    	PPM_PIN_LO;
-//    	delay_us(50);
-//
-//    	PPM_PIN_HI;		//CH7
-//    	delay_us(130);
-//    	PPM_PIN_LO;
-//    	delay_us(50);
-//
-//    	PPM_PIN_HI;		//CH8
-//    	delay_us(200);
-//    	PPM_PIN_LO;
-//    	delay_us(50);
-
 
     }
 }

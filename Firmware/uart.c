@@ -208,10 +208,10 @@ void UART1_put_int(int32_t data)
           else UART1_put_char('0');
 
 }
+
 void buff_clear()															//	очищаем буфер
 {
-  int i;
-  for(i=0;i<UART3_STRING_BUFFER_SIZE;i++)
+  for(uint8_t i=0;i<UART3_STRING_BUFFER_SIZE;i++)
     {
 	Buffer[i]=0;
     }

@@ -14,7 +14,8 @@
 #define CHANNELS    8
 
 void CPPM_Configuration(void);
-void CHANNELS_Configuration(void);
+void DMA_Configuration(void);
+void PWM_Configuration(void);
 
 void ch1_puls(int puls);
 void ch2_puls(int puls);
@@ -25,7 +26,7 @@ void ch6_puls(int puls);
 void ch7_puls(int puls);
 void ch8_puls(int puls);
 
-void cppm_output(int ch1, int ch2, int ch3, int ch4, int ch5, int ch6, int ch7, int ch8 );
+
 
 
 #endif
