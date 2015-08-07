@@ -21,7 +21,7 @@
 #define PPM_PIN_HI GPIO_SetBits(PPM_PIN);
 #define PPM_PIN_LO GPIO_ResetBits(PPM_PIN);
 
-
+void Periph_Init(void);
 void GPIO_Configuration(void);
 void TIMERS_Configuration(void);
 void delay_ms(uint16_t ms);

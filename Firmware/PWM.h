@@ -13,7 +13,7 @@
 
 #define CHANNELS    8
 
-void PWM_Init(void);
+
 void PWM_Configuration(void);
 
 void ch1_puls(int puls);

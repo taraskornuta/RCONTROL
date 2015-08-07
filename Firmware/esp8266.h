@@ -4,7 +4,7 @@
 #include "stm32f10x.h"
 #include "peripheral.h"
 #include "uart.h"
-#include "channels.h"
+#include "PWM.h"
 #include <stdio.h>
 #include <string.h>
 

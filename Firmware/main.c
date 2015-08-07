@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "peripheral.h"
-#include "channels.h"
+#include "PWM.h"
+#include "CPPM.h"
 #include "uart.h"
 #include "esp8266.h"
 
@@ -12,14 +13,12 @@
 int main(void)
 {
 	SystemInit();
-	//__disable_irq();
-	TIMERS_Configuration();
-	GPIO_Configuration();
-	//PWM_Configuration();
-	DMA_Configuration();
-	CPPM_Configuration();
+
+	Periph_Init();
+	CPPM_Init();
+	//PWM_Init();
 	USART_Configuration();
-	//__enable_irq();
+
 	WIFI_Init();
 	WIFI_weit_connection();
 

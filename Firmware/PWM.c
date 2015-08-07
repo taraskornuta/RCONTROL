@@ -5,11 +5,6 @@
 
 double coeff= (double) MAX_PULSE / MAX_COMMAND; //Розрахунок коефіцієнта множення для задання періоду пульсації PWM
 
-void PWM_Init(void)
-{
-	PWM_Configuration();
-}
-
 void PWM_Configuration(void)
 {
 	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;

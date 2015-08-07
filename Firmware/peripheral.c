@@ -4,7 +4,11 @@
 #include <stdlib.h>
 #include "peripheral.h"
 
-
+void Periph_Init(void)
+{
+	TIMERS_Configuration();
+	GPIO_Configuration();
+}
 void GPIO_Configuration(void)
 {
     /* Port PB3, PA15 JTAG pins, mast be disabled */

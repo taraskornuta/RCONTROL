@@ -1,6 +1,6 @@
 #include "stm32f10x.h"
 #include "esp8266.h"
-#include "channels.h"
+#include "PWM.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -10,21 +10,14 @@ int Channel[CH_QUANTITI] = {MIN_COMMAND, MIN_COMMAND, MIN_COMMAND, MIN_COMMAND, 
 void WIFI_Init(void)
 {
 	CH_PD_ON;
-	delay_ms(200);
-	WIFI_command((unsigned char *)"AT+RST\r\n",(unsigned char *) "ready");
-	WIFI_command((unsigned char *)"ATE0\r\n",(unsigned char *) "OK");
-	delay_ms(200);
-	WIFI_command((unsigned char *)"AT+CWMODE=2\r\n", (unsigned char *)"OK");
-	delay_ms(200);
-	WIFI_command((unsigned char *)"AT+CWSAP=\"RCONTROL\",\"rcontrol\",3,3\r\n", (unsigned char *)"OK");
-	delay_ms(500);
-	WIFI_command((unsigned char *)"AT+CIPMODE=0\r\n", (unsigned char *)"OK");
-	delay_ms(200);
-	WIFI_command((unsigned char *)"AT+CIPMUX=1\r\n", (unsigned char *)"OK");
-	delay_ms(200);
-	WIFI_command((unsigned char *)"AT+CIPSERVER=1,8000\r\n", (unsigned char *)"OK");
-	delay_ms(200);
-	WIFI_command((unsigned char *)"AT+CIPSTART=0,\"UDP\",\"192.168.4.1\",8000,8000,2\r\n", (unsigned char *)"OK");
+	WIFI_command("AT+RST\r\n", "ready");
+	WIFI_command("ATE0\r\n", "OK");
+	WIFI_command("AT+CWMODE=2\r\n", "OK");
+	WIFI_command("AT+CWSAP=\"RCONTROL\",\"rcontrol\",3,3\r\n", "OK");
+	WIFI_command("AT+CIPMODE=0\r\n", "OK");
+	WIFI_command("AT+CIPMUX=1\r\n", "OK");
+	WIFI_command("AT+CIPSERVER=1,8000\r\n", "OK");
+	WIFI_command("AT+CIPSTART=0,\"UDP\",\"192.168.4.1\",8000,8000,2\r\n", "OK");
 }
 
 void WIFI_command(unsigned char *command, unsigned char *answer)
@@ -74,7 +67,8 @@ void WIFI_connect(void)
 	while((!strstr(Buffer,"\n+IPD,0,39:"))&& (!strstr(Buffer,"0,CLOSED")));
 	if (strstr(Buffer, "\n+IPD,0,39:"))
 	{
-	    do{
+	    do
+	    {
 	        UART1_read_str(Buffer);
 	        sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&Channel[0], &Channel[1],&Channel[2],&Channel[3],&Channel[4],&Channel[5],&Channel[6],&Channel[7]);
 
@@ -86,7 +80,7 @@ void WIFI_connect(void)
 //	        ch6_puls(channel[5]);
 //	        ch7_puls(channel[6]);
 //	        ch8_puls(channel[7]);
-	      }
+	     }
 	    while((!strstr(Buffer,"0,CLOSED")));
 	}
 	if (strstr(Buffer, "0,CLOSED"))

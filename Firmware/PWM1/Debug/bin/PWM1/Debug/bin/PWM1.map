@@ -302,6 +302,8 @@ Discarded input sections
  .text          0x00000000        0x0 ..\obj\main.o
  .data          0x00000000        0x0 ..\obj\main.o
  .bss           0x00000000        0x0 ..\obj\main.o
+ .text          0x00000000        0x0 ..\obj\CPPM.o
+ .bss           0x00000000        0x0 ..\obj\CPPM.o
  .text          0x00000000        0x0 ..\obj\stm32f10x_rcc.o
  .bss           0x00000000        0x0 ..\obj\stm32f10x_rcc.o
  .text.RCC_DeInit
@@ -475,7 +477,10 @@ Discarded input sections
  .text.DMA_ClearITPendingBit
                 0x00000000       0x5c ..\obj\stm32f10x_dma.o
  .text          0x00000000        0x0 ..\obj\channels.o
+ .data          0x00000000        0x8 ..\obj\channels.o
  .bss           0x00000000        0x0 ..\obj\channels.o
+ .text.PWM_Init
+                0x00000000        0xc ..\obj\channels.o
  .text.PWM_Configuration
                 0x00000000      0x184 ..\obj\channels.o
  .text.ch1_puls
@@ -494,6 +499,17 @@ Discarded input sections
                 0x00000000       0x38 ..\obj\channels.o
  .text.ch8_puls
                 0x00000000       0x3c ..\obj\channels.o
+ .debug_info    0x00000000      0x6a2 ..\obj\channels.o
+ .debug_abbrev  0x00000000      0x139 ..\obj\channels.o
+ .debug_aranges
+                0x00000000       0x68 ..\obj\channels.o
+ .debug_ranges  0x00000000       0x58 ..\obj\channels.o
+ .debug_line    0x00000000      0x2be ..\obj\channels.o
+ .debug_str     0x00000000      0x5ea ..\obj\channels.o
+ .comment       0x00000000       0x71 ..\obj\channels.o
+ .debug_frame   0x00000000      0x190 ..\obj\channels.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\channels.o
  .text          0x00000000        0x0 ..\obj\misc.o
  .data          0x00000000        0x0 ..\obj\misc.o
  .bss           0x00000000        0x0 ..\obj\misc.o
@@ -702,7 +718,7 @@ Linker script and memory map
 
                 0x20005000                _eram = 0x20005000
 
-.text           0x08000000     0x3f24
+.text           0x08000000     0x3f10
  *(.isr_vector)
  .isr_vector    0x08000000      0x10c ..\obj\startup_stm32f10x_md.o
                 0x08000000                g_pfnVectors
@@ -825,145 +841,151 @@ Linker script and memory map
  .text.GPIO_PinRemapConfig
                 0x08001620      0x2fc ..\obj\stm32f10x_gpio.o
                 0x08001620                GPIO_PinRemapConfig
- .text.main     0x0800191c       0x28 ..\obj\main.o
+ .text.main     0x0800191c       0x20 ..\obj\main.o
                 0x0800191c                main
  .text.assert_failed
-                0x08001944        0xc ..\obj\main.o
-                0x08001944                assert_failed
- .text.RCC_GetClocksFreq
-                0x08001950      0x164 ..\obj\stm32f10x_rcc.o
-                0x08001950                RCC_GetClocksFreq
- .text.RCC_AHBPeriphClockCmd
-                0x08001ab4       0x70 ..\obj\stm32f10x_rcc.o
-                0x08001ab4                RCC_AHBPeriphClockCmd
- .text.RCC_APB2PeriphClockCmd
-                0x08001b24       0x70 ..\obj\stm32f10x_rcc.o
-                0x08001b24                RCC_APB2PeriphClockCmd
- .text.RCC_APB1PeriphClockCmd
-                0x08001b94       0x70 ..\obj\stm32f10x_rcc.o
-                0x08001b94                RCC_APB1PeriphClockCmd
- .text.USART_Init
-                0x08001c04      0x2b8 ..\obj\stm32f10x_usart.o
-                0x08001c04                USART_Init
- .text.USART_Cmd
-                0x08001ebc       0x9c ..\obj\stm32f10x_usart.o
-                0x08001ebc                USART_Cmd
- .text.USART_ITConfig
-                0x08001f58      0x168 ..\obj\stm32f10x_usart.o
-                0x08001f58                USART_ITConfig
- .text.USART_SendData
-                0x080020c0       0x7c ..\obj\stm32f10x_usart.o
-                0x080020c0                USART_SendData
- .text.USART_ReceiveData
-                0x0800213c       0x68 ..\obj\stm32f10x_usart.o
-                0x0800213c                USART_ReceiveData
- .text.USART_GetFlagStatus
-                0x080021a4       0xf4 ..\obj\stm32f10x_usart.o
-                0x080021a4                USART_GetFlagStatus
- .text.USART_GetITStatus
-                0x08002298      0x18c ..\obj\stm32f10x_usart.o
-                0x08002298                USART_GetITStatus
- .text.GPIO_Configuration
-                0x08002424       0x60 ..\obj\peripheral.o
-                0x08002424                GPIO_Configuration
- .text.TIMERS_Configuration
-                0x08002484       0x24 ..\obj\peripheral.o
-                0x08002484                TIMERS_Configuration
- .text.delay_ms
-                0x080024a8       0x4c ..\obj\peripheral.o
-                0x080024a8                delay_ms
- .text.led_red_blink
-                0x080024f4       0x50 ..\obj\peripheral.o
-                0x080024f4                led_red_blink
- .text._sbrk    0x08002544       0x40 ..\obj\syscalls.o
-                0x08002544                _sbrk
- .text.DMA_DeInit
-                0x08002584      0x1e0 ..\obj\stm32f10x_dma.o
-                0x08002584                DMA_DeInit
- .text.DMA_Init
-                0x08002764      0x220 ..\obj\stm32f10x_dma.o
-                0x08002764                DMA_Init
- .text.DMA_Cmd  0x08002984       0xe8 ..\obj\stm32f10x_dma.o
-                0x08002984                DMA_Cmd
+                0x0800193c        0xc ..\obj\main.o
+                0x0800193c                assert_failed
+ .text.CPPM_Init
+                0x08001948       0x10 ..\obj\CPPM.o
+                0x08001948                CPPM_Init
  .text.CPPM_Configuration
-                0x08002a6c       0xc0 ..\obj\channels.o
-                0x08002a6c                CPPM_Configuration
+                0x08001958       0xc0 ..\obj\CPPM.o
+                0x08001958                CPPM_Configuration
  .text.DMA_Configuration
-                0x08002b2c       0x6c ..\obj\channels.o
-                0x08002b2c                DMA_Configuration
+                0x08001a18       0x6c ..\obj\CPPM.o
+                0x08001a18                DMA_Configuration
  .text.TIM2_IRQHandler
-                0x08002b98       0x94 ..\obj\channels.o
-                0x08002b98                TIM2_IRQHandler
+                0x08001a84       0x94 ..\obj\CPPM.o
+                0x08001a84                TIM2_IRQHandler
+ .text.RCC_GetClocksFreq
+                0x08001b18      0x164 ..\obj\stm32f10x_rcc.o
+                0x08001b18                RCC_GetClocksFreq
+ .text.RCC_AHBPeriphClockCmd
+                0x08001c7c       0x70 ..\obj\stm32f10x_rcc.o
+                0x08001c7c                RCC_AHBPeriphClockCmd
+ .text.RCC_APB2PeriphClockCmd
+                0x08001cec       0x70 ..\obj\stm32f10x_rcc.o
+                0x08001cec                RCC_APB2PeriphClockCmd
+ .text.RCC_APB1PeriphClockCmd
+                0x08001d5c       0x70 ..\obj\stm32f10x_rcc.o
+                0x08001d5c                RCC_APB1PeriphClockCmd
+ .text.USART_Init
+                0x08001dcc      0x2b8 ..\obj\stm32f10x_usart.o
+                0x08001dcc                USART_Init
+ .text.USART_Cmd
+                0x08002084       0x9c ..\obj\stm32f10x_usart.o
+                0x08002084                USART_Cmd
+ .text.USART_ITConfig
+                0x08002120      0x168 ..\obj\stm32f10x_usart.o
+                0x08002120                USART_ITConfig
+ .text.USART_SendData
+                0x08002288       0x7c ..\obj\stm32f10x_usart.o
+                0x08002288                USART_SendData
+ .text.USART_ReceiveData
+                0x08002304       0x68 ..\obj\stm32f10x_usart.o
+                0x08002304                USART_ReceiveData
+ .text.USART_GetFlagStatus
+                0x0800236c       0xf4 ..\obj\stm32f10x_usart.o
+                0x0800236c                USART_GetFlagStatus
+ .text.USART_GetITStatus
+                0x08002460      0x18c ..\obj\stm32f10x_usart.o
+                0x08002460                USART_GetITStatus
+ .text.Periph_Init
+                0x080025ec       0x10 ..\obj\peripheral.o
+                0x080025ec                Periph_Init
+ .text.GPIO_Configuration
+                0x080025fc       0x60 ..\obj\peripheral.o
+                0x080025fc                GPIO_Configuration
+ .text.TIMERS_Configuration
+                0x0800265c       0x24 ..\obj\peripheral.o
+                0x0800265c                TIMERS_Configuration
+ .text.delay_ms
+                0x08002680       0x4c ..\obj\peripheral.o
+                0x08002680                delay_ms
+ .text.led_red_blink
+                0x080026cc       0x50 ..\obj\peripheral.o
+                0x080026cc                led_red_blink
+ .text._sbrk    0x0800271c       0x40 ..\obj\syscalls.o
+                0x0800271c                _sbrk
+ .text.DMA_DeInit
+                0x0800275c      0x1e0 ..\obj\stm32f10x_dma.o
+                0x0800275c                DMA_DeInit
+ .text.DMA_Init
+                0x0800293c      0x220 ..\obj\stm32f10x_dma.o
+                0x0800293c                DMA_Init
+ .text.DMA_Cmd  0x08002b5c       0xe8 ..\obj\stm32f10x_dma.o
+                0x08002b5c                DMA_Cmd
  .text.NVIC_Init
-                0x08002c2c       0xfc ..\obj\misc.o
-                0x08002c2c                NVIC_Init
+                0x08002c44       0xfc ..\obj\misc.o
+                0x08002c44                NVIC_Init
  .text.WIFI_Init
-                0x08002d28       0xa8 ..\obj\esp8266.o
-                0x08002d28                WIFI_Init
+                0x08002d40       0x7c ..\obj\esp8266.o
+                0x08002d40                WIFI_Init
  .text.WIFI_command
-                0x08002dd0       0x44 ..\obj\esp8266.o
-                0x08002dd0                WIFI_command
+                0x08002dbc       0x44 ..\obj\esp8266.o
+                0x08002dbc                WIFI_command
  .text.WIFI_weit_connection
-                0x08002e14       0x8c ..\obj\esp8266.o
-                0x08002e14                WIFI_weit_connection
+                0x08002e00       0x8c ..\obj\esp8266.o
+                0x08002e00                WIFI_weit_connection
  .text.WIFI_connect
-                0x08002ea0       0xb4 ..\obj\esp8266.o
-                0x08002ea0                WIFI_connect
- .text.sscanf   0x08002f54       0x54 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sscanf.o)
-                0x08002f54                siscanf
-                0x08002f54                sscanf
+                0x08002e8c       0xb4 ..\obj\esp8266.o
+                0x08002e8c                WIFI_connect
+ .text.sscanf   0x08002f40       0x54 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sscanf.o)
+                0x08002f40                siscanf
+                0x08002f40                sscanf
  .text.__seofread
-                0x08002fa8        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-stdio.o)
-                0x08002fa8                __seofread
- .text.strlen   0x08002fac       0x10 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
-                0x08002fac                strlen
- .text.strstr   0x08002fbc       0x30 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strstr.o)
-                0x08002fbc                strstr
+                0x08002f94        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-stdio.o)
+                0x08002f94                __seofread
+ .text.strlen   0x08002f98       0x10 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
+                0x08002f98                strlen
+ .text.strstr   0x08002fa8       0x30 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strstr.o)
+                0x08002fa8                strstr
  .text._sungetc_r
-                0x08002fec       0x7a e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
-                0x08002fec                _sungetc_r
+                0x08002fd8       0x7a e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
+                0x08002fd8                _sungetc_r
  .text.__ssrefill_r
-                0x08003066       0x3a e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
-                0x08003066                __ssrefill_r
+                0x08003052       0x3a e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
+                0x08003052                __ssrefill_r
  .text.__ssvfscanf_r
-                0x080030a0      0x29c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
-                0x080030a0                __ssvfiscanf_r
-                0x080030a0                __ssvfscanf_r
+                0x0800308c      0x29c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
+                0x0800308c                __ssvfiscanf_r
+                0x0800308c                __ssvfscanf_r
  .text._scanf_chars
-                0x0800333c       0xbc e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
-                0x0800333c                _scanf_chars
+                0x08003328       0xbc e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x08003328                _scanf_chars
  .text._scanf_i
-                0x080033f8      0x1e4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
-                0x080033f8                _scanf_i
- .text.__sccl   0x080035dc       0x62 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sccl.o)
-                0x080035dc                __sccl
- *fill*         0x0800363e        0x2 
+                0x080033e4      0x1e4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x080033e4                _scanf_i
+ .text.__sccl   0x080035c8       0x62 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sccl.o)
+                0x080035c8                __sccl
+ *fill*         0x0800362a        0x2 
  .text._strtol_r
-                0x08003640      0x10c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strtol.o)
-                0x08003640                _strtol_r
+                0x0800362c      0x10c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strtol.o)
+                0x0800362c                _strtol_r
  .text._strtoul_r
-                0x0800374c       0xf8 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strtoul.o)
-                0x0800374c                _strtoul_r
+                0x08003738       0xf8 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strtoul.o)
+                0x08003738                _strtoul_r
  .text.__submore
-                0x08003844       0x72 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-ungetc.o)
-                0x08003844                __submore
- .text.memchr   0x080038b6       0x1c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr.o)
-                0x080038b6                memchr
- .text.memcpy   0x080038d2       0x16 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
-                0x080038d2                memcpy
- .text._free_r  0x080038e8       0x88 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
-                0x080038e8                _free_r
+                0x08003830       0x72 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-ungetc.o)
+                0x08003830                __submore
+ .text.memchr   0x080038a2       0x1c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr.o)
+                0x080038a2                memchr
+ .text.memcpy   0x080038be       0x16 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x080038be                memcpy
+ .text._free_r  0x080038d4       0x88 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+                0x080038d4                _free_r
  .text._malloc_r
-                0x08003970       0xac e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x08003970                _malloc_r
+                0x0800395c       0xac e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x0800395c                _malloc_r
  .text._realloc_r
-                0x08003a1c       0x4c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
-                0x08003a1c                _realloc_r
- .text._sbrk_r  0x08003a68       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
-                0x08003a68                _sbrk_r
+                0x08003a08       0x4c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
+                0x08003a08                _realloc_r
+ .text._sbrk_r  0x08003a54       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+                0x08003a54                _sbrk_r
  .text._malloc_usable_size_r
-                0x08003a88       0x14 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
-                0x08003a88                _malloc_usable_size_r
+                0x08003a74       0x14 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+                0x08003a74                _malloc_usable_size_r
  *(.init)
  *(.fini)
  *crtbegin.o(.ctors)
@@ -977,157 +999,155 @@ Linker script and memory map
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x08003a9c       0x50 ..\obj\stm32f10x_tim.o
- .rodata        0x08003aec       0x50 ..\obj\stm32f10x_gpio.o
- .rodata        0x08003b3c       0x50 ..\obj\stm32f10x_rcc.o
- .rodata        0x08003b8c       0x50 ..\obj\stm32f10x_usart.o
- .rodata        0x08003bdc       0x50 ..\obj\stm32f10x_dma.o
- .rodata        0x08003c2c       0x48 ..\obj\misc.o
- .rodata        0x08003c74      0x120 ..\obj\esp8266.o
+ .rodata        0x08003a88       0x50 ..\obj\stm32f10x_tim.o
+ .rodata        0x08003ad8       0x50 ..\obj\stm32f10x_gpio.o
+ .rodata        0x08003b28       0x50 ..\obj\stm32f10x_rcc.o
+ .rodata        0x08003b78       0x50 ..\obj\stm32f10x_usart.o
+ .rodata        0x08003bc8       0x50 ..\obj\stm32f10x_dma.o
+ .rodata        0x08003c18       0x48 ..\obj\misc.o
+ .rodata        0x08003c60      0x120 ..\obj\esp8266.o
  .rodata.str1.1
-                0x08003d94        0x2 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x08003d80        0x2 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .rodata.str1.1
-                0x08003d96        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
- *fill*         0x08003d9a        0x2 
- .rodata        0x08003d9c        0xc e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x08003d82        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
+ *fill*         0x08003d86        0x2 
+ .rodata        0x08003d88        0xc e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
  .rodata.str1.1
-                0x08003da8       0x1b e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x08003d94       0x1b e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
  .rodata._ctype_
-                0x08003dc3      0x101 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-ctype_.o)
-                0x08003dc3                _ctype_
+                0x08003daf      0x101 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-ctype_.o)
+                0x08003daf                _ctype_
  .rodata.__sf_fake_stdin
-                0x08003ec4       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-findfp.o)
-                0x08003ec4                __sf_fake_stdin
+                0x08003eb0       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-findfp.o)
+                0x08003eb0                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x08003ee4       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-findfp.o)
-                0x08003ee4                __sf_fake_stdout
+                0x08003ed0       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-findfp.o)
+                0x08003ed0                __sf_fake_stdout
  .rodata.__sf_fake_stderr
-                0x08003f04       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-findfp.o)
-                0x08003f04                __sf_fake_stderr
+                0x08003ef0       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-findfp.o)
+                0x08003ef0                __sf_fake_stderr
  *(.eh_fram e*)
 
-.glue_7         0x08003f24        0x0
+.glue_7         0x08003f10        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x08003f24        0x0
+.glue_7t        0x08003f10        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x08003f24        0x0
+.vfp11_veneer   0x08003f10        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08003f24        0x0
+.v4_bx          0x08003f10        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08003f24        0x0
+.iplt           0x08003f10        0x0
  .iplt          0x00000000        0x0 ..\obj\stm32f10x_tim.o
 
-.rel.dyn        0x08003f24        0x0
+.rel.dyn        0x08003f10        0x0
  .rel.iplt      0x00000000        0x0 ..\obj\stm32f10x_tim.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08003f24                __exidx_start = .
+                0x08003f10                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08003f24                __exidx_end = .
-                0x08003f24                __etext = .
-                0x08003f24                _sidata = __etext
+                0x08003f10                __exidx_end = .
+                0x08003f10                __etext = .
+                0x08003f10                _sidata = __etext
 
-.data           0x20000000       0xd0 load address 0x08003f24
+.data           0x20000000       0xc0 load address 0x08003f10
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
  *(.data*)
- .data          0x20000000       0x14 ..\obj\stm32f10x_rcc.o
- *fill*         0x20000014        0x4 
- .data          0x20000018       0x30 ..\obj\channels.o
-                0x20000018                coeff
-                0x20000020                PPM_Buffer
- .data          0x20000048       0x20 ..\obj\esp8266.o
-                0x20000048                Channel
+ .data          0x20000000       0x24 ..\obj\CPPM.o
+                0x20000000                PPM_Buffer
+ .data          0x20000024       0x14 ..\obj\stm32f10x_rcc.o
+ .data          0x20000038       0x20 ..\obj\esp8266.o
+                0x20000038                Channel
  .data.impure_data
-                0x20000068       0x60 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x20000058       0x60 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .data._impure_ptr
-                0x200000c8        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x200000c8                _impure_ptr
+                0x200000b8        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x200000b8                _impure_ptr
  .data.__ctype_ptr__
-                0x200000cc        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-ctype_.o)
-                0x200000cc                __ctype_ptr__
-                0x200000d0                . = ALIGN (0x4)
-                0x200000d0                PROVIDE (__preinit_array_start, .)
+                0x200000bc        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-ctype_.o)
+                0x200000bc                __ctype_ptr__
+                0x200000c0                . = ALIGN (0x4)
+                0x200000c0                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x200000d0                PROVIDE (__preinit_array_end, .)
-                0x200000d0                . = ALIGN (0x4)
-                0x200000d0                PROVIDE (__init_array_start, .)
+                0x200000c0                PROVIDE (__preinit_array_end, .)
+                0x200000c0                . = ALIGN (0x4)
+                0x200000c0                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x200000d0                PROVIDE (__init_array_end, .)
-                0x200000d0                . = ALIGN (0x4)
-                0x200000d0                PROVIDE (__fini_array_start, .)
+                0x200000c0                PROVIDE (__init_array_end, .)
+                0x200000c0                . = ALIGN (0x4)
+                0x200000c0                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array)
-                0x200000d0                PROVIDE (__fini_array_end, .)
+                0x200000c0                PROVIDE (__fini_array_end, .)
  *(.jcr*)
-                0x200000d0                . = ALIGN (0x4)
-                0x200000d0                __data_end__ = .
-                0x200000d0                _edata = __data_end__
+                0x200000c0                . = ALIGN (0x4)
+                0x200000c0                __data_end__ = .
+                0x200000c0                _edata = __data_end__
 
-.igot.plt       0x200000d0        0x0 load address 0x08003ff4
+.igot.plt       0x200000c0        0x0 load address 0x08003fd0
  .igot.plt      0x00000000        0x0 ..\obj\stm32f10x_tim.o
 
-.bss            0x200000d0      0x2c8 load address 0x08003ff4
-                0x200000d0                . = ALIGN (0x4)
-                0x200000d0                __bss_start__ = .
-                0x200000d0                _sbss = __bss_start__
+.bss            0x200000c0      0x2c8 load address 0x08003fd0
+                0x200000c0                . = ALIGN (0x4)
+                0x200000c0                __bss_start__ = .
+                0x200000c0                _sbss = __bss_start__
  *(.bss*)
- .bss           0x200000d0       0x38 ..\obj\uart.o
-                0x200000d0                UART1_rx_wr_index
-                0x200000d4                UART1_rx_rd_index
-                0x200000d8                UART1_rx_counter
-                0x200000dc                UART1_rx_buffer_overflow
-                0x200000e0                UART1_tx_wr_index
-                0x200000e4                UART1_tx_rd_index
-                0x200000e8                UART1_tx_counter
-                0x200000ec                UART3_rx_wr_index
-                0x200000f0                UART3_rx_rd_index
-                0x200000f4                UART3_rx_counter
-                0x200000f8                UART3_rx_buffer_overflow
-                0x200000fc                UART3_tx_wr_index
-                0x20000100                UART3_tx_rd_index
-                0x20000104                UART3_tx_counter
- .bss           0x20000108        0x4 ..\obj\syscalls.o
+ .bss           0x200000c0       0x38 ..\obj\uart.o
+                0x200000c0                UART1_rx_wr_index
+                0x200000c4                UART1_rx_rd_index
+                0x200000c8                UART1_rx_counter
+                0x200000cc                UART1_rx_buffer_overflow
+                0x200000d0                UART1_tx_wr_index
+                0x200000d4                UART1_tx_rd_index
+                0x200000d8                UART1_tx_counter
+                0x200000dc                UART3_rx_wr_index
+                0x200000e0                UART3_rx_rd_index
+                0x200000e4                UART3_rx_counter
+                0x200000e8                UART3_rx_buffer_overflow
+                0x200000ec                UART3_tx_wr_index
+                0x200000f0                UART3_tx_rd_index
+                0x200000f4                UART3_tx_counter
+ .bss           0x200000f8        0x4 ..\obj\syscalls.o
  .bss.__malloc_sbrk_start
-                0x2000010c        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x2000010c                __malloc_sbrk_start
+                0x200000fc        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x200000fc                __malloc_sbrk_start
  .bss.__malloc_free_list
-                0x20000110        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x20000110                __malloc_free_list
+                0x20000100        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x20000100                __malloc_free_list
  *(COMMON)
- COMMON         0x20000114      0x280 ..\obj\uart.o
-                0x20000114                UART1_rx_buffer
-                0x20000194                UART3_tx_buffer
-                0x20000214                UART1_tx_buffer
-                0x20000294                UART3_rx_buffer
-                0x20000314                Buffer
- COMMON         0x20000394        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
-                0x20000394                errno
-                0x20000398                . = ALIGN (0x4)
-                0x20000398                __bss_end__ = .
-                0x20000398                _ebss = __bss_end__
+ COMMON         0x20000104      0x280 ..\obj\uart.o
+                0x20000104                UART1_rx_buffer
+                0x20000184                UART3_tx_buffer
+                0x20000204                UART1_tx_buffer
+                0x20000284                UART3_rx_buffer
+                0x20000304                Buffer
+ COMMON         0x20000384        0x4 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+                0x20000384                errno
+                0x20000388                . = ALIGN (0x4)
+                0x20000388                __bss_end__ = .
+                0x20000388                _ebss = __bss_end__
 
-.heap           0x20000398        0x0
-                0x20000398                __end__ = .
-                0x20000398                _end = __end__
-                0x20000398                end = __end__
+.heap           0x20000388        0x0
+                0x20000388                __end__ = .
+                0x20000388                _end = __end__
+                0x20000388                end = __end__
  *(.heap*)
-                0x20000398                __HeapLimit = .
+                0x20000388                __HeapLimit = .
 
-.co_stack       0x20000398      0x400 load address 0x080042bc
-                0x20000398                . = ALIGN (0x8)
+.co_stack       0x20000388      0x400 load address 0x08004298
+                0x20000388                . = ALIGN (0x8)
  *(.co_stack .co_stack.*)
- .co_stack      0x20000398      0x400 ..\obj\startup_stm32f10x_md.o
-                0x20000398                pulStack
+ .co_stack      0x20000388      0x400 ..\obj\startup_stm32f10x_md.o
+                0x20000388                pulStack
                 0x20005000                __StackTop = (ORIGIN (ram) + 0x5000)
                 0x20004c00                __StackLimit = (__StackTop - SIZEOF (.co_stack))
                 0x20005000                PROVIDE (__stack, __StackTop)
@@ -1138,6 +1158,7 @@ LOAD ..\obj\uart.o
 LOAD ..\obj\startup_stm32f10x_md.o
 LOAD ..\obj\stm32f10x_gpio.o
 LOAD ..\obj\main.o
+LOAD ..\obj\CPPM.o
 LOAD ..\obj\stm32f10x_rcc.o
 LOAD ..\obj\stm32f10x_exti.o
 LOAD ..\obj\stm32f10x_usart.o
@@ -1158,39 +1179,39 @@ LOAD e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-ea
 END GROUP
 OUTPUT(PWM1.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x63f5
+.debug_info     0x00000000     0x629f
  .debug_info    0x00000000     0x1c58 ..\obj\stm32f10x_tim.o
  .debug_info    0x00001c58      0x479 ..\obj\system_stm32f10x.o
  .debug_info    0x000020d1      0x8c0 ..\obj\uart.o
  .debug_info    0x00002991       0xe9 ..\obj\startup_stm32f10x_md.o
  .debug_info    0x00002a7a      0x6f3 ..\obj\stm32f10x_gpio.o
  .debug_info    0x0000316d      0x13b ..\obj\main.o
- .debug_info    0x000032a8      0x88d ..\obj\stm32f10x_rcc.o
- .debug_info    0x00003b35      0x9e8 ..\obj\stm32f10x_usart.o
- .debug_info    0x0000451d      0x556 ..\obj\peripheral.o
- .debug_info    0x00004a73      0x3ee ..\obj\syscalls.o
- .debug_info    0x00004e61      0x489 ..\obj\stm32f10x_dma.o
- .debug_info    0x000052ea      0x9cd ..\obj\channels.o
- .debug_info    0x00005cb7      0x53d ..\obj\misc.o
- .debug_info    0x000061f4      0x201 ..\obj\esp8266.o
+ .debug_info    0x000032a8      0x866 ..\obj\CPPM.o
+ .debug_info    0x00003b0e      0x88d ..\obj\stm32f10x_rcc.o
+ .debug_info    0x0000439b      0x9e8 ..\obj\stm32f10x_usart.o
+ .debug_info    0x00004d83      0x567 ..\obj\peripheral.o
+ .debug_info    0x000052ea      0x3ee ..\obj\syscalls.o
+ .debug_info    0x000056d8      0x489 ..\obj\stm32f10x_dma.o
+ .debug_info    0x00005b61      0x53d ..\obj\misc.o
+ .debug_info    0x0000609e      0x201 ..\obj\esp8266.o
 
-.debug_abbrev   0x00000000     0x1284
+.debug_abbrev   0x00000000     0x128d
  .debug_abbrev  0x00000000      0x196 ..\obj\stm32f10x_tim.o
  .debug_abbrev  0x00000196      0x14c ..\obj\system_stm32f10x.o
  .debug_abbrev  0x000002e2      0x216 ..\obj\uart.o
  .debug_abbrev  0x000004f8       0xa7 ..\obj\startup_stm32f10x_md.o
  .debug_abbrev  0x0000059f      0x1c8 ..\obj\stm32f10x_gpio.o
  .debug_abbrev  0x00000767       0xbe ..\obj\main.o
- .debug_abbrev  0x00000825      0x1b8 ..\obj\stm32f10x_rcc.o
- .debug_abbrev  0x000009dd      0x17c ..\obj\stm32f10x_usart.o
- .debug_abbrev  0x00000b59      0x14c ..\obj\peripheral.o
- .debug_abbrev  0x00000ca5       0xe2 ..\obj\syscalls.o
- .debug_abbrev  0x00000d87      0x16f ..\obj\stm32f10x_dma.o
- .debug_abbrev  0x00000ef6      0x155 ..\obj\channels.o
- .debug_abbrev  0x0000104b      0x145 ..\obj\misc.o
- .debug_abbrev  0x00001190       0xf4 ..\obj\esp8266.o
+ .debug_abbrev  0x00000825      0x15e ..\obj\CPPM.o
+ .debug_abbrev  0x00000983      0x1b8 ..\obj\stm32f10x_rcc.o
+ .debug_abbrev  0x00000b3b      0x17c ..\obj\stm32f10x_usart.o
+ .debug_abbrev  0x00000cb7      0x14c ..\obj\peripheral.o
+ .debug_abbrev  0x00000e03       0xe2 ..\obj\syscalls.o
+ .debug_abbrev  0x00000ee5      0x16f ..\obj\stm32f10x_dma.o
+ .debug_abbrev  0x00001054      0x145 ..\obj\misc.o
+ .debug_abbrev  0x00001199       0xf4 ..\obj\esp8266.o
 
-.debug_aranges  0x00000000      0x8d0
+.debug_aranges  0x00000000      0x898
  .debug_aranges
                 0x00000000      0x2f0 ..\obj\stm32f10x_tim.o
  .debug_aranges
@@ -1204,55 +1225,55 @@ OUTPUT(PWM1.elf elf32-littlearm)
  .debug_aranges
                 0x00000480       0x28 ..\obj\main.o
  .debug_aranges
-                0x000004a8      0x118 ..\obj\stm32f10x_rcc.o
+                0x000004a8       0x38 ..\obj\CPPM.o
  .debug_aranges
-                0x000005c0      0x100 ..\obj\stm32f10x_usart.o
+                0x000004e0      0x118 ..\obj\stm32f10x_rcc.o
  .debug_aranges
-                0x000006c0       0x48 ..\obj\peripheral.o
+                0x000005f8      0x100 ..\obj\stm32f10x_usart.o
  .debug_aranges
-                0x00000708       0x60 ..\obj\syscalls.o
+                0x000006f8       0x50 ..\obj\peripheral.o
  .debug_aranges
-                0x00000768       0x70 ..\obj\stm32f10x_dma.o
+                0x00000748       0x60 ..\obj\syscalls.o
  .debug_aranges
-                0x000007d8       0x78 ..\obj\channels.o
+                0x000007a8       0x70 ..\obj\stm32f10x_dma.o
  .debug_aranges
-                0x00000850       0x40 ..\obj\misc.o
+                0x00000818       0x40 ..\obj\misc.o
  .debug_aranges
-                0x00000890       0x40 ..\obj\esp8266.o
+                0x00000858       0x40 ..\obj\esp8266.o
 
-.debug_ranges   0x00000000      0x7f0
+.debug_ranges   0x00000000      0x7b8
  .debug_ranges  0x00000000      0x2e0 ..\obj\stm32f10x_tim.o
  .debug_ranges  0x000002e0       0x28 ..\obj\system_stm32f10x.o
  .debug_ranges  0x00000308       0x78 ..\obj\uart.o
  .debug_ranges  0x00000380       0x18 ..\obj\startup_stm32f10x_md.o
  .debug_ranges  0x00000398       0x98 ..\obj\stm32f10x_gpio.o
  .debug_ranges  0x00000430       0x18 ..\obj\main.o
- .debug_ranges  0x00000448      0x108 ..\obj\stm32f10x_rcc.o
- .debug_ranges  0x00000550       0xf0 ..\obj\stm32f10x_usart.o
- .debug_ranges  0x00000640       0x38 ..\obj\peripheral.o
- .debug_ranges  0x00000678       0x50 ..\obj\syscalls.o
- .debug_ranges  0x000006c8       0x60 ..\obj\stm32f10x_dma.o
- .debug_ranges  0x00000728       0x68 ..\obj\channels.o
- .debug_ranges  0x00000790       0x30 ..\obj\misc.o
- .debug_ranges  0x000007c0       0x30 ..\obj\esp8266.o
+ .debug_ranges  0x00000448       0x28 ..\obj\CPPM.o
+ .debug_ranges  0x00000470      0x108 ..\obj\stm32f10x_rcc.o
+ .debug_ranges  0x00000578       0xf0 ..\obj\stm32f10x_usart.o
+ .debug_ranges  0x00000668       0x40 ..\obj\peripheral.o
+ .debug_ranges  0x000006a8       0x50 ..\obj\syscalls.o
+ .debug_ranges  0x000006f8       0x60 ..\obj\stm32f10x_dma.o
+ .debug_ranges  0x00000758       0x30 ..\obj\misc.o
+ .debug_ranges  0x00000788       0x30 ..\obj\esp8266.o
 
-.debug_line     0x00000000     0x5958
+.debug_line     0x00000000     0x5892
  .debug_line    0x00000000     0x252d ..\obj\stm32f10x_tim.o
  .debug_line    0x0000252d      0x1e1 ..\obj\system_stm32f10x.o
  .debug_line    0x0000270e      0x3ec ..\obj\uart.o
  .debug_line    0x00002afa       0xaf ..\obj\startup_stm32f10x_md.o
  .debug_line    0x00002ba9      0x886 ..\obj\stm32f10x_gpio.o
- .debug_line    0x0000342f      0x14f ..\obj\main.o
- .debug_line    0x0000357e      0x74a ..\obj\stm32f10x_rcc.o
- .debug_line    0x00003cc8      0x9cb ..\obj\stm32f10x_usart.o
- .debug_line    0x00004693      0x252 ..\obj\peripheral.o
- .debug_line    0x000048e5      0x155 ..\obj\syscalls.o
- .debug_line    0x00004a3a      0x712 ..\obj\stm32f10x_dma.o
- .debug_line    0x0000514c      0x349 ..\obj\channels.o
- .debug_line    0x00005495      0x29b ..\obj\misc.o
- .debug_line    0x00005730      0x228 ..\obj\esp8266.o
+ .debug_line    0x0000342f      0x14d ..\obj\main.o
+ .debug_line    0x0000357c      0x27b ..\obj\CPPM.o
+ .debug_line    0x000037f7      0x74a ..\obj\stm32f10x_rcc.o
+ .debug_line    0x00003f41      0x9cb ..\obj\stm32f10x_usart.o
+ .debug_line    0x0000490c      0x264 ..\obj\peripheral.o
+ .debug_line    0x00004b70      0x155 ..\obj\syscalls.o
+ .debug_line    0x00004cc5      0x712 ..\obj\stm32f10x_dma.o
+ .debug_line    0x000053d7      0x29b ..\obj\misc.o
+ .debug_line    0x00005672      0x220 ..\obj\esp8266.o
 
-.debug_str      0x00000000     0x28fe
+.debug_str      0x00000000     0x28a9
  .debug_str     0x00000000      0xd38 ..\obj\stm32f10x_tim.o
                                 0xdfb (size before relaxing)
  .debug_str     0x00000d38      0x17f ..\obj\system_stm32f10x.o
@@ -1265,21 +1286,21 @@ OUTPUT(PWM1.elf elf32-littlearm)
                                 0x537 (size before relaxing)
  .debug_str     0x00001954       0xa6 ..\obj\main.o
                                 0x209 (size before relaxing)
- .debug_str     0x000019fa      0x3f5 ..\obj\stm32f10x_rcc.o
+ .debug_str     0x000019fa      0x19c ..\obj\CPPM.o
+                                0xa10 (size before relaxing)
+ .debug_str     0x00001b96      0x3f5 ..\obj\stm32f10x_rcc.o
                                 0x638 (size before relaxing)
- .debug_str     0x00001def      0x3b6 ..\obj\stm32f10x_usart.o
+ .debug_str     0x00001f8b      0x3b6 ..\obj\stm32f10x_usart.o
                                 0x6ae (size before relaxing)
- .debug_str     0x000021a5       0xb6 ..\obj\peripheral.o
-                                0x481 (size before relaxing)
- .debug_str     0x0000225b      0x168 ..\obj\syscalls.o
+ .debug_str     0x00002341       0xc2 ..\obj\peripheral.o
+                                0x48d (size before relaxing)
+ .debug_str     0x00002403      0x168 ..\obj\syscalls.o
                                 0x2fb (size before relaxing)
- .debug_str     0x000023c3      0x229 ..\obj\stm32f10x_dma.o
+ .debug_str     0x0000256b      0x14c ..\obj\stm32f10x_dma.o
                                 0x3e7 (size before relaxing)
- .debug_str     0x000025ec      0x120 ..\obj\channels.o
-                                0xa76 (size before relaxing)
- .debug_str     0x0000270c      0x166 ..\obj\misc.o
+ .debug_str     0x000026b7      0x166 ..\obj\misc.o
                                 0x3dc (size before relaxing)
- .debug_str     0x00002872       0x8c ..\obj\esp8266.o
+ .debug_str     0x0000281d       0x8c ..\obj\esp8266.o
                                 0x268 (size before relaxing)
 
 .comment        0x00000000       0x70
@@ -1290,12 +1311,12 @@ OUTPUT(PWM1.elf elf32-littlearm)
  .comment       0x00000000       0x71 ..\obj\startup_stm32f10x_md.o
  .comment       0x00000000       0x71 ..\obj\stm32f10x_gpio.o
  .comment       0x00000000       0x71 ..\obj\main.o
+ .comment       0x00000000       0x71 ..\obj\CPPM.o
  .comment       0x00000000       0x71 ..\obj\stm32f10x_rcc.o
  .comment       0x00000000       0x71 ..\obj\stm32f10x_usart.o
  .comment       0x00000000       0x71 ..\obj\peripheral.o
  .comment       0x00000000       0x71 ..\obj\syscalls.o
  .comment       0x00000000       0x71 ..\obj\stm32f10x_dma.o
- .comment       0x00000000       0x71 ..\obj\channels.o
  .comment       0x00000000       0x71 ..\obj\misc.o
  .comment       0x00000000       0x71 ..\obj\esp8266.o
 
@@ -1314,17 +1335,17 @@ OUTPUT(PWM1.elf elf32-littlearm)
  .ARM.attributes
                 0x000000ff       0x33 ..\obj\main.o
  .ARM.attributes
-                0x00000132       0x33 ..\obj\stm32f10x_rcc.o
+                0x00000132       0x33 ..\obj\CPPM.o
  .ARM.attributes
-                0x00000165       0x33 ..\obj\stm32f10x_usart.o
+                0x00000165       0x33 ..\obj\stm32f10x_rcc.o
  .ARM.attributes
-                0x00000198       0x33 ..\obj\peripheral.o
+                0x00000198       0x33 ..\obj\stm32f10x_usart.o
  .ARM.attributes
-                0x000001cb       0x33 ..\obj\syscalls.o
+                0x000001cb       0x33 ..\obj\peripheral.o
  .ARM.attributes
-                0x000001fe       0x33 ..\obj\stm32f10x_dma.o
+                0x000001fe       0x33 ..\obj\syscalls.o
  .ARM.attributes
-                0x00000231       0x33 ..\obj\channels.o
+                0x00000231       0x33 ..\obj\stm32f10x_dma.o
  .ARM.attributes
                 0x00000264       0x33 ..\obj\misc.o
  .ARM.attributes
@@ -1372,37 +1393,37 @@ OUTPUT(PWM1.elf elf32-littlearm)
  .ARM.attributes
                 0x0000064e       0x2d e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
 
-.debug_frame    0x00000000     0x28d4
+.debug_frame    0x00000000     0x27a8
  .debug_frame   0x00000000      0xd10 ..\obj\stm32f10x_tim.o
  .debug_frame   0x00000d10       0x98 ..\obj\system_stm32f10x.o
  .debug_frame   0x00000da8      0x204 ..\obj\uart.o
  .debug_frame   0x00000fac       0x4c ..\obj\startup_stm32f10x_md.o
  .debug_frame   0x00000ff8      0x2a0 ..\obj\stm32f10x_gpio.o
  .debug_frame   0x00001298       0x48 ..\obj\main.o
- .debug_frame   0x000012e0      0x488 ..\obj\stm32f10x_rcc.o
- .debug_frame   0x00001768      0x430 ..\obj\stm32f10x_usart.o
- .debug_frame   0x00001b98       0xe8 ..\obj\peripheral.o
- .debug_frame   0x00001c80      0x168 ..\obj\syscalls.o
- .debug_frame   0x00001de8      0x1a0 ..\obj\stm32f10x_dma.o
- .debug_frame   0x00001f88      0x1e0 ..\obj\channels.o
- .debug_frame   0x00002168       0xc4 ..\obj\misc.o
- .debug_frame   0x0000222c       0xac ..\obj\esp8266.o
- .debug_frame   0x000022d8       0x80 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sscanf.o)
- .debug_frame   0x00002358       0x88 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-stdio.o)
- .debug_frame   0x000023e0       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
- .debug_frame   0x00002400       0x2c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strstr.o)
- .debug_frame   0x0000242c       0x70 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
- .debug_frame   0x0000249c       0x5c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
- .debug_frame   0x000024f8       0x5c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
- .debug_frame   0x00002554       0x30 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sccl.o)
- .debug_frame   0x00002584       0x54 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strtol.o)
- .debug_frame   0x000025d8       0x54 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strtoul.o)
- .debug_frame   0x0000262c       0x5c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-ungetc.o)
- .debug_frame   0x00002688      0x11c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-findfp.o)
- .debug_frame   0x000027a4       0x28 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr.o)
- .debug_frame   0x000027cc       0x28 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
- .debug_frame   0x000027f4       0x2c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x00002820       0x2c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x0000284c       0x3c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
- .debug_frame   0x00002888       0x2c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x000028b4       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+ .debug_frame   0x000012e0       0x98 ..\obj\CPPM.o
+ .debug_frame   0x00001378      0x488 ..\obj\stm32f10x_rcc.o
+ .debug_frame   0x00001800      0x430 ..\obj\stm32f10x_usart.o
+ .debug_frame   0x00001c30      0x104 ..\obj\peripheral.o
+ .debug_frame   0x00001d34      0x168 ..\obj\syscalls.o
+ .debug_frame   0x00001e9c      0x1a0 ..\obj\stm32f10x_dma.o
+ .debug_frame   0x0000203c       0xc4 ..\obj\misc.o
+ .debug_frame   0x00002100       0xac ..\obj\esp8266.o
+ .debug_frame   0x000021ac       0x80 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sscanf.o)
+ .debug_frame   0x0000222c       0x88 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-stdio.o)
+ .debug_frame   0x000022b4       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
+ .debug_frame   0x000022d4       0x2c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strstr.o)
+ .debug_frame   0x00002300       0x70 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfscanf.o)
+ .debug_frame   0x00002370       0x5c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfscanf_i.o)
+ .debug_frame   0x000023cc       0x5c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .debug_frame   0x00002428       0x30 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sccl.o)
+ .debug_frame   0x00002458       0x54 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strtol.o)
+ .debug_frame   0x000024ac       0x54 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strtoul.o)
+ .debug_frame   0x00002500       0x5c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-ungetc.o)
+ .debug_frame   0x0000255c      0x11c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-findfp.o)
+ .debug_frame   0x00002678       0x28 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr.o)
+ .debug_frame   0x000026a0       0x28 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x000026c8       0x2c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x000026f4       0x2c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00002720       0x3c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x0000275c       0x2c e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x00002788       0x20 e:/arm_toolchein/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
