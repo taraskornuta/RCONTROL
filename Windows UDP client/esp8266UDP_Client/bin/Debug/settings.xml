@@ -24,8 +24,8 @@
     <Debug_Enable>false</Debug_Enable>
     <Debug_IP>127.0.0.1</Debug_IP>
     <Debug_Port>8000</Debug_Port>
-    <Debug_Open_Console>false</Debug_Open_Console>
-    <Joy_Enable>false</Joy_Enable>
+    <Debug_Open_Console>true</Debug_Open_Console>
+    <Joy_Enable>true</Joy_Enable>
     <LabelText>Save all settings</LabelText>
   </root>
 </Settings>

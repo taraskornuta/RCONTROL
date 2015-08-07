@@ -111,10 +111,10 @@ namespace RCONTROL
 
             if (Settings.Joy_Enable == true)
             {
-                tBar_CH1.Value = Convert.ToInt16(1000 + (X * 3.92156862745099));
-                tBar_CH2.Value = Convert.ToInt16(1000 + (Y * 3.92156862745099));
-                tBar_CH3.Value = Convert.ToInt16(1000 + (Z * 3.92156862745099));
-                tBar_CH4.Value = Convert.ToInt16(1000 + (RotZ * 3.92156862745099)); 
+                tBar_CH1.Value = Convert.ToInt16(1000 + (X * 0.0152590218966964));
+                tBar_CH2.Value = Convert.ToInt16(1000 + (Y * 0.0152590218966964));
+                tBar_CH3.Value = Convert.ToInt16(1000 + (Z * 0.0152590218966964));
+                tBar_CH4.Value = Convert.ToInt16(1000 + (RotZ * 0.0152590218966964)); 
             }
 
             udp.Close();
@@ -184,7 +184,7 @@ namespace RCONTROL
 
         public int Revert(int data)
         {
-            int i = 255 - data;
+            int i = 65535 - data;
             return i;
         }
         public void JoyStatus()
@@ -240,19 +240,23 @@ namespace RCONTROL
                     {
                         if (state.Offset == JoystickOffset.X)
                         {
-                            X = (state.Value/256);
+                            X = state.Value;
+                            Console.WriteLine("X: " + Convert.ToString(X) + ": " + Convert.ToString(state.Value));
                         }
                         else if (state.Offset == JoystickOffset.Y)
                         {
-                            Y = Revert(state.Value/256);
+                            Y = Revert(state.Value);
+                            Console.WriteLine("Y: " + Convert.ToString(Y) + ": " + Convert.ToString(state.Value));
                         }
                         else if (state.Offset == JoystickOffset.Z)
                         {
-                            Z = (state.Value/256);
+                            Z = state.Value;
+                            Console.WriteLine("Z: " + Convert.ToString(Z) + ": " + Convert.ToString(state.Value));
                         }
                         else if (state.Offset == JoystickOffset.RotationZ)
                         {
-                            RotZ = Revert(state.Value/256);
+                            RotZ = Revert(state.Value);
+                            Console.WriteLine("RotZ: " + Convert.ToString(RotZ) + ": " + Convert.ToString(state.Value));
                         }
                     }
                 }
