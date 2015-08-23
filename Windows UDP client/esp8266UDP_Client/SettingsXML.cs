@@ -10,6 +10,7 @@ namespace RCONTROL
 {
     public class Settings
     {
+        #region UserParam
         public static DataSet ds;
         public static string xmlPath;
 
@@ -19,6 +20,8 @@ namespace RCONTROL
         public static string Debug_Port;
         public static bool Debug_Open_Console;
         public static bool Joy_Enable;
+        public static string Joy_Name;
+        #endregion
 
         public static void Load()
         {
@@ -36,6 +39,7 @@ namespace RCONTROL
             Debug_Port = dr["Debug_Port"].ToString();
             Debug_Open_Console = (bool)dr["Debug_Open_Console"];
             Joy_Enable = (bool)dr["Joy_Enable"];
+            Joy_Name = dr["Joy_Name"].ToString();
         }
 
         public static void Save()
@@ -48,6 +52,7 @@ namespace RCONTROL
             ds.Tables[0].Rows[0]["Debug_Port"] = Debug_Port;
             ds.Tables[0].Rows[0]["Debug_Open_Console"] = Debug_Open_Console;
             ds.Tables[0].Rows[0]["Joy_Enable"] = Joy_Enable;
+            ds.Tables[0].Rows[0]["Joy_Name"] = Joy_Name;
 
             ds.WriteXml(xmlPath, XmlWriteMode.WriteSchema);
         }

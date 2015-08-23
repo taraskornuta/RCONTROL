@@ -48,7 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.UDPtimer = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.btn_Settings = new System.Windows.Forms.Button();
             this.pBar_CH8 = new ProgressBars.Basic.BasicProgressBar();
@@ -59,9 +59,7 @@
             this.pBar_CH1 = new ProgressBars.Basic.BasicProgressBar();
             this.pBar_CH2 = new ProgressBars.Basic.BasicProgressBar();
             this.pBar_CH4 = new ProgressBars.Basic.BasicProgressBar();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.joystickTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CH7)).BeginInit();
@@ -270,19 +268,18 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "CH8";
             // 
-            // timer1
+            // UDPtimer
             // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.UDPtimer.Interval = 1;
+            this.UDPtimer.Tick += new System.EventHandler(this.UDPtimer_Tick);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(489, 77);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.Size = new System.Drawing.Size(0, 13);
             this.label9.TabIndex = 36;
-            this.label9.Text = "label9";
             // 
             // btn_Settings
             // 
@@ -412,41 +409,16 @@
             this.pBar_CH4.TabIndex = 28;
             this.pBar_CH4.Text = "basicProgressBar1";
             // 
-            // label10
+            // joystickTimer
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(489, 101);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "label10";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(489, 122);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "label11";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(489, 145);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "label12";
+            this.joystickTimer.Interval = 1;
+            this.joystickTimer.Tick += new System.EventHandler(this.joystickTimer_Tick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 344);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_Settings);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pBar_CH8);
@@ -521,12 +493,10 @@
         private ProgressBars.Basic.BasicProgressBar pBar_CH6;
         private ProgressBars.Basic.BasicProgressBar pBar_CH7;
         private ProgressBars.Basic.BasicProgressBar pBar_CH8;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer UDPtimer;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_Settings;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Timer joystickTimer;
     }
 }
 

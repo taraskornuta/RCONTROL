@@ -1,6 +1,3 @@
-C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\SharpDX.DirectInput.dll
-C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\bin\Debug\SharpDX.dll
-C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.csprojResolveAssemblyReference.cache
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.DigitControl.resources
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.MainForm.resources
 C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.Properties.Resources.resources
@@ -24,3 +21,4 @@ E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\ob
 E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.Properties.Resources.resources
 E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.SettingsForm.resources
 E:\Users\Taras\Documents\GitHub\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.csproj.GenerateResource.Cache
+C:\Users\L\Documents\github\RCONTROL\Windows UDP client\esp8266UDP_Client\obj\Debug\RCONTROL.csprojResolveAssemblyReference.cache

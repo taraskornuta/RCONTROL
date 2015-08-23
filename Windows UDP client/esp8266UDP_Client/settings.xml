@@ -11,7 +11,7 @@
                 <xs:element name="Debug_IP" type="xs:string" minOccurs="0" />
                 <xs:element name="Debug_Port" type="xs:string" minOccurs="0" />
                 <xs:element name="Debug_Open_Console" type="xs:boolean" minOccurs="0" />
-                <xs:element name="Joy_Enable" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Joy_Enable" type="xs:boolean" minOccurs="0" />                
                 <xs:element name="Joy_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="LabelText" type="xs:string" minOccurs="0" />
               </xs:sequence>

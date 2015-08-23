@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SharpDX.DirectInput;
 
 namespace RCONTROL
 {
@@ -31,29 +30,7 @@ namespace RCONTROL
             chkBox_Debug.Checked = Settings.Debug_Enable;
             txt_Debug_IP.Text = Settings.Debug_IP;
             txt_Debug_Port.Text = Settings.Debug_Port;
-        }
-        private void chkBox_Open_Consol_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.Debug_Open_Console = chkBox_Open_Consol.Checked;
-        }
-
-        private void chkBox_Debug_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.Debug_Enable = chkBox_Debug.Checked;
-            if (chkBox_Debug.Checked)//Робить не активними поля вводу тексту
-            {
-                txt_Debug_IP.Enabled = true;
-                txt_Debug_Port.Enabled = true;
-            }
-            else
-            {
-                txt_Debug_IP.Enabled = false;
-                txt_Debug_Port.Enabled = false;
-            }     
-        }
-        private void chkBox_Joy_Enable_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.Joy_Enable = chkBox_Joy_Enable.Checked;
+            cBox_Joy_Select.Text = Settings.Joy_Name;
         }
         private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {          
@@ -86,15 +63,46 @@ namespace RCONTROL
                 }
             }
 
-            Settings.Save();           
+            if (chkBox_Joy_Enable.Checked == true)
+            {
+                Settings.Joy_Name = cBox_Joy_Select.Text;
+            }
+
+            Settings.Save();
+            //MessageBox.Show("You mast restart RCONTROL client, to confirm settings!, MessageBoxButtons.OK, MessageBoxIcon.Warning");
         }
 
-       
+        private void chkBox_Open_Consol_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Debug_Open_Console = chkBox_Open_Consol.Checked;
+        }
+        private void chkBox_Debug_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Debug_Enable = chkBox_Debug.Checked;
+            if (chkBox_Debug.Checked)//Робить не активними поля вводу тексту
+            {
+                txt_Debug_IP.Enabled = true;
+                txt_Debug_Port.Enabled = true;
+            }
+            else
+            {
+                txt_Debug_IP.Enabled = false;
+                txt_Debug_Port.Enabled = false;
+            }     
+        }
+        private void chkBox_Joy_Enable_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Joy_Enable = chkBox_Joy_Enable.Checked;
+            cBox_Joy_Select.Enabled ^= true;
+            btn_Joy_Refresh.Enabled ^= true;
+        }
 
-
-
-
-
-
+        private void btn_Joy_Refresh_Click(object sender, EventArgs e)
+        {
+            Joystick joy = new Joystick(Handle);          
+            cBox_Joy_Select.Items.Add(joy.FindJoysticks());
+            
+        }
+        
     }
 }

@@ -11,22 +11,34 @@ using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Remoting.Channels;
 using System.Threading;
-using SharpDX.DirectInput;
 using System.Runtime.InteropServices;
 
 namespace RCONTROL
 {
     public partial class MainForm : Form
     {
-        private Thread JoystickThread = null;
-        public int X, Y, Z, RotZ;
+        #region UserParam
+        string defaultIP = "192.168.4.1";
+        int defaultPort = 8000;
+
+        private Joystick joystick;
+        private bool[] joystickButtons;
+
+        private int X, Y, Z, RotZ;
         private string ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8;
+        #endregion
 
         public MainForm()
         {
             InitializeComponent();
             Settings.Load();
-            
+            Settings.Read();
+
+            if (Settings.Joy_Enable == true)
+            {
+                joystick = new Joystick(this.Handle);
+                connectToJoystick(joystick);
+            }            
         }
 
         [DllImport("kernel32.dll", SetLastError = true)] //Enabling debuging console
@@ -34,8 +46,7 @@ namespace RCONTROL
         static extern bool AllocConsole();
 
         private void MainForm_Load(object sender, EventArgs e)
-        {
-            Settings.Read();
+        {           
             if (Settings.Debug_Open_Console==true)
             {
                 AllocConsole(); //Enabling debuging console
@@ -45,29 +56,88 @@ namespace RCONTROL
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            timer1.Stop();
-            StopReceive();
+            UDPtimer.Stop();
         }
 
-        private void btn_Open_Click(object sender, System.EventArgs e)
+        private void connectToJoystick(Joystick joystick)
         {
-            if (Settings.Joy_Enable == true)
+            while (true)
             {
-                JoystickThread = new Thread(new ThreadStart(this.JoyStatus));
-                JoystickThread.Start();
+                string joyName = joystick.FindJoysticks();
+                if (joyName != null)
+                {
+                    if (joystick.AcquireJoystick(joyName))
+                    {
+                        enableTimer();
+                        break;
+                    }
+                }
+                else if (joyName == null)
+                {
+                    MessageBox.Show("Connect Joystick and restart programm", " Joystick NOT connected!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                }
             }
-
-            //ThreadStart UdpThread = new ThreadStart(UdpReceive);
-            //workReceive = new Thread(UdpThread);
-            //workReceive.Start();
-            timer1.Start();
         }
 
-        private void timer1_Tick(object sender, System.EventArgs e)
+        private void enableTimer()  //Method to enabling timer for joystick
+        {
+            if (this.InvokeRequired)
+            {
+                BeginInvoke(new ThreadStart(delegate()
+                {
+                    joystickTimer.Enabled = true;
+                }));
+            }
+            else
+                joystickTimer.Enabled = true;
+        }
+
+        private void joystickTimer_Tick(object sender, EventArgs e)
+        {
+             try
+            {
+                joystick.UpdateStatus();
+                joystickButtons = joystick.buttons;
+
+                    X = joystick.Axis_X;
+                    Y = Revert(joystick.Axis_Y);
+                    Z = joystick.Axis_Z;
+                    RotZ = Revert(joystick.Axis_RotZ);
+
+                    Console.WriteLine("Axis X:" + X + 
+                                    "\nAxis Y:" + Y + 
+                                    "\nAxis Z:" + Z + 
+                                    "\nAxis RotZ:" + RotZ);
+
+               
+
+                for (int i = 0; i < joystickButtons.Length; i++)
+                {
+                    if(joystickButtons[i] == true)
+                    {
+                        label9.Text = "Button " + i + " Pressed";
+                        Console.WriteLine("Button " + i + " Pressed");
+                        
+                    }
+                }
+            }
+            catch
+            {
+                joystickTimer.Enabled = false;
+                connectToJoystick(joystick);
+            }
+        }
+
+        public int Revert(int data) //Revert joystick axis direction
+        {
+            int i = 65535 - data;
+            return i;
+        } 
+       
+        private void UDPtimer_Tick(object sender, System.EventArgs e)
         {
             UdpClient udp = new UdpClient();
-            string defaultIP = "192.168.4.1";
-            int defaultPort = 8000;
 
             if (Settings.Debug_Enable == true)
             {
@@ -118,156 +188,24 @@ namespace RCONTROL
             }
 
             udp.Close();
-
-            
-
-
         }
 
-        UdpClient udp = null;
-       // bool stopReceive = false;
-        Thread workReceive = null;
-
-        //void UdpReceive()
-        //{
-        //    try
-        //    {
-        //        IPEndPoint ep = new IPEndPoint(IPAddress.Parse("192.168.4.1"), 8001);
-        //        udp = new UdpClient(ep);
-        //        while (true)
-        //        {
-        //            IPEndPoint remote = null;
-        //            byte[] message = udp.Receive(ref remote);
-        //            ShowMessage(Encoding.Default.GetString(message));
-        //            if (stopReceive == true) break;
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        MessageBox.Show(e.Message);
-        //    }
-        //    finally
-        //    {
-        //        if (udp != null) udp.Close();
-        //    }
-
-
-        //}
-        //Приймає значення із паралельного потоку
-        delegate void SetTextCallback(string message);
-        void ShowMessage(string message)
+        private void btn_Open_Click(object sender, System.EventArgs e)
         {
-            if (this.label9.InvokeRequired)
-            {
-                SetTextCallback dt = new SetTextCallback(ShowMessage);
-                this.Invoke(dt, new object[] { message });
-            }
-            else
-            {
-                this.label9.Text = message;
-            }
+            UDPtimer.Start();
         }
 
-        void StopReceive()
-        {
-            //stopReceive = true;
-            if (udp != null) udp.Close();
-            if (workReceive != null) workReceive.Join();
-        }
         private void btn_Close_Click(object sender, System.EventArgs e)
-        {
-            
-            timer1.Stop();
-            StopReceive();
-
+        {           
+            UDPtimer.Stop();
         }
-
-        public int Revert(int data)
-        {
-            int i = 65535 - data;
-            return i;
-        }
-        public void JoyStatus()
-        {
-            if (Settings.Joy_Enable == true)
-            {
-                var directInput = new DirectInput();
-
-                // Find a Joystick Guid
-                var joystickGuid = Guid.Empty;
-
-                foreach (var deviceInstance in directInput.GetDevices(DeviceType.Gamepad,
-                    DeviceEnumerationFlags.AllDevices))
-                    joystickGuid = deviceInstance.InstanceGuid;
-
-                // If Gamepad not found, look for a Joystick
-                if (joystickGuid == Guid.Empty)
-                    foreach (var deviceInstance in directInput.GetDevices(DeviceType.Joystick,
-                        DeviceEnumerationFlags.AllDevices))
-                        joystickGuid = deviceInstance.InstanceGuid;
-
-                // If Joystick not found, throws an error
-                if (joystickGuid == Guid.Empty)
-                {
-                    MessageBox.Show("Joystick not found");
-                }
-
-                // Instantiate the joystick
-                var joystick = new Joystick(directInput, joystickGuid);
-
-                Console.WriteLine("Found Joystick/Gamepad with GUID: {0}", joystickGuid);
-
-                //Query all suported ForceFeedback effects
-                var allEffects = joystick.GetEffects();
-                foreach (var effectInfo in allEffects)
-                    Console.WriteLine("Effect available {0}", effectInfo.Name);
-
-                //Set BufferSize in order to use buffered data.
-                joystick.Properties.BufferSize = 128;
-
-                // Acquire the joystick
-                joystick.Acquire();
-
-                //Poll events from joystick
-                while (true)
-                {
-                    joystick.Poll();
-                    var data = joystick.GetBufferedData();
-                    foreach (var state in data)
-                        Console.WriteLine(state);
-
-                    foreach (var state in data)
-                    {
-                        if (state.Offset == JoystickOffset.X)
-                        {
-                            X = state.Value;
-                            Console.WriteLine("X: " + Convert.ToString(X) + ": " + Convert.ToString(state.Value));
-                        }
-                        else if (state.Offset == JoystickOffset.Y)
-                        {
-                            Y = Revert(state.Value);
-                            Console.WriteLine("Y: " + Convert.ToString(Y) + ": " + Convert.ToString(state.Value));
-                        }
-                        else if (state.Offset == JoystickOffset.Z)
-                        {
-                            Z = state.Value;
-                            Console.WriteLine("Z: " + Convert.ToString(Z) + ": " + Convert.ToString(state.Value));
-                        }
-                        else if (state.Offset == JoystickOffset.RotationZ)
-                        {
-                            RotZ = Revert(state.Value);
-                            Console.WriteLine("RotZ: " + Convert.ToString(RotZ) + ": " + Convert.ToString(state.Value));
-                        }
-                    }
-                }
-            }
-        }
-
+      
         private void btn_Settings_Click(object sender, EventArgs e)
         {
             SettingsForm settings = new SettingsForm(); // Створює форму Settings
             settings.Show(); 
-        }       
+        }
+             
     }
 }
 

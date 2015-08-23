@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.cBox_Joy_Select = new System.Windows.Forms.ComboBox();
-            this.btn_Joy_Enable = new System.Windows.Forms.Button();
+            this.btn_Joy_Refresh = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.chkBox_Debug = new System.Windows.Forms.CheckBox();
             this.txt_Debug_Port = new System.Windows.Forms.TextBox();
@@ -51,6 +51,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.chkBox_Joy_Enable = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chkBox_Open_Consol = new System.Windows.Forms.CheckBox();
             this.digitControl19 = new RCONTROL.DigitControl();
             this.digitControl20 = new RCONTROL.DigitControl();
             this.digitControl21 = new RCONTROL.DigitControl();
@@ -75,8 +77,6 @@
             this.digitControl16 = new RCONTROL.DigitControl();
             this.digitControl18 = new RCONTROL.DigitControl();
             this.digitControl17 = new RCONTROL.DigitControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.chkBox_Open_Consol = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -85,20 +85,23 @@
             // 
             // cBox_Joy_Select
             // 
-            this.cBox_Joy_Select.FormattingEnabled = true;
+            this.cBox_Joy_Select.Enabled = false;
+            this.cBox_Joy_Select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cBox_Joy_Select.Location = new System.Drawing.Point(3, 6);
             this.cBox_Joy_Select.Name = "cBox_Joy_Select";
-            this.cBox_Joy_Select.Size = new System.Drawing.Size(136, 21);
+            this.cBox_Joy_Select.Size = new System.Drawing.Size(196, 21);
             this.cBox_Joy_Select.TabIndex = 0;
             // 
-            // btn_Joy_Enable
+            // btn_Joy_Refresh
             // 
-            this.btn_Joy_Enable.Location = new System.Drawing.Point(148, 6);
-            this.btn_Joy_Enable.Name = "btn_Joy_Enable";
-            this.btn_Joy_Enable.Size = new System.Drawing.Size(75, 23);
-            this.btn_Joy_Enable.TabIndex = 1;
-            this.btn_Joy_Enable.Text = "Enable";
-            this.btn_Joy_Enable.UseVisualStyleBackColor = true;
+            this.btn_Joy_Refresh.Enabled = false;
+            this.btn_Joy_Refresh.Location = new System.Drawing.Point(221, 6);
+            this.btn_Joy_Refresh.Name = "btn_Joy_Refresh";
+            this.btn_Joy_Refresh.Size = new System.Drawing.Size(75, 23);
+            this.btn_Joy_Refresh.TabIndex = 1;
+            this.btn_Joy_Refresh.Text = "Refresh";
+            this.btn_Joy_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Joy_Refresh.Click += new System.EventHandler(this.btn_Joy_Refresh_Click);
             // 
             // label1
             // 
@@ -246,13 +249,16 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(368, 290);
+            this.tabControl1.Size = new System.Drawing.Size(487, 356);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -260,20 +266,21 @@
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.chkBox_Joy_Enable);
             this.tabPage1.Controls.Add(this.cBox_Joy_Select);
-            this.tabPage1.Controls.Add(this.btn_Joy_Enable);
+            this.tabPage1.Controls.Add(this.btn_Joy_Refresh);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(360, 264);
+            this.tabPage1.Size = new System.Drawing.Size(479, 330);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Joystick";
             // 
             // chkBox_Joy_Enable
             // 
             this.chkBox_Joy_Enable.AutoSize = true;
-            this.chkBox_Joy_Enable.Location = new System.Drawing.Point(230, 7);
+            this.chkBox_Joy_Enable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkBox_Joy_Enable.Location = new System.Drawing.Point(303, 7);
             this.chkBox_Joy_Enable.Name = "chkBox_Joy_Enable";
-            this.chkBox_Joy_Enable.Size = new System.Drawing.Size(100, 17);
+            this.chkBox_Joy_Enable.Size = new System.Drawing.Size(97, 17);
             this.chkBox_Joy_Enable.TabIndex = 2;
             this.chkBox_Joy_Enable.Text = "Joystick Enable";
             this.chkBox_Joy_Enable.UseVisualStyleBackColor = true;
@@ -320,9 +327,35 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(360, 264);
+            this.tabPage2.Size = new System.Drawing.Size(479, 330);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Limits";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.chkBox_Open_Consol);
+            this.tabPage3.Controls.Add(this.chkBox_Debug);
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.txt_Debug_Port);
+            this.tabPage3.Controls.Add(this.txt_Debug_IP);
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(479, 330);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Debug";
+            // 
+            // chkBox_Open_Consol
+            // 
+            this.chkBox_Open_Consol.AutoSize = true;
+            this.chkBox_Open_Consol.Location = new System.Drawing.Point(229, 8);
+            this.chkBox_Open_Consol.Name = "chkBox_Open_Consol";
+            this.chkBox_Open_Consol.Size = new System.Drawing.Size(103, 17);
+            this.chkBox_Open_Consol.TabIndex = 7;
+            this.chkBox_Open_Consol.Text = "Open consol log";
+            this.chkBox_Open_Consol.UseVisualStyleBackColor = true;
+            this.chkBox_Open_Consol.CheckedChanged += new System.EventHandler(this.chkBox_Open_Consol_CheckedChanged);
             // 
             // digitControl19
             // 
@@ -540,37 +573,11 @@
             this.digitControl17.TabIndex = 17;
             this.digitControl17.Value = "-100";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.chkBox_Open_Consol);
-            this.tabPage3.Controls.Add(this.chkBox_Debug);
-            this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Controls.Add(this.txt_Debug_Port);
-            this.tabPage3.Controls.Add(this.txt_Debug_IP);
-            this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(360, 264);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Debug";
-            // 
-            // chkBox_Open_Consol
-            // 
-            this.chkBox_Open_Consol.AutoSize = true;
-            this.chkBox_Open_Consol.Location = new System.Drawing.Point(229, 8);
-            this.chkBox_Open_Consol.Name = "chkBox_Open_Consol";
-            this.chkBox_Open_Consol.Size = new System.Drawing.Size(103, 17);
-            this.chkBox_Open_Consol.TabIndex = 7;
-            this.chkBox_Open_Consol.Text = "Open consol log";
-            this.chkBox_Open_Consol.UseVisualStyleBackColor = true;
-            this.chkBox_Open_Consol.CheckedChanged += new System.EventHandler(this.chkBox_Open_Consol_CheckedChanged);
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 309);
+            this.ClientSize = new System.Drawing.Size(510, 375);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
@@ -591,7 +598,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cBox_Joy_Select;
-        private System.Windows.Forms.Button btn_Joy_Enable;
+        private System.Windows.Forms.Button btn_Joy_Refresh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkBox_Debug;
         private System.Windows.Forms.TextBox txt_Debug_Port;
