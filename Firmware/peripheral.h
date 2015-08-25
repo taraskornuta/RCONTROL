@@ -5,7 +5,6 @@
 #include <stdint.h>
 #include <peripheral.h>
 
-
 #define LED_GREEN GPIOA, GPIO_Pin_15
 #define LED_RED  GPIOB, GPIO_Pin_3
 #define LED_GREEN_ON  GPIO_SetBits(LED_GREEN);
@@ -17,17 +16,12 @@
 #define CH_PD_ON  GPIO_SetBits(CH_PD);
 #define CH_PD_OFF GPIO_ResetBits(CH_PD);
 
-#define PPM_PIN GPIOA, GPIO_Pin_0
-#define PPM_PIN_HI GPIO_SetBits(PPM_PIN);
-#define PPM_PIN_LO GPIO_ResetBits(PPM_PIN);
-
 void Periph_Init(void);
 void GPIO_Configuration(void);
 void TIMERS_Configuration(void);
 void delay_ms(uint16_t ms);
 void led_red_blink(uint16_t time, uint8_t quantiti);
 void led_green_blink(uint16_t time, uint8_t quantiti);
-
-
+uint8_t jumper_state(void);
 
 #endif

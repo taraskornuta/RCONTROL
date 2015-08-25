@@ -15,8 +15,7 @@ int main(void)
 	SystemInit();
 
 	Periph_Init();
-	CPPM_Init();
-	//PWM_Init();
+	jumper_state();
 	USART_Configuration();
 
 	WIFI_Init();

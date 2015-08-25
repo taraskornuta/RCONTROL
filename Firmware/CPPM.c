@@ -63,35 +63,35 @@ void CPPM_Configuration(void)
 void DMA_Configuration(void)
 {
 	//enable DMA1 clock
-	    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
 
-	    //create DMA structure
-	    DMA_InitTypeDef  DMA_InitStructure;
+	//create DMA structure
+	DMA_InitTypeDef  DMA_InitStructure;
 
-	    //reset DMA1 channe1 to default values;
-	    DMA_DeInit(DMA1_Channel5);
-	    //channel will be used for memory to memory transfer
-	    DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
-	    //setting normal mode (non circular)
-	    DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
-	    //medium priority
-	    DMA_InitStructure.DMA_Priority = DMA_Priority_High;
-	    //source and destination data size word=32bit
-	    DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
-	    DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
-	    //automatic memory destination increment enable.
-	    DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
-	    //source address increment disable
-	    DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+	//reset DMA1 channe1 to default values;
+	DMA_DeInit(DMA1_Channel5);
+	//channel will be used for memory to memory transfer
+	DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
+	//setting normal mode (non circular)
+	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+	//medium priority
+	DMA_InitStructure.DMA_Priority = DMA_Priority_High;
+	//source and destination data size word=32bit
+	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+	DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+	//automatic memory destination increment enable.
+	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+	//source address increment disable
+	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
 
-	    DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
-	    DMA_InitStructure.DMA_BufferSize = PPM_ELEMENTS;                            // 8 channels + 9 space + end
-	    DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&TIM2->CCR1;
-	    DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)PPM_Buffer;
-	    DMA_Init(DMA1_Channel5, &DMA_InitStructure);
+	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
+	DMA_InitStructure.DMA_BufferSize = PPM_ELEMENTS;                            // 8 channels + 9 space + end
+	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&TIM2->CCR1;
+	DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)PPM_Buffer;
+	DMA_Init(DMA1_Channel5, &DMA_InitStructure);
 
-	    // turning DMA on
-	    DMA_Cmd(DMA1_Channel5, ENABLE);
+	// turning DMA on
+	DMA_Cmd(DMA1_Channel5, ENABLE);
 }
 
 void TIM2_IRQHandler(void)

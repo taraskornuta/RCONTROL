@@ -71,15 +71,10 @@ void WIFI_connect(void)
 	    {
 	        UART1_read_str(Buffer);
 	        sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&Channel[0], &Channel[1],&Channel[2],&Channel[3],&Channel[4],&Channel[5],&Channel[6],&Channel[7]);
-
-//	        ch1_puls(channel[0]);
-//	        ch2_puls(channel[1]);
-//	        ch3_puls(channel[2]);
-//	        ch4_puls(channel[3]);
-//	        ch5_puls(channel[4]);
-//	        ch6_puls(channel[5]);
-//	        ch7_puls(channel[6]);
-//	        ch8_puls(channel[7]);
+	        if(jumper_state()==0)
+	        {
+	        	pwm_puls(Channel);
+	        }
 	     }
 	    while((!strstr(Buffer,"0,CLOSED")));
 	}
@@ -88,7 +83,6 @@ void WIFI_connect(void)
 	    WIFI_weit_connection();
 	}
 }
-
 
 void WIFI_hard_reset(void)
 {

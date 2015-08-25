@@ -16,16 +16,6 @@
 void PWM_Init(void);
 void PWM_Configuration(void);
 
-void ch1_puls(int puls);
-void ch2_puls(int puls);
-void ch3_puls(int puls);
-void ch4_puls(int puls);
-void ch5_puls(int puls);
-void ch6_puls(int puls);
-void ch7_puls(int puls);
-void ch8_puls(int puls);
-
-
-
+void pwm_puls(int ch[]);
 
 #endif

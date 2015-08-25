@@ -84,8 +84,8 @@
   </Components>
   <Files>
     <File name="esp8266.c" path="esp8266.c" type="1"/>
-    <File name="peripheral.c" path="peripheral.c" type="1"/>
     <File name="cmsis_boot/system_stm32f10x.c" path="cmsis_boot/system_stm32f10x.c" type="1"/>
+    <File name="peripheral.c" path="peripheral.c" type="1"/>
     <File name="stm_lib/inc/misc.h" path="stm_lib/inc/misc.h" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_tim.h" path="stm_lib/inc/stm32f10x_tim.h" type="1"/>
@@ -104,8 +104,8 @@
     <File name="cmsis_boot/stm32f10x_conf.h" path="cmsis_boot/stm32f10x_conf.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_dma.c" path="stm_lib/src/stm32f10x_dma.c" type="1"/>
     <File name="stm_lib/src" path="" type="2"/>
-    <File name="CPPM.h" path="CPPM.h" type="1"/>
     <File name="cmsis" path="" type="2"/>
+    <File name="CPPM.h" path="CPPM.h" type="1"/>
     <File name="stm_lib" path="" type="2"/>
     <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_exti.h" path="stm_lib/inc/stm32f10x_exti.h" type="1"/>
