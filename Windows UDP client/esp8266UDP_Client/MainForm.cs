@@ -116,7 +116,7 @@ namespace RCONTROL
                 {
                     if(joystickButtons[i] == true)
                     {
-                        label9.Text = "Button " + i + " Pressed";
+                        label9.Text = "Button " + i;
                         Console.WriteLine("Button " + i + " Pressed");
                         
                     }
