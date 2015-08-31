@@ -4,7 +4,7 @@
 #include "stm32f10x.h"
 #include "stm32f10x_conf.h"
 
-#include <stdint.h>
+//#include <stdint.h>
 
 #define MAX_COMMAND 2000
 #define MIN_COMMAND 1000

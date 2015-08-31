@@ -22,11 +22,11 @@
     </xs:element>
   </xs:schema>
   <root>
-    <Debug_Enable>true</Debug_Enable>
+    <Debug_Enable>false</Debug_Enable>
     <Debug_IP>127.0.0.1</Debug_IP>
     <Debug_Port>8000</Debug_Port>
     <Debug_Open_Console>false</Debug_Open_Console>
-    <Joy_Enable>true</Joy_Enable>
+    <Joy_Enable>false</Joy_Enable>
     <Joy_Name>Generic   USB  Joystick  </Joy_Name>
     <LabelText>Save all settings</LabelText>
   </root>

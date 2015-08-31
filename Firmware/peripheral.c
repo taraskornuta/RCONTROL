@@ -1,7 +1,7 @@
-#include "stm32f10x.h"
-#include "misc.h"
-#include <stdint.h>
-#include <stdlib.h>
+//#include "stm32f10x.h"
+//#include "misc.h"
+//#include <stdint.h>
+//#include <stdlib.h>
 #include "peripheral.h"
 
 void Periph_Init(void)
@@ -84,39 +84,41 @@ void led_green_blink(uint16_t time, uint8_t quantiti)
 	}
 }
 
+uint8_t jumper = 0;
 uint8_t jumper_state(void)
 {
-	/*Init ports for making possible read conditions of port */
-	GPIO_InitTypeDef GPIO_InitStructure;
 
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+		/*Init ports for making possible read conditions of port */
+		GPIO_InitTypeDef GPIO_InitStructure;
 
-	/*Set GPIOA Port 1 to IN */
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
 
-	/*Set GPIOA Port 2 to OUT */
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
+		/*Set GPIOA Port 1 to IN */
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
+		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+		GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-
-	GPIO_SetBits(GPIOA, GPIO_Pin_2); //Set HI level on port
+		/*Set GPIOA Port 2 to OUT */
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+		GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 
-	if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1) == 1)
+		GPIO_SetBits(GPIOA, GPIO_Pin_2); //Set HI level on port
+
+
+	if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1) == 0)
 	{
-		GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-		CPPM_Init();
-		return 1;
-	}
-	else
-	{
-		GPIO_ResetBits(GPIOA, GPIO_Pin_2);
 		PWM_Init();
 		return 0;
 	}
+	else if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1) == 1)
+	{
+		CPPM_Init();
+		return 1;
+	}
+
+		GPIO_ResetBits(GPIOA, GPIO_Pin_2);
 }

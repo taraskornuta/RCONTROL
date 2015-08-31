@@ -3,7 +3,8 @@
 
 #include "stm32f10x.h"
 #include <stdint.h>
-#include <peripheral.h>
+
+extern uint8_t jumper;
 
 #define LED_GREEN GPIOA, GPIO_Pin_15
 #define LED_RED  GPIOB, GPIO_Pin_3

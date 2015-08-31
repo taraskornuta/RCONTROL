@@ -71,10 +71,11 @@ void WIFI_connect(void)
 	    {
 	        UART1_read_str(Buffer);
 	        sscanf (Buffer,"\n+IPD,0,39: %4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d",&Channel[0], &Channel[1],&Channel[2],&Channel[3],&Channel[4],&Channel[5],&Channel[6],&Channel[7]);
-	        if(jumper_state()==0)
+	        if(jumper == 0)
 	        {
 	        	pwm_puls(Channel);
 	        }
+
 	     }
 	    while((!strstr(Buffer,"0,CLOSED")));
 	}

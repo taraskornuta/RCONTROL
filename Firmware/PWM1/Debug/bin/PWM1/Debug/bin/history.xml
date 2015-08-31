@@ -1,23 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=PWM1.map -O0 --gc-sections --specs=nano.specs -LC:\CooCox\CoIDE\configuration\ProgramData\PWM1 -TC:\CooCox\CoIDE\configuration\ProgramData\PWM1/arm-gcc-link.ld -g">
-      <target file="PWM1.elf" lastModified="14f64eb96d0">
-         <source file="..\obj\stm32f10x_tim.o" lastModified="14f64d63c47"/>
-         <source file="..\obj\system_stm32f10x.o" lastModified="14f64d63cb5"/>
-         <source file="..\obj\uart.o" lastModified="14f64e82bb4"/>
-         <source file="..\obj\startup_stm32f10x_md.o" lastModified="14f64d63d9f"/>
-         <source file="..\obj\stm32f10x_gpio.o" lastModified="14f64d63e5b"/>
-         <source file="..\obj\main.o" lastModified="14f64e82c51"/>
-         <source file="..\obj\CPPM.o" lastModified="14f64e82cce"/>
-         <source file="..\obj\stm32f10x_rcc.o" lastModified="14f64d63ff1"/>
-         <source file="..\obj\stm32f10x_exti.o" lastModified="14f64d6406e"/>
-         <source file="..\obj\stm32f10x_usart.o" lastModified="14f64d64139"/>
-         <source file="..\obj\peripheral.o" lastModified="14f64e85de3"/>
-         <source file="..\obj\syscalls.o" lastModified="14f64d64223"/>
-         <source file="..\obj\stm32f10x_dma.o" lastModified="14f64d642c0"/>
-         <source file="..\obj\channels.o" lastModified="14f64e82df7"/>
-         <source file="..\obj\misc.o" lastModified="14f64d643ba"/>
-         <source file="..\obj\esp8266.o" lastModified="14f64eb949d"/>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=PWM1.map -O0 --gc-sections --specs=nano.specs -LE:\CooCox\CoIDE\configuration\ProgramData\PWM1 -TE:\CooCox\CoIDE\configuration\ProgramData\PWM1/arm-gcc-link.ld -g">
+      <target file="PWM1.elf" lastModified="14f80aa9616">
+         <source file="..\obj\stm32f10x_tim.o" lastModified="14f80a9466b"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="14f80a946c3"/>
+         <source file="..\obj\uart.o" lastModified="14f80a9474f"/>
+         <source file="..\obj\startup_stm32f10x_md.o" lastModified="14f80a9478b"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="14f80a9482b"/>
+         <source file="..\obj\main.o" lastModified="14f80a9488f"/>
+         <source file="..\obj\CPPM.o" lastModified="14f80a948fd"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="14f80a94993"/>
+         <source file="..\obj\stm32f10x_exti.o" lastModified="14f80a94a01"/>
+         <source file="..\obj\stm32f10x_usart.o" lastModified="14f80a94ac9"/>
+         <source file="..\obj\peripheral.o" lastModified="14f80aa9405"/>
+         <source file="..\obj\syscalls.o" lastModified="14f80a94ba1"/>
+         <source file="..\obj\stm32f10x_dma.o" lastModified="14f80a94c33"/>
+         <source file="..\obj\channels.o" lastModified="14f80a94ca1"/>
+         <source file="..\obj\misc.o" lastModified="14f80a94d05"/>
+         <source file="..\obj\esp8266.o" lastModified="14f80a94d73"/>
       </target>
    </processor>
 </history>

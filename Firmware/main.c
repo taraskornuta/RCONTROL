@@ -9,13 +9,13 @@
 #include "uart.h"
 #include "esp8266.h"
 
-
 int main(void)
 {
 	SystemInit();
 
+	jumper = jumper_state(); //Checking state of jumper, for chose what protocol will be work
+
 	Periph_Init();
-	jumper_state();
 	USART_Configuration();
 
 	WIFI_Init();
